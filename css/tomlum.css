@@ -8,6 +8,7 @@ body {
     background-color: #555;
     max-width: 750px;
     margin:auto;
+    overflow-x: hidden; 
 }
 
 h1 {
@@ -25,6 +26,7 @@ hr {
     height: 15px;
     background-color: #999;
     margin:0px -2000px;
+    overflow: hidden;
 }
 
 img{
