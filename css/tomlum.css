@@ -1,0 +1,71 @@
+header {
+    background-color: #555;
+}
+
+body {
+    font-size: 20px;
+    font-family: 'Arial';
+    background-color: #555;
+    max-width: 750px;
+    margin:auto;
+}
+
+h1 {
+    color:#000;
+}
+
+.projectTitle{
+    text-align: left;
+    font-size: 25px;
+    color:#fff;
+}
+
+hr {
+    border: none;
+    height: 15px;
+    background-color: #999;
+    margin:0px -2000px;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+.icon2 {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+}
+
+h3 {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 20px;
+    text-align:left;
+    color:#aaa;
+}
+
+a {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    color:#aaa;
+}
+
+a:hover{
+    color:#fff;
+    text-decoration: none;
+}
+
+a:active{
+    color:#fff;
+    text-decoration: none;
+}
+
+i{
+    font-size: 25px;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+.center{
+   text-align:center;
+}
