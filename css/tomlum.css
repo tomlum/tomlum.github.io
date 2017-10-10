@@ -1,11 +1,11 @@
 header {
-    background-color: #555;
+    background-color: #666;
 }
 
 body {
     font-size: 20px;
     font-family: 'Arial';
-    background-color: #555;
+    background-color: #666;
     margin:auto;
 }
 
@@ -22,7 +22,7 @@ h1 {
 hr {
     border: none;
     height: 15px;
-    background-color: #999;
+    background-color: #bbb;
     margin:0px 0px;
 }
 
@@ -42,12 +42,12 @@ h3 {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 20px;
     text-align:left;
-    color:#aaa;
+    color:#bbb;
 }
 
 a {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    color:#aaa;
+    color:#bbb;
 }
 
 a:hover{
