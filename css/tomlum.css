@@ -21,9 +21,10 @@ h1 {
 
 hr {
     border: none;
-    height: 15px;
+    height: 10px;
     background-color: #bbb;
-    margin:0px 0px;
+    /*margin:0px 0px;*/
+    width:300px;
 }
 
 img{
@@ -41,13 +42,19 @@ img{
 h3 {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-size: 20px;
-    text-align:left;
-    color:#bbb;
+    text-align:center;
+    color:#fff;
+    margin-top: 10px;
+}
+
+.titlea {
+    text-decoration: none;
 }
 
 a {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     color:#bbb;
+    text-decoration: none;
 }
 
 a:hover{
