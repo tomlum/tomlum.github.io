@@ -1,45 +1,18 @@
-
 body {
     font-size: 20px;
-    font-family: 'Arial';
+    font-family: Futura, "Trebuchet MS", 'Arial';
     background-color: #888;
     margin:auto;
 }
 
-.paper {
-    background-color: #999;
-    padding: 10px;
+.center{
+   text-align:center;
+    max-width: 750px;
+    margin:auto;
 }
-
 
 h1 {
     color:#bbb;
-}
-
-.projectTitle{
-    text-align: left;
-    font-size: 25px;
-    color:#fff;
-}
-
-hr {
-    border: none;
-    height: 10px;
-    background-color: #bbb;
-    /*margin:0px 0px;*/
-    width:300px;
-}
-
-img{
-    max-width:100%;
-    height:auto;
-}
-
-.icon2 {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 30px;
 }
 
 h2 {
@@ -57,8 +30,30 @@ h3 {
     color:#fff;
 }
 
-.titlea {
-    text-decoration: none;
+i {
+    font-size: 25px;
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+hr {
+    border: none;
+    height: 10px;
+    background-color: #bbb;
+    /*margin:0px 0px;*/
+    width:300px;
+}
+
+.fade1 {
+    background-color: #999;
+    width:450px;
+}
+.fade2 {
+    background-color: #aaa;
+    width:600px;
+}
+.fade3 {
+    background-color: #bbb;
+    width:700px;
 }
 
 a {
@@ -67,14 +62,24 @@ a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color:#fff;
     text-decoration: none;
 }
 
-a:active{
+a:active {
     color:#fff;
     text-decoration: none;
+}
+
+p {
+    text-indent: 2.0em;
+}
+
+.paper {
+    text-align:left;
+    background-color: #999;
+    padding: 10px;
 }
 
 .paper > a {
@@ -83,13 +88,15 @@ a:active{
     text-decoration: none;
 }
 
-i{
-    font-size: 25px;
-    font-family: "Times New Roman", Georgia, Serif;
+img{
+    max-width:100%;
+    height:auto;
 }
 
-.center{
-   text-align:center;
-    max-width: 750px;
-    margin:auto;
+.icon {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
 }
+
