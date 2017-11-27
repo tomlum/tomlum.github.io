@@ -1,16 +1,19 @@
-header {
-    background-color: #666;
-}
 
 body {
     font-size: 20px;
     font-family: 'Arial';
-    background-color: #666;
+    background-color: #888;
     margin:auto;
 }
 
+.paper {
+    background-color: #999;
+    padding: 10px;
+}
+
+
 h1 {
-    color:#000;
+    color:#bbb;
 }
 
 .projectTitle{
@@ -39,12 +42,19 @@ img{
     height: 30px;
 }
 
-h3 {
+h2 {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     text-align:center;
     color:#fff;
     margin-top: 10px;
+}
+
+h3 {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 16px;
+    text-align:center;
+    color:#fff;
 }
 
 .titlea {
@@ -53,7 +63,7 @@ h3 {
 
 a {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    color:#bbb;
+    color:#ccc;
     text-decoration: none;
 }
 
@@ -64,6 +74,12 @@ a:hover{
 
 a:active{
     color:#fff;
+    text-decoration: none;
+}
+
+.paper > a {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    color:#ddd;
     text-decoration: none;
 }
 
