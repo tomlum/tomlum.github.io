@@ -31,7 +31,7 @@ h3 {
 }
 
 i {
-    font-size: 25px;
+    font-size: 23px;
     font-family: "Times New Roman", Georgia, Serif;
 }
 
@@ -74,6 +74,8 @@ a:active {
 
 p {
     text-indent: 2.0em;
+    margin:0px;
+    line-height: 1.3em;
 }
 
 .paper {
@@ -82,9 +84,23 @@ p {
     padding: 10px;
 }
 
+.paper > p {
+    padding:10px;
+    font-family: Georgia;
+}
+
 .paper > a {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    color:#ddd;
+    font-family: Georgia;
+    color:#eee;
+}
+
+.paper > a:hover {
+    color:#fff;
+    text-decoration: none;
+}
+
+.paper > a:active {
+    color:#fff;
     text-decoration: none;
 }
 

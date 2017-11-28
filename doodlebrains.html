@@ -61,22 +61,48 @@
         <br>
         <hr>
         <h2> 
-            CountSheep: Can Androids Count Electric Sheep?
+            Can Androids Count Electric Sheep?
         </h2>
 
         <img src="https://s3.us-east-2.amazonaws.com/tomlum/cs.png" alt="A neural network's depiction of numbers">
 
-        <a href="github.com/tomlum">
+        <a href="github.com/tomlum" target="none">
             (github)
         </a>
         <br>
         <br>
         <div class="paper">
             <p>
-                The <a href="http://yann.lecun.com/exdb/mnist/">MNIST database of handwritten numbers</a> is perhaps the most prolific dataset in machine learning.  Given a set of handwritten numbers and the digit they are depicting, a neural network can learn to read human written digits it has never seen before with astounding accuracy.
-            </p>
-            <p>
-                As our maiden voyage into implementing doodle brains, I wanted to turn this basic task in on itself; bend the formulaic task of categorization into a more creative one.  <b>This neural network, "CountSheep", is trained to take in a hand drawn digit and draw the next digit</b>.  Feeding this depiction back into the network again allows it to spiral into abstraction and introspection, dipping into nonsense and suddenly pulling back semblances of meaning.
+                The <a href="http://yann.lecun.com/exdb/mnist/">MNIST database of handwritten numbers</a> is perhaps the most prolific dataset in machine learning.  Given a set of handwritten numbers and the digit they are depicting, a neural network can learn to read human written digits it has never seen before with <a href="http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#4d4e495354" target="none">astounding accuracy</a>.
+                </p>
+                <p>
+                As our maiden voyage into making doodle brains, I wanted to turn this basic task in on itself; bend the formulaic task of categorization into a more creative one.  <b>This neural network, "CountSheep", is trained to take in a hand drawn digit and draw the next number in sequence</b>.  Feeding this depiction back into the network again allows it to quickly spiral into abstraction and introspection as each error and imperfection is reinterpreted.  As if beginning to doze off from counting sheep, the network begins to drift into nonsense and ghastly semblances of meaning.
+                </p>
+                <p>
+                But what does this little network show us?  From a practical sense, it affords us very little.  While Optical Character Recognition (OCR) and general image classification is an important field with applications ranging from mass archival work to advertisement suggestions, what we have here is <b>Optical Character Generation</b>.  And at that, a very limited example, as CountSheep can only count upwards the digits from 0 to 9.  On top of that, the network is very small, containing only one hidden layer with 32 hidden nodes.
+                </p>
+                <p>
+                Yet this inversion from recognition to generation is, to me, somehow instantly more gripping than even an objectively more complex neural network performing ludicrously accurate OCR.  I am reminded of <a href="http://cogprints.org/7150/1/10.1.1.83.5248.pdf" target="none">Searle's Chinese Room</a>, something I am not want to do, as I am rather ambivalent about its message.  In Searle's thought experiment, there exists a person inside of a room with a dictionary of foreign phrases and their corresponding responses. The person inside the room receives inputs from the outside world, and must find, match, and output the response.  Searle's point is that such a person in the room could perform the task accurately, even mime conversation, but would not <i>understand</i> the content the same way a native speaker of the language would, much like a <a href="https://en.wikipedia.org/wiki/Philosophical_zombie" target="none">philosophical zombie</a> could mime behavior.  And as such, if the person and dictionary in the room were replaced with a simple dictionary program, this machine would not <i>understand</i> what it was doing either.
+                </p>
+                <p>
+                Say we were to mirror this thought experiment, and rewire CountSheep not to feed back into itself, but to take in our input drawings and output its own drawings (a task I am working on presently).  CountSheep is no longer talking to itself, but, in a sense, playing a game with us.  A simple counting game, but a game nonetheless, much like Searle's room's conversation.  We give it a number, and it shows us the next number.  Make no mistake, there is a preponderance of anthropomorphism going on here in just rephrasing it as such.  After all, the black box we're dealing with is transparent (in fact, we made it), and the task is absurdly limited.  But in spite of knowing all this, there's still something there that feels... meaningful.
+                </p>
+                <p>
+                <div class="center">
+                    <img width="70%" src="https://s3.us-east-2.amazonaws.com/tomlum/cs_sketch.png" alt="A sketch of a human counting with a robot"/>
+                </div>
+                </p>
+                <p>
+                And that's because there is.  There is a wealth of meaning from the drawings the machine is trained on.  Human made, hand drawn numbers encode a lot more than simply digits from 0 to 9.  They encode subtle reflections about the nature of how we write, and why we write the way we do.  Latin numerals were not designed arbitrarily, and we do not write them arbitrarily.  In the language of Searle's thought experiment, I like to think of this as <i>Underestimating the Dictionary</i>.  Depending on the complexity of the task Searle's room must accomplish, the dictionary must match the complexity of the task, which may become exponentially and non-trivially enormous, or even dynamically changing or Turing complete.  
+                </p>
+                <p>
+                The second meaningful component of CountSheep is its ability to output, to produce, <i>to act</i>, in a wide, varying range.  After all, we are creatures of both perception and action, with complex motor cortices along with our complex sensory cortices.  And while CountSheep is limited to its 28x28 pixel output, the possibility space of output is still 255^(28*28), higher than the <a href="https://en.wikipedia.org/wiki/Shannon_number"> Shannon Number</a>.  Rather than condensing and distilling our deep well of encoded, meaningful knowledge, we are throwing it back and re-expressing it.
+                </p>
+                <p>
+                I feel again like I am overselling this very simple program.  Its behavior can be surmised as learning to regurgitate frankenstinian depictions of numbers.  However, when you begin to describe it as something that learns to do things from what it observes, it begins to sound less like a machine and a lot more like you or me.  Searle's point is that if we attempt to get at cognition in a machine the same way we get at it subjectively, we will have no luck.  But if we move towards cognition from opposite ends, flank and sneak up on it from its perceptions and its actions, we won't find <i>nothing</i>... or if we do, then like Dorothy, we may find that the cognition was within our perception and action the whole time.
+                </p>
+                <p>
+                There is an undeniably enormous gulf of difference between a dictionary and a person.  Some think it so insurmountable as to consider them two separate continents entirely.  But in this gray area has to be <i>something</i>, and CountSheep and our Doodle Brains are pointing us in that direction.
             </p>
         </div>
         <br>
