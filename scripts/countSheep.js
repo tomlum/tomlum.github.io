@@ -4,9 +4,9 @@ var lastNum = currentNum
 
 const model = new KerasJS.Model({
 	filepaths: {
-		model: 'https://s3.us-east-2.amazonaws.com/tomlum/countSheep/model.json',
-		weights: 'https://s3.us-east-2.amazonaws.com/tomlum/countSheep/model_weights.buf',
-		metadata: 'https://s3.us-east-2.amazonaws.com/tomlum/countSheep/model_metadata.json'
+		model: 'countSheep/model.json',
+		weights: 'countSheep/model_weights.buf',
+		metadata: 'countSheep/model_metadata.json'
 	},
 	gpu: true
 })
