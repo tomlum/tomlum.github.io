@@ -8,6 +8,7 @@ body {
 .center{
    text-align:center;
     max-width: 750px;
+    min-width: 750px;
     margin:auto;
 }
 
