@@ -192,6 +192,8 @@ function show(element, speed) {
 	document.getElementById(element).style.opacity = "1";
 }
 
+show('clickMe',0);
+show('drawHere',0);
 
 drawNet(sheepApp, currentNum)
 
