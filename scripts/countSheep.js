@@ -38,6 +38,7 @@ for (i = 0; i < 28; i++) {
 		}
 	}
 }
+
 sheepApp.squares = []
 for (i = 0; i < 28; i++) {
 	for (j = 0; j < 28; j++) {
@@ -45,6 +46,8 @@ for (i = 0; i < 28; i++) {
 			var sqr = PIXI.Sprite.fromImage('assets/square.png');
 			sqr.scale.x = pScale;
 			sqr.scale.y = pScale;
+			sqr.interactive = true;
+			sqr.cursor = 'pointer'
 			sqr.x = i * pScale;
 			sqr.y = j * pScale;
 			sqr.tint = rgb(0,0,0);
@@ -79,6 +82,7 @@ for (i = 0; i < 28; i++) {
 			sqr.x = i * pScale;
 			sqr.y = j * pScale;
 			sqr.interactive = true;
+			sqr.cursor = 'crosshair'
 			sqr.on('pointerdown', mDown);
 			sqr.on('mouseup', mUp);
 			sqr.on('mouseupoutside', mUp);
@@ -90,8 +94,29 @@ for (i = 0; i < 28; i++) {
 	}
 }
 
+
+var clickMe = new PIXI.Text('Click Me!',{ font: '20px Futura'});
+clickMe.style.fill = rgb(1,1,1);
+clickMe.anchor.x = .5;
+clickMe.anchor.y = .5;
+clickMe.x = pScale * 14;
+clickMe.y = 25;
+sheepApp.stage.addChild(clickMe);
+
+var drawHere = new PIXI.Text('Draw Here!',{ font: '25px Futura'});
+drawHere.style.fill = rgb(1,1,1);
+drawHere.anchor.x = .5;
+drawHere.anchor.y = .5;
+drawHere.x = pScale * 14;
+drawHere.y = pScale * 14;
+drawApp.stage.addChild(drawHere);
+
 function mDown(){
-	hide('drawHere');
+	if (drawHere.alpha == 1){
+		drawApp.ticker.add(function(delta) {
+			drawHere.alpha -= 0.1 * delta;
+		});
+	}
 	mouseDown = true;
 	this.tint = rgb(1, 1, 1);
 	drawApp.input[Math.floor(this.x/pScale)+28*Math.floor(this.y/pScale)] = 1;
@@ -111,6 +136,14 @@ function paint() {
 
 function rgb(r, g, b) {
 	return PIXI.utils.rgb2hex([r, g, b]);
+}
+
+function hideClickMe(){
+	if (clickMe.alpha == 1){
+		sheepApp.ticker.add(function(delta) {
+			clickMe.alpha -= 0.1 * delta;
+		});
+	}
 }
 
 function forwardPass(app,input) {
@@ -192,8 +225,6 @@ function show(element, speed) {
 	document.getElementById(element).style.opacity = "1";
 }
 
-show('clickMe',0);
-show('drawHere',0);
 
 drawNet(sheepApp, currentNum)
 
