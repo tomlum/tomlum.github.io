@@ -2,6 +2,8 @@ const zeroNum = new Float32Array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0196
 var currentNum = zeroNum
 var lastNum = currentNum
 
+const chr = chroma.scale('viridis');
+
 const model = new KerasJS.Model({
 	filepaths: {
 		model: 'countSheep/model.json',
@@ -32,7 +34,7 @@ for (i = 0; i < 28; i++) {
 			sqr.scale.y = pScale;
 			sqr.x = i * pScale;
 			sqr.y = j * pScale;
-			sqr.tint = rgb(0,0,0);
+			sqr.tint = cMap(0);
 			drawApp.stage.addChild(sqr);
 			drawApp.squares[(i+28*j)]=sqr;
 		}
@@ -50,7 +52,7 @@ for (i = 0; i < 28; i++) {
 			sqr.cursor = 'pointer'
 			sqr.x = i * pScale;
 			sqr.y = j * pScale;
-			sqr.tint = rgb(0,0,0);
+			sqr.tint = cMap(0);
 			sheepApp.stage.addChild(sqr);
 			sheepApp.squares[(i+28*j)]=sqr;
 		}
@@ -65,7 +67,7 @@ for (i = 0; i < 28; i++) {
 			sqr.scale.y = pScale;
 			sqr.x = i * pScale;
 			sqr.y = j * pScale;
-			sqr.tint = rgb(0,0,0);
+			sqr.tint = cMap(0);
 			responseApp.stage.addChild(sqr);
 			responseApp.squares[(i+28*j)]=sqr;
 		}
@@ -87,7 +89,7 @@ for (i = 0; i < 28; i++) {
 			sqr.on('mouseup', mUp);
 			sqr.on('mouseupoutside', mUp);
 			sqr.on('mouseover', paint);
-			sqr.tint = rgb(0, 0, 0);
+			sqr.tint = cMap(0);
 			drawApp.stage.addChild(sqr);
 			drawApp.squares[(i+28*j)]=sqr;
 		}
@@ -96,7 +98,7 @@ for (i = 0; i < 28; i++) {
 
 
 var clickMe = new PIXI.Text('Click Me!',{ font: '20px Futura'});
-clickMe.style.fill = rgb(1,1,1);
+clickMe.style.fill = cMap(1);
 clickMe.anchor.x = .5;
 clickMe.anchor.y = .5;
 clickMe.x = pScale * 14;
@@ -104,7 +106,7 @@ clickMe.y = 25;
 sheepApp.stage.addChild(clickMe);
 
 var drawHere = new PIXI.Text('Draw Here!',{ font: '25px Futura'});
-drawHere.style.fill = rgb(1,1,1);
+drawHere.style.fill = cMap(1);
 drawHere.anchor.x = .5;
 drawHere.anchor.y = .5;
 drawHere.x = pScale * 14;
@@ -118,7 +120,7 @@ function mDown(){
 		});
 	}
 	mouseDown = true;
-	this.tint = rgb(1, 1, 1);
+	this.tint = cMap(1);
 	drawApp.input[Math.floor(this.x/pScale)+28*Math.floor(this.y/pScale)] = 1;
 }
 
@@ -129,13 +131,17 @@ function mUp(){
 
 function paint() {
 	if(mouseDown){
-		this.tint = rgb(1, 1, 1);
+		this.tint = cMap(1);
 		drawApp.input[Math.floor(this.x/pScale)+28*Math.floor(this.y/pScale)] = 1;
 	}
 }
 
 function rgb(r, g, b) {
-	return PIXI.utils.rgb2hex([r, g, b]);
+	return PIXI.utils.rgb2hex([chr(r)._rgb[0]/255, chr(g)._rgb[1]/255, chr(b)._rgb[2]/255]);
+}
+
+function cMap(val) {
+	return PIXI.utils.rgb2hex([chr(val)._rgb[0]/255, chr(val)._rgb[1]/255, chr(val)._rgb[2]/255]);
 }
 
 function hideClickMe(){
