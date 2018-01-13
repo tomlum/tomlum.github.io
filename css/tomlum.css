@@ -7,8 +7,8 @@ body {
 
 .center{
    text-align:center;
-    max-width: 750px;
-    margin:auto;
+   max-width: 750px;
+   margin:auto;
 }
 
 h1 {
@@ -33,6 +33,19 @@ h3 {
 i {
     font-size: 23px;
     font-family: "Times New Roman", Georgia, Serif;
+}
+
+.description {
+    text-align:left;
+    padding: auto;
+    padding-top:30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.quoteSource {
+    text-align:right;
+    padding-right: 20px;
 }
 
 hr {
