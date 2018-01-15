@@ -6,9 +6,9 @@ body {
 }
 
 .center{
-   text-align:center;
-   max-width: 750px;
-   margin:auto;
+ text-align:center;
+ max-width: 750px;
+ margin:auto;
 }
 
 h1 {
@@ -133,3 +133,6 @@ img{
     cursor: pointer;
 }
 
+.logo {
+    margin-bottom: -70px;
+}

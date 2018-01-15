@@ -790,8 +790,6 @@ const pScale1 = 10;
 var currentNum = zeroNum;
 var lastNum = currentNum;
 
-const chr = chroma.scale("viridis");
-
 const model = new KerasJS.Model({
 	filepaths: {
 		model: "countSheep/model.json",
@@ -943,21 +941,6 @@ function paint() {
 	}
 }
 
-function cMap(val) {
-	return PIXI.utils.rgb2hex([
-		chr(val)._rgb[0] / 255,
-		chr(val)._rgb[1] / 255,
-		chr(val)._rgb[2] / 255
-	]);
-}
-
-function hideIt(app, thing) {
-	if (thing.alpha == 1) {
-		app.ticker.add(function(delta) {
-			thing.alpha -= 0.1 * delta;
-		});
-	}
-}
 sheepApp.view.onclick = function() {
 	hideIt(sheepApp, clickMe);
 	forwardPass(sheepApp, currentNum, "history");

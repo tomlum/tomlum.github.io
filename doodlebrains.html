@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <title>Doodle Brains</title>
+
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png?v=A0Rrm0rq0k">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=A0Rrm0rq0k">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=A0Rrm0rq0k">
@@ -9,21 +11,24 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg?v=A0Rrm0rq0k" color="#5bbad5">
     <link rel="shortcut icon" href="favicon.ico?v=A0Rrm0rq0k">
     <meta name="theme-color" content="#aaaaaa">
-    <title>Doodle Brains</title>
     <meta property="og:image" content="https://s3.us-east-2.amazonaws.com/tomlum/logo.png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Pixi -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.6.2/pixi.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/keras-js/0.3.0/keras.js" crossorigin="anonymous"></script>
+    <!-- Keras -->
+    <script asyncsrc="https://cdnjs.cloudflare.com/ajax/libs/keras-js/0.3.0/keras.js" crossorigin="anonymous"></script>
+    <!-- Alea -->
     <script async src="https://cdn.jsdelivr.net/npm/alea@0.0.9/alea.min.js" crossorigin="anonymous">
     </script>
-
-    <!-- <script async src="pixi.min.js"></script> -->
+    <!-- Chroma Color Scale -->
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link href="css/tomlum.css" rel="stylesheet">
+    <!-- Common Pixi Tools -->
     <script src="scripts/pixiTools.js"></script>
-    <!-- <script async src="keras.js"></script> -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js" crossorigin="anonymous"></script>
 
     <script>
         (function(i, s, o, g, r, a, m) {
@@ -41,16 +46,12 @@
         ga('create', 'UA-46705501-4', 'auto');
         ga('send', 'pageview');
     </script>
-    <!-- Custom CSS -->
-    <link href="css/tomlum.css" rel="stylesheet">
 </head>
-<header>
-</header>
 
 <body>
     <div class="center">
-        <a class="icon2" href="index.html">
-            <img alt="Logo" src="https://s3.us-east-2.amazonaws.com/tomlum/logo.png">
+        <a href="index.html">
+            <img class="logo" alt="Logo" src="https://s3.us-east-2.amazonaws.com/tomlum/logo.png">
         </a>
     </div>
 
@@ -64,130 +65,43 @@
             </h3>
         </div>
         <br>
-        <hr>
-        <h2> 
-            Can Androids Count Electric Sheep?
-        </h2>
-        <img src="https://s3.us-east-2.amazonaws.com/tomlum/cs.png" alt="A neural network's depiction of numbers">
-        <a href="github.com/tomlum" target="none">
-            (github)
+        <a href="countSheep.html">
+            <div class="paper">
+                <h2> 
+                    Can Androids Count Electric Sheep?
+                </h2>
+                <img src="https://s3.us-east-2.amazonaws.com/tomlum/cs.png" alt="A neural network's depiction of numbers">
+            </div>
         </a>
-        <br>
-        <br>
-        <div id="CountSheep"></div>
-        <img class="click" src="https://s3.us-east-2.amazonaws.com/tomlum/resetArrow.png" onClick="reset()" />
-        <img class="click" id="backArrow" src="https://s3.us-east-2.amazonaws.com/tomlum/backArrow.png" onClick="back()" style="margin-left: -400px;opacity:0" />
-        <br>
-        <div class="paper">
-            <p>
-                The <a href="http://yann.lecun.com/exdb/mnist/">MNIST database of handwritten numbers</a> is perhaps the most prolific dataset in machine learning. Given a set of handwritten numbers and the digit they are depicting, a neural network can learn to read human written digits it has never seen before with <a href="http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#4d4e495354" target="none">astounding accuracy</a>.
-            </p>
-            <p>
-                As our maiden voyage into making doodle brains, I wanted to turn this basic task in on itself; bend the formulaic task of categorization into a more creative one. <b>This neural network, "CountSheep", is trained to take in a hand drawn digit and draw the next number in sequence</b>. And when we feed this depiction back into the network again, so that it draws based on its own drawing, it quickly spirals into abstraction and introspection as each error and imperfection is reinterpreted. As if beginning to doze off from counting sheep, the network begins to drift into nonsense and ghastly semblances of meaning.
-            </p>
-            <p>
-                But what does this little network show us? From a practical sense, it affords us very little. While Optical Character Recognition (OCR) and general image classification is an important field with applications ranging from mass archival work to advertisement suggestions, what we have here is <b>Optical Character Generation</b>. And at that, a very limited example, as CountSheep can only count upwards the digits from 0 to 9 in a loop. On top of that, the network is very small, containing only one hidden layer with 32 hidden nodes.
-            </p>
-            <p>
-                Yet this inversion from recognition to generation is, to me, somehow instantly more gripping than even an objectively more complex neural network performing ludicrously accurate OCR. I am reminded of <a href="http://cogprints.org/7150/1/10.1.1.83.5248.pdf" target="none">Searle's Chinese Room</a>, something I am not wont to do, as I am rather ambivalent about its message. In Searle's thought experiment, there exists a person inside of a room with a dictionary of foreign phrases and their corresponding responses. The person inside the room receives inputs from the outside world, and must find, match, and output the response. Searle's point is that such a person in the room could perform the task accurately, even mime conversation, but would not <i>understand</i> the content the same way a native speaker of the language would, much like a <a href="https://en.wikipedia.org/wiki/Philosophical_zombie" target="none">philosophical zombie</a> could mime behavior. And as such, if the person and dictionary in the room were replaced with a simple dictionary program, this machine would not <i>understand</i> what it was doing either.
-            </p>
-            <p>
-                Say we were to mirror this thought experiment, and rewire CountSheep not to feed back into itself, but to take in our input drawings and output its own drawings. CountSheep is no longer talking to itself, but, in a sense, playing a game with us. A simple counting game, but a game nonetheless, much like Searle's room's conversation. We give it a number, and it shows us the next number.  Or... it tries to, anyway.
-            </p>
-            <br>
-            <div class="center">
-                <div id="CountDrawing" style="display:inline"></div>
-                <div id="CountResponse" style="display:inline;"></div>
-            </div>
-            <div class="center"">
-                <img class="click" src="https://s3.us-east-2.amazonaws.com/tomlum/resetDrawing.png" onclick="resetDrawing()"/>
-            </div>
-            <br>
-            <p>
-                Make no mistake, there is a preponderance of anthropomorphism going on here in just rephrasing it as a "game". After all, the black box we're dealing with is transparent (in fact, we made it), and the task is absurdly limited, and the answers produced are often incorrect. But in spite of knowing all this, even in the patently incorrect responses from the network, there's still something there that feels... meaningful.
-            </p>
-            <br>
-            <div class="center">
-                <img width="70%" src="https://s3.us-east-2.amazonaws.com/tomlum/cs_sketch.png" alt="A sketch of a human counting with a robot" />
-            </div>
-            <br>
-            <p>
-                And that's because there <i>is</i> meaning. Firstly, there is a wealth of meaning from the drawings the machine is trained on. Human made, hand drawn numbers encode a lot more than simply the digits from 0 to 9. They encode subtle reflections about the nature of how we write, and why we write the way we do.  While more symbolic than tally marks, Latin numerals were not designed arbitrarily, and we do not write them arbitrarily. If we did, we would expect the digits to look like a Pollock: streaks of random lines and dots.
-            </p>
-            <br>
-            <div class="center">
-                <img width="70%" src="https://s3.us-east-2.amazonaws.com/tomlum/cs_sketch2.png" alt="A sketch of purely symbolic vs.  meaningful symbols" />
-            </div>
-            <p>
-                Latin numerals must be read and written, and for that, they encode a balance between mechanical efficiency and visual distinctness.  Even deeper speculations can be made about the influence of anthropology, psychology, biology... but the unifying theme is this: <b>because they are human made, they reflect humanity</b>, and so we should not be surprised these strange distorted images feel meaningful.  In the language of Searle's thought experiment, I like to think of this as <i>Underestimating the Dictionary</i>. Depending on the complexity of the task Searle's room must accomplish, the dictionary must match the complexity of the task, which may become exponentially and non-trivially enormous, or even dynamically changing or Turing complete.
-            </p>
-            <p>
-                The second meaningful component of CountSheep is its ability to output, to produce, <i>to act</i>, in a wide, varying range. After all, we are creatures of both perception and action, with complex motor cortices along with our complex sensory cortices. And while CountSheep is limited to its 28x28 pixel output, with each pixel a value from 0 to 255, the possibility space of output is still 255^(28*28), higher than the <a href="https://en.wikipedia.org/wiki/Shannon_number"> Shannon Number</a> of possible chess games. Rather than condensing and distilling our deep well of encoded, meaningful knowledge, we are throwing it back and re-expressing it.  You can teach a potted plant a language until you're blue in the face, but it can only really <i>learn</i> as much as it can show you it has learned.
-            </p>
-            <br>
-            <div class="center">
-                <img width="70%" src="https://s3.us-east-2.amazonaws.com/tomlum/cs_sketch3.png" alt="A sketch of purely symbolic vs.  meaningful symbols" />
-            </div>
-            <p>
-                I feel once again like I am overselling this very simple program. At the end of the day, its behavior can be surmised as learning to regurgitate frankenstinian depictions of numbers. However, when you begin to describe it as something that learns to do things from what it observes, it begins to sound less like a machine and a lot more like you or me. Searle's point is that if we attempt to get at cognition in a machine the same way we get at it subjectively, we will have no luck. But if we move towards cognition from opposite ends, flank and sneak up on it from its perceptions and its actions, we won't find <i>nothing</i>... and if we do, then like Dorothy, we may find that the cognition was within our perception and action the whole time.
-            </p>
-            <p>
-                There is an undeniably enormous gulf of difference between a dictionary and a person. Some think it so insurmountable as to consider them two separate continents entirely. But in this gray area has to be <i>something</i>, and CountSheep and our Doodle Brains are pointing us in that direction.
-            </p>
-        </div>
+
         <br>
         
-            <hr>
-            <br>
-            <input id = "monkeySeed" onchange="changeMonkey()" value="1 Monkey" placeholder="Enter Seed Here" style="background:#aaa;font-size:22px;text-align:center;font-family:Futura;border-style:none;color:#fff;width:250px;font-weight:bold;
-            "/>
-            <a name="monkey"></a>
-            <div id="1Monkey" style=""></div>
-            <br>
+        <a href="1_monkey.html">
             <div class="paper">
-                <p>
-                </p>
+                <h2> 
+                    1 Monkey
+                </h2>
+                <img src="assets/1m.png" alt="A neural network's depiction of numbers">
             </div>
-            <br>
+        </a>
 
-
-
-            <hr>
-            <h2>
-                Road Trip (Coming Soon)
-            </h2>
-            <img src="https://s3.us-east-2.amazonaws.com/tomlum/cw.png" alt="A neural network's depiction of numbers">
-            <br>
-            <br>
-            <div class="paper">
-                <p>
-                    There's a whole world outside that window.
-                </p>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <hr class="fade1">
-            <hr class="fade2">
-            <hr class="fade3">
-            <h2> 
-                What's the point?
-            </h2>
-            <div class="paper">
-                <p>
-                    I don't know yet! ¯\_(ツ)_/¯ Doodle Brains is an ongoing exploration and introspection for insight into the limits and similarities of carbon minds and silicon minds. Until then, I hope it can at least offer something cool to think about, or fun to look at.
-                </p>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
+        <br>
+        <hr class="fade1">
+        <hr class="fade2">
+        <hr class="fade3">
+        <h2> 
+            What's the point?
+        </h2>
+        <div class="paper">
+            <p>
+                I don't know yet! ¯\_(ツ)_/¯ Doodle Brains is an ongoing exploration and introspection for insight into the limits and similarities of carbon minds and silicon minds. Until then, I hope it can at least offer something cool to think about, or fun to look at.
+            </p>
         </div>
-        <!-- <script type="text/javascript" src="scripts/countSheep.js"></script> -->
-        <script type="text/javascript" src="scripts/monkey.js"></script>
-    </body>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</body>
 
-    </html>
+</html>

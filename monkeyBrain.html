@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>1 Monkey</title>
+
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png?v=A0Rrm0rq0k">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=A0Rrm0rq0k">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=A0Rrm0rq0k">
+	<link rel="manifest" href="manifest.json?v=A0Rrm0rq0k">
+	<link rel="mask-icon" href="safari-pinned-tab.svg?v=A0Rrm0rq0k" color="#5bbad5">
+	<link rel="shortcut icon" href="favicon.ico?v=A0Rrm0rq0k">
+	<meta name="theme-color" content="#aaaaaa">
+	<meta property="og:image" content="https://s3.us-east-2.amazonaws.com/tomlum/logo.png">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Pixi -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.6.2/pixi.min.js" crossorigin="anonymous"></script>
+	<!-- Keras -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/keras-js/0.3.0/keras.js" crossorigin="anonymous"></script>
+	<!-- Alea -->
+	<script async src="https://cdn.jsdelivr.net/npm/alea@0.0.9/alea.min.js" crossorigin="anonymous">
+	</script>
+	<!-- Chroma Color Scale -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js" crossorigin="anonymous"></script>
+	<!-- Custom CSS -->
+	<link href="css/tomlum.css" rel="stylesheet">
+	<!-- Common Pixi Tools -->
+	<script src="scripts/pixiTools.js"></script>
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-46705501-4', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+
+<body>
+	<div class="center">
+		<a href="index.html">
+			<img class="logo" alt="Logo" src="https://s3.us-east-2.amazonaws.com/tomlum/rainbowLogo.png">
+		</a>
+	</div>
+
+	<div class="center">
+		<div>
+			<a href="doodlebrains.html">
+				<h1> 
+					Doodle Brains
+				</h1>
+			</a>
+			<h3>
+				Exploring the idle creativity of Neural Networks
+			</h3>
+		</div>
+		<hr>
+		<br>
+
+		<input id = "monkeySeed" onchange="changeMonkey()" value="1 Monkey" placeholder="Enter Seed Here" style="background:#aaa;font-size:22px;text-align:center;font-family:Futura;border-style:none;color:#fff;width:250px;font-weight:bold;
+		"/>
+		<a name="monkey"></a>
+		<div id="1Monkey" style=""></div>
+		<a href="github.com/tomlum" target="none">
+			(github)
+		</a>
+		<br>
+		<div class="paper">
+			<div class="center">
+				<img alt = "A Young Me" src = "assets/me.png">
+			</div>
+			<p>
+				This is me bla of --- 
+				Except it's not.  It's a digital image, made up of pixels, 10000 of them.
+
+			</p>
+			<div class="center">
+				<img alt = "Pale Blue Dot" src = "assets/pbd.png">
+			</div>
+			<p>
+				This is another grid of XX pixels, the same as the picture of XX.  Except it's not.  It's the famous <a href="https://en.wikipedia.org/wiki/Pale_Blue_Dot"> pale blue dot </a> photograph of Earth from 3.7 billion miles away.  So, roughly three of those XX pixels is planet Earth.
+			</p>
+			<p>
+				So what if instead of going to these astronomical lengths to take this mesmerizingly beautiful grid of pixels, or even the pale blue dot photo, <b>what if we did it the other way around: shook up a frame of pixels until it made something?</b>
+			</p>
+			<p>
+				In theory<sup>*</sup>, there is nothing stopping us randomizing XX pixels and creating that pale blue dot photograph, without ever having to send the Voyager into space.  We could also create 
+			</p>
+			<p>
+				You may have realized this is really just the Infinite Monkey thought experiment: whereby an infinite number of 
+			</p>
+			<p>
+				<sup>*</sup> Did you follow the asterisk down?  Because the secret to this thought experiment is that in actuality the protagonist of this story isn't the power of randomness, it's the power of combinatorials.
+
+
+
+
+				One single pixel has a red, green, and blue channel, each of which has 255 possible values, which means there are 16.5 million possible discreted colors.  In this gamut is a lot of things.  The color red, the color blue, the color of grass, the color of your eye (or the closest approximation).
+			</p>
+			<p>
+				Sure, the pale blue dot is just as likely as the 1 Monkey's starting screen, but that doesn't mean that all <i>kinds</i> of portraits are equally likely.  Calculate likelihood of black and white photograph vs any other.
+			</p>
+			<p>
+				But there's one last player in this game.  The power of randomness affords us bla bla bla, the power of combinatorials bla bla bla... but the last factor is meaning.  
+			</p>
+			<br>
+			<p>
+				
+			</p>
+			<br>
+		</div>
+		<br>
+		<br>
+	</div>
+	<script type="text/javascript" src="scripts/monkey.js"></script>
+</body>
+</html>
