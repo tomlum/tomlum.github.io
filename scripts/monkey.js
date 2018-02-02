@@ -1,12 +1,22 @@
-const pScale2 = 10;
-const dimX = 32;
-const dimY = Math.floor(dimX * 1.3);
+const pScale2 = 2;
+const dimX = 156;
+const dimY = 200;
 const portWidth = dimX * pScale2;
 const portHeight = dimY * pScale2;
 const seedLength = 10;
-const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-const history = [];
-const MAXHISTORY = 25
+const chars =
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?., ";
+
+let firstTime = 2;
+
+let history = [];
+const MAXHISTORY = 25;
+
+let oldSeed;
+let seed = "";
+
+let playing = false;
+let playInterval;
 
 // 1 Monkey Application
 var monkeyApp = new PIXI.Application(portWidth, portHeight + 100, {
@@ -20,19 +30,20 @@ clickMe2.style.fill = cMap(1);
 clickMe2.anchor.x = 0.5;
 clickMe2.anchor.y = 0.5;
 clickMe2.x = portWidth / 2;
-clickMe2.y = 100;
+clickMe2.y = 200;
 
 var textBack = new PIXI.Sprite(t_rect);
 textBack.scale.x = 100;
 textBack.scale.y = 60;
 textBack.x = portWidth / 2 - 100 / 2;
-textBack.y = 100 - 60 / 2;
+textBack.y = 200 - 60 / 2;
 textBack.tint = "#000";
 
-let t_colorButton = PIXI.Texture.fromImage("https://s3.us-east-2.amazonaws.com/tomlum/colorIcon.png");
-let t_grayButton = PIXI.Texture.fromImage("https://s3.us-east-2.amazonaws.com/tomlum/grayIcon.png");
+let t_colorButton = PIXI.Texture.fromImage("assets/colorIcon.png");
+let t_grayButton = PIXI.Texture.fromImage("assets/grayIcon.png");
 
-let colorMode = true;
+let t_playButton = PIXI.Texture.fromImage("assets/playIconOff.png");
+let t_pauseButton = PIXI.Texture.fromImage("assets/playIconOn.png");
 
 let bigButton = new PIXI.Sprite(t_clear);
 bigButton.interactive = true;
@@ -46,6 +57,8 @@ bigButton.scale.x = portWidth;
 bigButton.scale.y = portHeight;
 bigButton.alpha = 0;
 
+let colorMode = true;
+
 let colorButton = new PIXI.Sprite(t_colorButton);
 colorButton.interactive = true;
 colorButton.on("click", swapColorMode);
@@ -56,6 +69,53 @@ colorButton.anchor.x = 0.5;
 colorButton.anchor.y = 0.5;
 colorButton.x = portWidth / 2;
 colorButton.y = 460;
+
+let backButton = new PIXI.Sprite.fromImage("assets/backIcon.png");
+backButton.interactive = true;
+backButton.on("click", getHistory);
+backButton.cursor = "pointer";
+backButton.scale.x = 1;
+backButton.scale.y = 1;
+backButton.anchor.x = 0.5;
+backButton.anchor.y = 0.5;
+backButton.x = portWidth / 2 - 100;
+backButton.y = 460;
+
+let backButtonEnd = new PIXI.Sprite.fromImage("assets/backIconEnd.png");
+backButtonEnd.interactive = true;
+backButtonEnd.on("click", getHistory);
+backButtonEnd.cursor = "pointer";
+backButtonEnd.scale.x = 1;
+backButtonEnd.scale.y = 1;
+backButtonEnd.anchor.x = 0.5;
+backButtonEnd.anchor.y = 0.5;
+backButtonEnd.startX = portWidth / 2 - 100;
+backButtonEnd.x = portWidth / 2 - 100;
+backButtonEnd.y = 460;
+
+let backButtonExtend = new PIXI.Sprite(t_rect);
+backButtonExtend.interactive = true;
+backButtonExtend.on("click", getHistory);
+backButtonExtend.cursor = "pointer";
+backButtonExtend.scale.startX = 6;
+backButtonExtend.scale.x = 6;
+backButtonExtend.scale.y = 6;
+backButtonExtend.anchor.x = 0;
+backButtonExtend.anchor.y = 0.5;
+backButtonExtend.startX = portWidth / 2 - 92;
+backButtonExtend.x = portWidth / 2 - 92;
+backButtonExtend.y = 480;
+
+let playButton = new PIXI.Sprite(t_playButton);
+playButton.interactive = true;
+playButton.on("click", togglePlay);
+playButton.cursor = "pointer";
+playButton.scale.x = 1;
+playButton.scale.y = 1;
+playButton.anchor.x = 0.5;
+playButton.anchor.y = 0.5;
+playButton.x = portWidth / 2 + 100;
+playButton.y = 460;
 
 monkeyApp.squares = [];
 for (i = 0; i < dimX; i++) {
@@ -79,21 +139,28 @@ for (i = 0; i < dimX; i++) {
 		monkeyApp.squares[i + dimY * j] = sqr;
 	}
 }
-changeMonkey();
-monkeyApp.stage.addChild(textBack);
-monkeyApp.stage.addChild(clickMe2);
-monkeyApp.stage.addChild(colorButton);
+setMonkey();
+// monkeyApp.stage.addChild(textBack);
+// monkeyApp.stage.addChild(clickMe2);
 monkeyApp.stage.addChild(bigButton);
+monkeyApp.stage.addChild(colorButton);
+monkeyApp.stage.addChild(backButton);
+monkeyApp.stage.addChild(backButtonEnd);
+monkeyApp.stage.addChild(backButtonExtend);
+monkeyApp.stage.addChild(playButton);
 
 function randomizeMonkey() {
+	setHistory(document.getElementById("monkeySeed").value);
 	let newSeed = "";
-	const rand = new Alea(document.getElementById("monkeySeed").value);
-	const newSeedLength = Math.floor(rand() * seedLength) + 1;
-	for (let i = 0; i < Math.min(newSeedLength, seedLength); i++) {
+	const rand = firstTime
+		? new Alea(Math.random())
+		: new Alea(document.getElementById("monkeySeed").value);
+
+	for (let i = 0; i < seedLength; i++) {
 		newSeed += chars.charAt(Math.floor(rand() * chars.length));
 	}
 	document.getElementById("monkeySeed").value = newSeed;
-	changeMonkey();
+	setMonkey();
 }
 
 // monkeyApp.view.onclick = function() {
@@ -102,8 +169,16 @@ function randomizeMonkey() {
 // 	hideIt(monkeyApp, textBack);
 // };
 
-function changeMonkey(see) {
-	const seed = see? see : document.getElementById("monkeySeed").value;
+// Called when entering custom seed on form
+function changeMonkey() {
+	setHistory();
+	setMonkey();
+}
+
+function setMonkey(see, getHistory) {
+	oldSeed = seed;
+	seed = see ? see : document.getElementById("monkeySeed").value;
+
 	let seedNumber1 = -2147483647;
 	let seedNumber2 = 0;
 	for (let i = 0; i < Math.min(seed.length, 8); i++) {
@@ -113,9 +188,10 @@ function changeMonkey(see) {
 		seedNumber2 += seed.charCodeAt(i) * chars.length ** (i - 8);
 	}
 	let rand = new Alea(seedNumber1);
-	rand = new Alea(seedNumber2 + rand());
+	let rand2 = new Alea(seedNumber2);
 	for (j = 0; j < dimY; j++) {
 		for (i = 0; i < dimX; i++) {
+			rand = new Alea(rand() + rand2());
 			const r = rand();
 			const g = rand();
 			const b = rand();
@@ -134,10 +210,9 @@ function changeMonkey(see) {
 	}
 }
 
-let firstTime = true
-function setHistory(s1, s2, seed) {
-	if (firstTime) {
-		let history = this.state.history.concat([[s1, s2, seed]]);
+function setHistory() {
+	if (firstTime <= 1) {
+		history.push(seed);
 		if (history.length > MAXHISTORY) {
 			history = history.slice(
 				history.length - MAXHISTORY,
@@ -147,15 +222,29 @@ function setHistory(s1, s2, seed) {
 	} else {
 		firstTime--;
 	}
-};
+	backButtonEnd.x =
+		backButtonEnd.startX - history.length * (33 / (MAXHISTORY + 1));
+	backButtonExtend.x =
+		backButtonExtend.startX - history.length * (33 / (MAXHISTORY + 1));
+	backButtonExtend.scale.x =
+		backButtonExtend.scale.startX +
+		history.length * (33 / (MAXHISTORY + 1));
+}
 
 function getHistory() {
-	if (this.state.history.length > 0) {
-		const seeds = this.state.history.pop();
-		changeMonkey(seeds[2])
-		document.getElementById("monkeySeed").value = seeds[2]
+	if (history.length > 0) {
+		const seed = history.pop();
+		setMonkey(seed, true);
+		document.getElementById("monkeySeed").value = seed;
 	}
-};
+	backButtonEnd.x =
+		backButtonEnd.startX - history.length * (33 / (MAXHISTORY + 1));
+	backButtonExtend.x =
+		backButtonExtend.startX - history.length * (33 / (MAXHISTORY + 1));
+	backButtonExtend.scale.x =
+		backButtonExtend.scale.startX +
+		history.length * (33 / (MAXHISTORY + 1));
+}
 
 function swapColorMode() {
 	colorMode = !colorMode;
@@ -179,6 +268,27 @@ function swapColorMode() {
 				colorButton.texture = t_grayButton;
 			}
 		}
+	}
+}
+
+function togglePlay() {
+	playing = !playing;
+	hideIt(monkeyApp, textBack);
+	hideIt(monkeyApp, clickMe2);
+	if (playing) {
+		playButton.texture = t_pauseButton;
+		keepPlaying();
+	} else {
+		playButton.texture = t_playButton;
+		clearInterval(playInterval);
+	}
+}
+
+function keepPlaying() {
+	if (playing) {
+		randomizeMonkey();
+		clearInterval(playInterval);
+		playInterval = setInterval(keepPlaying, 1300);
 	}
 }
 
