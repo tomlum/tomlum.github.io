@@ -13,6 +13,13 @@
     <meta name="description" content="Indie Game Dev Collective">
     <!-- Custom CSS -->
     <link href="css/tomlum.css" rel="stylesheet">
+    <!-- Alea -->
+    <script src="https://cdn.jsdelivr.net/npm/alea@0.0.9/alea.min.js" crossorigin="anonymous">
+    </script>
+    <!-- Pixi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.6.2/pixi.min.js" crossorigin="anonymous"></script>
+    <!-- Common Pixi Tools -->
+    <script src="scripts/pixiTools.js"></script>
 
     <script>
         (function(i, s, o, g, r, a, m) {
@@ -31,8 +38,6 @@
         ga('send', 'pageview');
     </script>
 </head>
-<header>
-</header>
 
 <body style="background:#000">
     &nbsp;
@@ -42,10 +47,10 @@
         </a>
         <br>
 
-        <div class="center" style="background: #444; width:150px;padding:20px">
+        <div class="center">
             <!-- SOCIAL BUTTONS -->
             <a class="icon" href="mailto:TomLumPerson@gmail.com" target="_blank">
-                <img src="https://s3.us-east-2.amazonaws.com/tomlum/mail.png" alt="Mail" width="70">
+                <img src="https://s3.us-east-2.amazonaws.com/tomlum/monkeyMail.png" alt="Mail" width="70">
             </a>
             <a class="icon" href="https://twitter.com/tomlumperson" target="_blank">
                 <img src="https://s3.us-east-2.amazonaws.com/tomlum/twitter.png" alt="Twitter" width="70">
@@ -53,17 +58,54 @@
         </div>
         <br>
 
-        <h3 style="color:#fff">
+        <h2 style="color:#fff">
             Embrace Randomness
             <br>
             Find Meaning
-        </h3>
+        </h2>
+
+        <br>
+
+        <div class="center">
+            <input id = "monkeySeed" onchange="changeMonkey()" value="1 Monkey" placeholder="Enter Seed Here" style="background:#aaa;font-size:22px;text-align:center;font-family:Futura;border-style:none;color:#fff;width:250px;font-weight:bold;
+            "/>
+            <a name="monkey"></a>
+            <div id="1Monkey" style=""></div>
+        </div>
+
         <img alt="" src="https://s3.us-east-2.amazonaws.com/tomlum/monkeyLogo.png">
         <h1 style="color:#fff">
             1 Monkey
         </h1>
-    </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>psst... want to know the secrets of 1 Monkey? 
+            <u>
+                <a href="monkeyBrain.html">
+                Check this out.
+            </a>
+        </u>
+    </h3>
 </div>
+<script src="scripts/monkey.js"></script>
 </body>
 <footer>
 </footer>

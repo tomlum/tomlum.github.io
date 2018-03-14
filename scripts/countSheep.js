@@ -784,6 +784,17 @@ const zeroNum = new Float32Array([
 	0.0,
 	0.0
 ]);
+
+const chr = chroma.scale("viridis");
+
+function cMap(val) {
+	return PIXI.utils.rgb2hex([
+		chr(val)._rgb[0] / 255,
+		chr(val)._rgb[1] / 255,
+		chr(val)._rgb[2] / 255
+	]);
+}
+
 const size1 = 28;
 const pScale1 = 10;
 

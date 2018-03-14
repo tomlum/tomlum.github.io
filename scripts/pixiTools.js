@@ -8,13 +8,3 @@ function hideIt(app, thing) {
 		});
 	}
 }
-
-function cMap(val) {
-	return PIXI.utils.rgb2hex([
-		chr(val)._rgb[0] / 255,
-		chr(val)._rgb[1] / 255,
-		chr(val)._rgb[2] / 255
-	]);
-}
-
-const chr = chroma.scale("viridis");

@@ -1,0 +1,82 @@
+
+.placard{
+    background: #fff;
+    color: #000;
+    text-align: left;
+    width: 220px;
+    padding: 30px;
+    height:90px
+}
+
+.art1{
+    padding:0px;
+    margin:0px;
+    color: #000;
+    text-align: left;
+    font-size: 17px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.art2{
+    padding:0px;
+    margin:0px;
+    color: #000;
+    text-align: left;
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom:10px;
+}
+
+.art3{
+    padding:0px;
+    margin:0px;
+    color: #000;
+    text-align: left;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+.art4{
+    padding:0px;
+    margin:0px;
+    color: #000;
+    text-align: left;
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.color1{
+    background-color: #988 !important;
+}
+.color12{
+    background-color: #944 !important;
+}
+.color2{
+    background-color: #898 !important;
+}
+.color22{
+    background-color: #494 !important;
+}
+.color3{
+    background-color: #889 !important;
+}
+.color32{
+    background-color: #449 !important;
+}
+.color4{
+    background-color: #aa7 !important;
+}
+.color42{
+    background-color: #990 !important;
+}
+.color5{
+    background-color: #b8b !important;
+}
+.color52{
+    background-color: #909 !important;
+}
+.color6{
+    background-color: #8bb !important;
+}
+.color62{
+    background-color: #099 !important;
+}
