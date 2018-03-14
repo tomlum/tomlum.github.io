@@ -107,7 +107,7 @@ const layout = {
 	scene: {
 		camera: {
 			eye: {
-				x: 3,
+				x: 2.2,
 				y: 0.5,
 				z: 0.5
 			}
@@ -121,7 +121,7 @@ const layout = {
 			range: [0, 255],
 			showspikes: false,
 			zeroline: true,
-			ticks:"inside"
+			ticks: "inside"
 		},
 		yaxis: {
 			title: "",
@@ -132,7 +132,7 @@ const layout = {
 			range: [0, 255],
 			showspikes: false,
 			zeroline: true,
-			ticks:"inside"
+			ticks: "inside"
 		},
 		zaxis: {
 			title: "",
@@ -143,20 +143,36 @@ const layout = {
 			range: [0, 255],
 			showspikes: false,
 			zeroline: true,
-			ticks:"inside"
+			ticks: "inside"
 		}
 	}
 };
 
-Plotly.newPlot("blueChart", shapeColorData(cData.blue), layout);
-Plotly.newPlot("randomChart", shapeColorData(cData.random), layout);
-Plotly.newPlot("pollockChart", shapeColorData(cData.pollock), layout);
-Plotly.newPlot("obamaChart", shapeColorData(cData.obama), layout);
+Plotly.newPlot("blueChart", shapeColorData(cData.blue), layout, {
+	displayModeBar: false
+});
+Plotly.newPlot("randomChart", shapeColorData(cData.random), layout, {
+	displayModeBar: false
+});
+Plotly.newPlot("pollockChart", shapeColorData(cData.pollock), layout, {
+	displayModeBar: false
+});
+Plotly.newPlot("obamaChart", shapeColorData(cData.obama), layout, {
+	displayModeBar: false
+});
 
-Plotly.newPlot("blueChart2", shapeBrightData(bData.blue), bLayout);
-Plotly.newPlot("randomChart2", shapeBrightData(bData.random), bLayout);
-Plotly.newPlot("pollockChart2", shapeBrightData(bData.pollock), bLayout);
-Plotly.newPlot("obamaChart2", shapeBrightData(bData.obama), bLayout);
+Plotly.newPlot("blueChart2", shapeBrightData(bData.blue), bLayout, {
+	displayModeBar: false
+});
+Plotly.newPlot("randomChart2", shapeBrightData(bData.random), bLayout, {
+	displayModeBar: false
+});
+Plotly.newPlot("pollockChart2", shapeBrightData(bData.pollock), bLayout, {
+	displayModeBar: false
+});
+Plotly.newPlot("obamaChart2", shapeBrightData(bData.obama), bLayout, {
+	displayModeBar: false
+});
 
 let spinT = 0;
 let spinT2 = 0;
@@ -179,7 +195,7 @@ function resetChart(chart) {
 	const camera = scene.getCamera();
 
 	camera.eye = {
-		x: 3,
+		x: 2.2,
 		y: 0.5,
 		z: 0.5
 	};

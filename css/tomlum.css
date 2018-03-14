@@ -73,7 +73,7 @@ hr {
 }
 
 .wide {
-    width:700px;
+    width:100%;
 }
 
 
@@ -141,7 +141,8 @@ p {
 }
 
 .center > img{
-    padding:17px;
+    padding-top:17px;
+    padding-bottom:17px;
 }
 
 img{

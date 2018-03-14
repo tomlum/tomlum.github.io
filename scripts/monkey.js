@@ -48,7 +48,7 @@ let t_pauseButton = PIXI.Texture.fromImage("assets/playIconOn.png");
 
 let bigButton = new PIXI.Sprite(t_clear);
 bigButton.interactive = true;
-bigButton.on("click", function() {
+bigButton.on("pointerdown", function() {
 	randomizeMonkey();
 	hideIt(monkeyApp, clickMe2);
 	hideIt(monkeyApp, textBack);
@@ -64,7 +64,7 @@ const yOffset = 40;
 
 let colorButton = new PIXI.Sprite(t_colorButton);
 colorButton.interactive = true;
-colorButton.on("click", swapColorMode);
+colorButton.on("pointerdown", swapColorMode);
 colorButton.cursor = "pointer";
 colorButton.scale.x = 1;
 colorButton.scale.y = 1;
@@ -75,7 +75,7 @@ colorButton.y = 460 + yOffset;
 
 let backButton = new PIXI.Sprite.fromImage("assets/backIcon.png");
 backButton.interactive = true;
-backButton.on("click", getHistory);
+backButton.on("pointerdown", getHistory);
 backButton.cursor = "pointer";
 backButton.scale.x = 1;
 backButton.scale.y = 1;
@@ -86,7 +86,7 @@ backButton.y = 460 + yOffset;
 
 let backButtonEnd = new PIXI.Sprite.fromImage("assets/backIconEnd.png");
 backButtonEnd.interactive = true;
-backButtonEnd.on("click", getHistory);
+backButtonEnd.on("pointerdown", getHistory);
 backButtonEnd.cursor = "pointer";
 backButtonEnd.scale.x = 1;
 backButtonEnd.scale.y = 1;
@@ -98,7 +98,7 @@ backButtonEnd.y = 460 + yOffset;
 
 let backButtonExtend = new PIXI.Sprite(t_rect);
 backButtonExtend.interactive = true;
-backButtonExtend.on("click", getHistory);
+backButtonExtend.on("pointerdown", getHistory);
 backButtonExtend.cursor = "pointer";
 backButtonExtend.scale.startX = 6;
 backButtonExtend.scale.x = 6;
@@ -111,7 +111,7 @@ backButtonExtend.y = 480 + yOffset;
 
 let playButton = new PIXI.Sprite(t_playButton);
 playButton.interactive = true;
-playButton.on("click", togglePlay);
+playButton.on("pointerdown", togglePlay);
 playButton.cursor = "pointer";
 playButton.scale.x = 1;
 playButton.scale.y = 1;
