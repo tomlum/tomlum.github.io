@@ -79,15 +79,15 @@ hr {
 
 .fade1 {
     background-color: #999;
-    width:450px;
+    width:50%;
 }
 .fade2 {
     background-color: #aaa;
-    width:600px;
+    width:60%;
 }
 .fade3 {
     background-color: #bbb;
-    width:700px;
+    width:80%;
 }
 
 a {

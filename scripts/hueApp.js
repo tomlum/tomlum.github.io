@@ -7,7 +7,7 @@ document.getElementById("hueApp").appendChild(hueApp.view);
 
 let hueScreen = new PIXI.Sprite(t_rect);
 hueScreen.interactive = true;
-hueScreen.on("click", pauseHue);
+hueScreen.on("pointerdown", pauseHue);
 hueScreen.cursor = "pointer";
 hueScreen.x = 50;
 hueScreen.scale.x = portWidth - 100;
@@ -17,7 +17,7 @@ hueApp.stage.addChild(hueScreen);
 
 let huePlayButton = new PIXI.Sprite(t_playButton);
 huePlayButton.interactive = true;
-huePlayButton.on("click", pauseHue);
+huePlayButton.on("pointerdown", pauseHue);
 huePlayButton.cursor = "pointer";
 huePlayButton.scale.x = 0.5;
 huePlayButton.scale.y = 0.5;
@@ -29,6 +29,15 @@ hueApp.stage.addChild(huePlayButton);
 
 function rgbString(r, g, b) {
 	return "rgb(" + r + "," + g + "," + b + ")";
+}
+
+function pauseHue() {
+	huePause = !huePause;
+	if (huePause) {
+		huePlayButton.texture = t_pauseButton;
+	} else {
+		huePlayButton.texture = t_playButton;
+	}
 }
 
 let huePause = false;

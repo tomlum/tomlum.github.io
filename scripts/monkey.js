@@ -1,8 +1,8 @@
-const pScale2 = 5;
+const pScale2 = 4.5;
 const dimX = 70;
 const dimY = Math.floor(70 * 1.3);
-const portWidth = dimX * pScale2;
-const portHeight = dimY * pScale2;
+const portWidth = Math.floor(dimX * pScale2);
+const portHeight = Math.floor(dimY * pScale2);
 const seedLength = 10;
 const chars =
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?., ";
@@ -60,7 +60,7 @@ bigButton.alpha = 0;
 
 let colorMode = true;
 
-const yOffset = 40;
+const yOffset = 0;
 
 let colorButton = new PIXI.Sprite(t_colorButton);
 colorButton.interactive = true;
@@ -151,15 +151,6 @@ monkeyApp.stage.addChild(backButton);
 monkeyApp.stage.addChild(backButtonEnd);
 monkeyApp.stage.addChild(backButtonExtend);
 monkeyApp.stage.addChild(playButton);
-
-function pauseHue() {
-	huePause = !huePause;
-	if (huePause) {
-		huePlayButton.texture = t_pauseButton;
-	} else {
-		huePlayButton.texture = t_playButton;
-	}
-}
 
 function randomizeMonkey() {
 	setHistory(document.getElementById("monkeySeed").value);

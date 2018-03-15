@@ -900,8 +900,10 @@ for (i = 0; i < size1; i++) {
 			sqr.cursor = "crosshair";
 			sqr.on("pointerdown", mDown);
 			sqr.on("mouseup", mUp);
+			sqr.on("touchend", mUp);
 			sqr.on("mouseupoutside", mUp);
 			sqr.on("mouseover", paint);
+			sqr.on("touchmove", paint);
 			sqr.tint = cMap(0);
 			drawApp.stage.addChild(sqr);
 			drawApp.squares[i + size1 * j] = sqr;
