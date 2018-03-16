@@ -75,9 +75,9 @@
         </a>
         <br>
         <br>
-        <div id="CountSheep"></div>
-        <img class="click" id="backArrow" src="https://s3.us-east-2.amazonaws.com/tomlum/backArrow.png" onClick="back()" style="margin-right: 30px;opacity:0" />
-        <img class="click" src="https://s3.us-east-2.amazonaws.com/tomlum/resetArrow.png" onClick="reset()" style="margin-left:30px"/>
+        <div id="CountSheep" class=""></div>
+        <img class="click noHighlight" id="backArrow" src="https://s3.us-east-2.amazonaws.com/tomlum/backArrow.png" onClick="sheepBack()" style="margin-right: 30px;opacity:0" />
+        <img class="click noHighlight" src="https://s3.us-east-2.amazonaws.com/tomlum/resetArrow.png" onClick="sheepReset()" style="margin-left:30px"/>
         <br>
         <div class="paper">
             <p>
@@ -96,12 +96,14 @@
                 Say we were to mirror this thought experiment, and rewire CountSheep not to feed back into itself, but to take in our input drawings and output its own drawings. CountSheep is no longer talking to itself, but, in a sense, playing a game with us. A simple counting game, but a game nonetheless, much like Searle's room's conversation. We give it a number, and it shows us the next number.  Or... it tries to, anyway.
             </p>
             <br>
-            <div class="center">
-                <div id="CountDrawing" style="display:inline"></div>
-                <div id="CountResponse" style="display:inline;"></div>
-            </div>
-            <div class="center"">
-                <img class="click" src="https://s3.us-east-2.amazonaws.com/tomlum/resetDrawing.png" onclick="resetDrawing()"/>
+            <div class="noHighlight">
+                <div class="center">
+                    <div id="CountDrawing" style="display:inline"></div>
+                    <div id="CountResponse" style="display:inline;"></div>
+                </div>
+                <div class="center"">
+                    <img class="click" src="https://s3.us-east-2.amazonaws.com/tomlum/resetDrawing.png" onclick="resetDrawing()"/>
+                </div>
             </div>
             <br>
             <p>

@@ -6,10 +6,16 @@ body {
     min-width:300px;
 }
 
+.noHighlight{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 .center{
- text-align:center;
- max-width: 750px;
- margin:auto;
+   text-align:center;
+   max-width: 750px;
+   margin:auto;
 }
 
 button{
@@ -114,7 +120,7 @@ p {
 
 .paper {
     text-align:left;
-    background-color: #999;
+    background-color: #9d9d9d;
     padding: 10px;
     padding-left: 25px;
     padding-right: 25px;

@@ -807,7 +807,7 @@ const model = new KerasJS.Model({
 		weights: "countSheep/model_weights.buf",
 		metadata: "countSheep/model_metadata.json"
 	},
-	gpu: true
+	gpu: false
 });
 
 var sheepApp = new PIXI.Application(pScale1 * size1, pScale1 * size1, {
@@ -845,6 +845,18 @@ for (i = 0; i < size1; i++) {
 	}
 }
 
+let bigSheepButton = new PIXI.Sprite(t_clear);
+bigSheepButton.interactive = true;
+bigSheepButton.on("pointerdown", function() {
+	hideIt(sheepApp, clickMe);
+	forwardPass(sheepApp, currentNum, "history");
+	show("backArrow", 0.1);
+});
+
+bigSheepButton.cursor = "pointer";
+bigSheepButton.scale.x = pScale1 * size1;
+bigSheepButton.scale.y = pScale1 * size1;
+bigSheepButton.alpha = 0;
 sheepApp.squares = [];
 for (i = 0; i < size1; i++) {
 	for (j = 0; j < size1; j++) {
@@ -865,6 +877,8 @@ for (i = 0; i < size1; i++) {
 		}
 	}
 }
+sheepApp.stage.addChild(bigSheepButton);
+
 responseApp.squares = [];
 for (i = 0; i < size1; i++) {
 	for (j = 0; j < size1; j++) {
@@ -899,11 +913,11 @@ for (i = 0; i < size1; i++) {
 			sqr.interactive = true;
 			sqr.cursor = "crosshair";
 			sqr.on("pointerdown", mDown);
-			sqr.on("mouseup", mUp);
-			sqr.on("touchend", mUp);
-			sqr.on("mouseupoutside", mUp);
-			sqr.on("mouseover", paint);
-			sqr.on("touchmove", paint);
+			sqr.on("pointerup", mUp);
+			sqr.on("pointerupoutside", mUp);
+			if ((i == 10) & (j == 10)) {
+				sqr.on("pointermove", paint);
+			}
 			sqr.tint = cMap(0);
 			drawApp.stage.addChild(sqr);
 			drawApp.squares[i + size1 * j] = sqr;
@@ -933,6 +947,7 @@ function mDown() {
 			drawHere.alpha -= 0.1 * delta;
 		});
 	}
+	console.log("down");
 	mouseDown = true;
 	this.tint = cMap(1);
 	drawApp.input[
@@ -941,24 +956,22 @@ function mDown() {
 }
 
 function mUp() {
+	console.log("up");
 	mouseDown = false;
 	forwardPass(responseApp, drawApp.input);
 }
 
-function paint() {
-	if (mouseDown) {
-		this.tint = cMap(1);
-		drawApp.input[
-			Math.floor(this.x / pScale1) + size1 * Math.floor(this.y / pScale1)
-		] = 1;
-	}
+function paint(event) {
+	this.tint = cMap(1);
+	drawApp.input[
+		Math.floor(event.data.global.x / pScale1) +
+			size1 * Math.floor(event.data.global.y / pScale1)
+	] = 1;
+	drawApp.squares[
+		Math.floor(event.data.global.x / pScale1) +
+			size1 * Math.floor(event.data.global.y / pScale1)
+	].tint = cMap(1);
 }
-
-sheepApp.view.onclick = function() {
-	hideIt(sheepApp, clickMe);
-	forwardPass(sheepApp, currentNum, "history");
-	show("backArrow", 0.1);
-};
 
 function forwardPass(app, input, history) {
 	app = app ? app : sheepApp;
@@ -990,7 +1003,7 @@ function forwardPass(app, input, history) {
 		});
 }
 
-function back() {
+function sheepBack() {
 	if (lastNum) {
 		hide("backArrow", 0.1);
 		currentNum = lastNum;
@@ -999,7 +1012,7 @@ function back() {
 	}
 }
 
-function reset() {
+function sheepReset() {
 	hide("backArrow", 0.1);
 	lastNum = null;
 	currentNum = zeroNum;
