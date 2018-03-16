@@ -947,7 +947,6 @@ function mDown() {
 			drawHere.alpha -= 0.1 * delta;
 		});
 	}
-	console.log("down");
 	mouseDown = true;
 	this.tint = cMap(1);
 	drawApp.input[
@@ -956,13 +955,11 @@ function mDown() {
 }
 
 function mUp() {
-	console.log("up");
 	mouseDown = false;
 	forwardPass(responseApp, drawApp.input);
 }
 
 function paint(event) {
-	this.tint = cMap(1);
 	drawApp.input[
 		Math.floor(event.data.global.x / pScale1) +
 			size1 * Math.floor(event.data.global.y / pScale1)
@@ -998,7 +995,6 @@ function forwardPass(app, input, history) {
 			}
 		})
 		.catch(err => {
-			console.log(err);
 			// handle error
 		});
 }
