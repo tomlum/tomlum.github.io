@@ -941,6 +941,14 @@ drawHere.x = pScale1 * 14;
 drawHere.y = pScale1 * 14;
 drawApp.stage.addChild(drawHere);
 
+let resetDrawingButton = new PIXI.Sprite.fromImage("assets/resetDrawing.png");
+resetDrawingButton.interactive = true;
+resetDrawingButton.on("pointerdown", resetDrawing);
+resetDrawingButton.x = pScale1 * 28 - 40;
+resetDrawingButton.y = pScale1 * 28 - 45;
+resetDrawingButton.cursor = "pointer";
+drawApp.stage.addChild(resetDrawingButton);
+
 function mDown() {
 	if (drawHere.alpha == 1) {
 		drawApp.ticker.add(function(delta) {
@@ -959,15 +967,15 @@ function mUp() {
 	forwardPass(responseApp, drawApp.input);
 }
 
+const drawAppWidth = size1 * pScale1
 function paint(event) {
-	drawApp.input[
-		Math.floor(event.data.global.x / pScale1) +
-			size1 * Math.floor(event.data.global.y / pScale1)
-	] = 1;
-	drawApp.squares[
-		Math.floor(event.data.global.x / pScale1) +
-			size1 * Math.floor(event.data.global.y / pScale1)
-	].tint = cMap(1);
+	if (mouseDown & event.data.global.x > 0 & event.data.global.x < drawAppWidth & event.data.global.y > 0 & event.data.global.y < drawAppWidth) {
+		const pos =
+			Math.floor(event.data.global.x / pScale1) +
+			size1 * Math.floor(event.data.global.y / pScale1);
+		drawApp.input[pos] = 1;
+		drawApp.squares[pos].tint = cMap(1);
+	}
 }
 
 function forwardPass(app, input, history) {
