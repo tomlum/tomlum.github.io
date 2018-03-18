@@ -22,7 +22,7 @@ let playInterval;
 var monkeyApp = new PIXI.Application(portWidth, portHeight + 100, {
 	transparent: true
 });
-document.getElementById("1Monkey").appendChild(monkeyApp.view);
+document.getElementById("1monkey").appendChild(monkeyApp.view);
 
 document.getElementById("monkeySeed").maxLength = seedLength;
 
