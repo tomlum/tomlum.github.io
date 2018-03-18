@@ -40,11 +40,11 @@ textBack.x = portWidth / 2 - 100 / 2;
 textBack.y = 200 - 60 / 2;
 textBack.tint = "#000";
 
-let t_colorButton = PIXI.Texture.fromImage("assets/colorIcon.png");
-let t_grayButton = PIXI.Texture.fromImage("assets/grayIcon.png");
+let t_colorButton = PIXI.Texture.fromImage("/assets/colorIcon.png");
+let t_grayButton = PIXI.Texture.fromImage("/assets/grayIcon.png");
 
-let t_playButton = PIXI.Texture.fromImage("assets/playIconOff.png");
-let t_pauseButton = PIXI.Texture.fromImage("assets/playIconOn.png");
+let t_playButton = PIXI.Texture.fromImage("/assets/playIconOff.png");
+let t_pauseButton = PIXI.Texture.fromImage("/assets/playIconOn.png");
 
 let bigButton = new PIXI.Sprite(t_clear);
 bigButton.interactive = true;
@@ -73,7 +73,7 @@ colorButton.anchor.y = 0.5;
 colorButton.x = portWidth / 2;
 colorButton.y = 460 + yOffset;
 
-let backButton = new PIXI.Sprite.fromImage("assets/backIcon.png");
+let backButton = new PIXI.Sprite.fromImage("/assets/backIcon.png");
 backButton.interactive = true;
 backButton.on("pointerdown", getHistory);
 backButton.cursor = "pointer";
@@ -84,7 +84,7 @@ backButton.anchor.y = 0.5;
 backButton.x = portWidth / 2 - 100;
 backButton.y = 460 + yOffset;
 
-let backButtonEnd = new PIXI.Sprite.fromImage("assets/backIconEnd.png");
+let backButtonEnd = new PIXI.Sprite.fromImage("/assets/backIconEnd.png");
 backButtonEnd.interactive = true;
 backButtonEnd.on("pointerdown", getHistory);
 backButtonEnd.cursor = "pointer";
@@ -176,6 +176,9 @@ function randomizeMonkey() {
 function changeMonkey() {
 	setHistory();
 	setMonkey();
+	
+	hideIt(monkeyApp, textBack);
+	hideIt(monkeyApp, clickMe2);
 }
 
 function setMonkey(see, getHistory) {
