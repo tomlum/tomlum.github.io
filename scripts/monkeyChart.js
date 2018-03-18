@@ -146,29 +146,29 @@ const layout = {
 };
 
 Plotly.newPlot("blueChart", shapeColorData(cData.blue), layout, {
-	
+	displayModeBar: false
 });
 Plotly.newPlot("randomChart", shapeColorData(cData.random), layout, {
-	
+	displayModeBar: false
 });
 Plotly.newPlot("pollockChart", shapeColorData(cData.pollock), layout, {
-	
+	displayModeBar: false
 });
 Plotly.newPlot("obamaChart", shapeColorData(cData.obama), layout, {
-	
+	displayModeBar: false
 });
 
 Plotly.newPlot("blueChart2", shapeBrightData(bData.blue), bLayout, {
-	
+	displayModeBar: false
 });
 Plotly.newPlot("randomChart2", shapeBrightData(bData.random), bLayout, {
-	
+	displayModeBar: false
 });
 Plotly.newPlot("pollockChart2", shapeBrightData(bData.pollock), bLayout, {
-	
+	displayModeBar: false
 });
 Plotly.newPlot("obamaChart2", shapeBrightData(bData.obama), bLayout, {
-	
+	displayModeBar: false
 });
 
 let spinT = 0;
