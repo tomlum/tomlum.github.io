@@ -4,12 +4,12 @@
 <head>
     <title>One Two Three...?</title>
 
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png?v=A0Rrm0rq0k">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=A0Rrm0rq0k">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=A0Rrm0rq0k">
-    <link rel="manifest" href="manifest.json?v=A0Rrm0rq0k">
-    <link rel="mask-icon" href="safari-pinned-tab.svg?v=A0Rrm0rq0k" color="#5bbad5">
-    <link rel="shortcut icon" href="favicon.ico?v=A0Rrm0rq0k">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png?v=A0Rrm0rq0k">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=A0Rrm0rq0k">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=A0Rrm0rq0k">
+    <link rel="manifest" href="/manifest.json?v=A0Rrm0rq0k">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=A0Rrm0rq0k" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico?v=A0Rrm0rq0k">
     <meta name="theme-color" content="#aaaaaa">
     <meta property="og:image" content="https://s3.us-east-2.amazonaws.com/tomlum/logo.png">
     <meta charset="utf-8">
@@ -22,8 +22,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/keras-js/0.3.0/keras.js" crossorigin="anonymous"></script>
     <!-- Chroma Color Scale -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js" crossorigin="anonymous"></script>
-    <!-- Custom CSS -->
-    <link href="/css/tomlum.css" rel="stylesheet">
     <!-- Common JS Tools -->
     <script src="/scripts/tools.js"></script>
     <!-- Common Pixi Tools -->
@@ -51,6 +49,9 @@
 </head>
 
 <body>
+    <!-- Custom CSS -->
+    <link href="/css/tomlum.css" rel="stylesheet">
+    
     <div class="center">
         <a href="/">
             <img class="logo" alt="Logo" src="https://s3.us-east-2.amazonaws.com/tomlum/logo.png">
@@ -85,16 +86,25 @@
         <br>
         <div class="paper">
             <p>
-                The <a href="http://yann.lecun.com/exdb/mnist/" target="none">MNIST database of handwritten numbers</a> is perhaps the most prolific dataset in machine learning. Given a set of handwritten numbers and the digit they are depicting, a neural network can learn to read human written digits it has never seen before with <a href="http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#4d4e495354" target="none">astounding accuracy</a>.
+                The <a href="http://yann.lecun.com/exdb/mnist/" target="none">MNIST database of handwritten numbers</a> is perhaps the most prolific dataset in machine learning. Given a set of handwritten numbers and the digit they are depicting, a neural network can learn to read handwritten numbers it has never even seen before with <a href="http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#4d4e495354" target="none">astounding accuracy</a>.
             </p>
             <p>
-                As a jump into making neural networks, I wanted to turn this basic task in on itself; bend the formulaic job of categorization into a more creative one. <b>This neural network, "CountSheep", is trained to take in a hand drawn digit and draw the next number in sequence</b>. And when we feed this depiction back into the network again, so that it draws based on its own drawing, it quickly spirals into abstraction and introspection as each error and imperfection is reinterpreted. As if beginning to doze off from counting sheep, the network begins to drift into nonsense and ghastly semblances of meaning.
+                As a first jump into making neural networks, I wanted to turn this basic task in on itself; bend the formulaic job of categorization into a more creative one. <b>This neural network, "CountSheep", is trained to take in a hand drawn digit and generate a hand drawn image of the next number in sequence</b>.
+            </p>
+            <div class="center">
+                <img width="70%" src="https://s3.us-east-2.amazonaws.com/tomlum/sheepNetwork.png" alt="A drawing of the network" />
+            </div>
+            <p>
+                And when we feed this depiction back into the network again, so that it draws based on its own drawing, it quickly spirals into abstraction and introspection as each error and imperfection is reinterpreted. As if beginning to doze off from counting sheep, the network begins to drift into nonsense and sudden ghastly semblances of meaning.
+            </p>
+            <div class="center">
+                <img width="70%" src="https://s3.us-east-2.amazonaws.com/tomlum/sheepNumbers.png" alt="A drawing of the network" />
+            </div>
+            <p>
+                But... what does this little network show us? From a practical sense, it affords us very little. While Optical Character Recognition (OCR) and general image classification is an important field, with applications ranging from mass archival work, to self-driving cars, what we have here is <b>Optical Character Generation</b>. And at that, a very limited example, as CountSheep can only count upwards the digits from 0 to 9 in a loop. On top of that, the network is very small, containing only one hidden layer with 32 hidden nodes.
             </p>
             <p>
-                But what does this little network show us? From a practical sense, it affords us very little. While Optical Character Recognition (OCR) and general image classification is an important field with applications ranging from mass archival work to self-driving cars, what we have here is <b>Optical Character Generation</b>. And at that, a very limited example, as CountSheep can only count upwards the digits from 0 to 9 in a loop. On top of that, the network is very small, containing only one hidden layer with 32 hidden nodes.
-            </p>
-            <p>
-                Yet this inversion from recognition to generation is, to me, somehow instantly more gripping than even an objectively more complex neural network performing ludicrously accurate OCR. I am reminded of <a href="http://cogprints.org/7150/1/10.1.1.83.5248.pdf" target="none">Searle's Chinese Room</a>, something I am not wont to do, as I am rather ambivalent about its message. In Searle's thought experiment, there exists a person inside of a room with a dictionary of foreign phrases and their corresponding responses. The person inside the room receives inputs from the outside world, and must find, match, and output the response. Searle's point is that such a person in the room could perform the task accurately, even mime conversation, but would not <i>understand</i> the content the same way a native speaker of the language would, much like a <a href="https://en.wikipedia.org/wiki/Philosophical_zombie" target="none">philosophical zombie</a> could mime behavior. And as such, if the person and dictionary in the room were replaced with a simple dictionary program, this machine would not <i>understand</i> what it was doing either.  There's no cognition happening in the space between perceiving and acting.
+                Yet this inversion from recognition to generation is, to me, somehow instantly more gripping than even an objectively more complex neural network performing ludicrously accurate OCR. I am reminded of <a href="http://cogprints.org/7150/1/10.1.1.83.5248.pdf" target="none">Searle's Chinese Room</a>, something I am not wont to do, as I am rather ambivalent about its message. In Searle's thought experiment, there exists a person inside of a room with a dictionary of foreign phrases and their corresponding responses. The person inside the room receives inputs from the outside world, and must find, match, and output the response. Searle's point is that such a person in the room could perform the task accurately, even mime conversation, but would not <i>understand</i> the content the same way a native speaker of the language would, much like a <a href="https://en.wikipedia.org/wiki/Philosophical_zombie" target="none">philosophical zombie</a> could mime behavior. And as such, if the person and dictionary in the room were replaced with a simple dictionary program (or a neural network), this machine would not <i>understand</i> what it was doing either.  There's no cognition happening in the space between perceiving and acting.
             </p>
             <p>
                 Say we were to mirror this thought experiment, and rewire CountSheep not to feed back into itself, but to take in our input drawings and output its own drawings. CountSheep is no longer talking to itself, but, in a sense, playing a game with us. A simple counting game, but a game nonetheless, much like Searle's room's conversation. We give it a number, and it shows us the next number.  Or... it tries to, anyway.
@@ -108,7 +118,7 @@
             </div>
             <br>
             <p>
-                The black box we're dealing with is transparent (in fact, we made it), and the task is absurdly limited, and the answers produced are often incorrect. But in spite of knowing all this, even in the patently incorrect responses from the network, there's still something there that feels, to me at least, meaningful.
+                The black box we're dealing with is transparent (in fact, we made it), the task is absurdly limited, and the answers produced are often incorrect. But in spite of knowing all this, even in the patently incorrect responses from the network, there's still something there that feels, to me at least, meaningful.
             </p>
             <br>
             <div class="center">
@@ -123,17 +133,17 @@
                 <img width="70%" src="https://s3.us-east-2.amazonaws.com/tomlum/cs_sketch2.png" alt="A sketch of purely symbolic vs.  meaningful symbols" />
             </div>
             <p>
-                Latin numerals must be read and written, and for that, they encode a balance between mechanical efficiency and visual distinctness.  Even deeper speculations can be made about the influence of anthropology, psychology, biology... but the unifying theme is this: <b>because they are human made, they reflect humanity</b>, and so we should not be surprised these strange distorted images feel meaningful.  In the language of Searle's thought experiment, I like to think of this as <i>Underestimating the Dictionary</i>, discounting the meaning implicit in the inanimate. Depending on the complexity of the task Searle's room must accomplish, the dictionary must match the complexity of the task, which may become exponentially and non-trivially enormous, or even dynamically changing or Turing complete.
+                Latin numerals must be read and written, and for that, they encode a balance between mechanical efficiency and visual distinctness.  Even deeper speculations can be made about the influence of anthropology, psychology, biology... but the unifying theme is this: <b>because they are human made, they reflect humanity</b>, and so we should not be surprised these strange distorted images feel meaningful.  In the language of Searle's thought experiment, I like to think of this as <i>Underestimating the Dictionary</i>, understating the meaning embedded in the inanimate. Depending on the complexity of the task Searle's room must accomplish, the dictionary must match the complexity of the task, which may become exponentially and non-trivially enormous.  In his initial premise, a book that contains the 'correct' response to every phrase in a language would have to be dynamically changing, Turing complete in a way.  At which point it starts to not look like a dictionary at all.
             </p>
             <p>
-                The second meaningful component of CountSheep is its ability to output, to produce, <i>to act</i>, in a wide, varying range. After all, we are creatures of both perception and action, with complex motor cortices along with our complex sensory cortices. And while CountSheep is limited to its 28x28 pixel output, with each pixel a value from 0 to 255, the possibility space of output is still 256^(28*28), higher than the <a href="https://en.wikipedia.org/wiki/Shannon_number" target="none"> Shannon Number</a> of possible chess games. Rather than condensing and distilling our deep well of encoded, meaningful knowledge, CountSheep is throwing it back and re-expressing it.  You can teach a potted plant a language until you're blue in the face, but it can only really <i>learn</i> as much as it can show you it has learned.
+                The second meaningful component of CountSheep is its ability to output, to produce, <i>to act</i>, in a wide, varying range. After all, we are creatures of both perception and action, with complex motor cortices along with our complex sensory cortices. And while CountSheep is limited to its 28x28 pixel output, with each pixel a value from 0 to 255, the possibility space of output is still 256<sup>(28*28)</sup>, higher than the <a href="https://en.wikipedia.org/wiki/Shannon_number" target="none"> Shannon Number</a> of possible chess games. Rather than condensing and distilling our deep well of encoded, meaningful knowledge, CountSheep is throwing it back and re-expressing it.  You can teach a potted plant a language until you're blue in the face, but it can only really <i>learn</i> as much as it can show you it has learned.
             </p>
             <br>
             <div class="center">
                 <img width="70%" src="https://s3.us-east-2.amazonaws.com/tomlum/cs_sketch3.png" alt="A sketch of purely symbolic vs.  meaningful symbols" />
             </div>
             <p>
-                I feel once again like I am overselling this very simple program. At the end of the day, its behavior can be surmised as learning to regurgitate frankenstinian depictions of numbers. However, when you begin to describe it as something that learns to do things from what it observes, it begins to sound less like a machine and a lot more like you or me.  Input and output starts to sound more like perception and action, like interaction. Searle's point is that if we attempt to find cognition in a machine the same way we find it subjectively in ourselves, we will have no luck. But if we move towards cognition from opposite ends, flank and sneak up on it from the both ends of perception and action, we won't find <i>nothing</i>... and if we do, then like Dorothy, we may find that the cognition was within our perception and action the whole time.
+                I feel once again like I am overselling this very simple program. At the end of the day, its behavior can be surmised as learning to regurgitate frankenstinian depictions of numbers. However, when you begin to describe it as something that learns to do things from what it observes, it begins to sound less like a machine and a lot more like you or me.  Input and output starts to sound more like perception and action, like interaction. Searle's point is that if we are trying to find cognition in a machine the same way we find it subjectively in ourselves, we will have no luck.  But if we move towards cognition from opposite ends, flank and sneak up on it from the both ends of perception and action, we won't find <i>nothing</i>... and if we do, then like Dorothy, we may find that the cognition was within our perception and action the whole time (an essay for another time).
             </p>
             <p>
                 There is an undeniably enormous gulf of difference between a dictionary program and a person. Some think it so insurmountable as to consider them two separate continents entirely. But in this gray area between the two has to be <i>something</i>, and CountSheep and our Doodle Brains are pointing us in that direction.
@@ -149,10 +159,13 @@
             </h2>
             <ul>
                 <li>
-                    You can play with the <a target="_blank" href="/app/count-sheep">counting app</a> and the <a target="_blank" href="/app/draw-sheep">drawing app</a> as individual webapps.
+                    You can play with the <a target="_blank" href="/apps/count-sheep">counting app</a> and the <a target="_blank" href="/apps/draw-sheep">drawing app</a> as standalone webapps.
                 </li>
                 <li>
-                    And as always, this app was made using the awesome <a target="_blank" href="http://www.pixijs.com/">PixiJS!</a>
+                    The neural networks in this piece were trained and run using the super cool <a target="_blank" href="https://keras.io/">Keras</a> and <a target="_blank" href="https://github.com/transcranial/keras-js">Keras.js</a> frameworks.
+                </li>
+                <li>
+                    And as always, this app was made using the awesome <a target="_blank" href="http://www.pixijs.com/">PixiJS</a>!
                 </li>
             </ul>
         </div>

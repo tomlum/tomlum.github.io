@@ -1,6 +1,6 @@
-const pScale2 = 4.5;
-const dimX = 70;
-const dimY = Math.floor(70 * 1.3);
+const pScale2 = 1;
+const dimX = 300;
+const dimY = 300;
 const portWidth = Math.floor(dimX * pScale2);
 const portHeight = Math.floor(dimY * pScale2);
 const seedLength = 10;
@@ -31,13 +31,13 @@ clickMe2.style.fill = "#FF0"
 clickMe2.anchor.x = 0.5;
 clickMe2.anchor.y = 0.5;
 clickMe2.x = portWidth / 2;
-clickMe2.y = 200;
+clickMe2.y = 150;
 
 var textBack = new PIXI.Sprite(t_rect);
 textBack.scale.x = 100;
 textBack.scale.y = 60;
 textBack.x = portWidth / 2 - 100 / 2;
-textBack.y = 200 - 60 / 2;
+textBack.y = 150 - 60 / 2;
 textBack.tint = "#000";
 
 let t_colorButton = PIXI.Texture.fromImage("/assets/colorIcon.png");
@@ -71,7 +71,7 @@ colorButton.scale.y = 1;
 colorButton.anchor.x = 0.5;
 colorButton.anchor.y = 0.5;
 colorButton.x = portWidth / 2;
-colorButton.y = 460 + yOffset;
+colorButton.y = 350 + yOffset;
 
 let backButton = new PIXI.Sprite.fromImage("/assets/backIcon.png");
 backButton.interactive = true;
@@ -82,7 +82,7 @@ backButton.scale.y = 1;
 backButton.anchor.x = 0.5;
 backButton.anchor.y = 0.5;
 backButton.x = portWidth / 2 - 100;
-backButton.y = 460 + yOffset;
+backButton.y = 350 + yOffset;
 
 let backButtonEnd = new PIXI.Sprite.fromImage("/assets/backIconEnd.png");
 backButtonEnd.interactive = true;
@@ -94,7 +94,7 @@ backButtonEnd.anchor.x = 0.5;
 backButtonEnd.anchor.y = 0.5;
 backButtonEnd.startX = portWidth / 2 - 100;
 backButtonEnd.x = portWidth / 2 - 100;
-backButtonEnd.y = 460 + yOffset;
+backButtonEnd.y = 350 + yOffset;
 
 let backButtonExtend = new PIXI.Sprite(t_rect);
 backButtonExtend.interactive = true;
@@ -106,8 +106,8 @@ backButtonExtend.scale.y = 6;
 backButtonExtend.anchor.x = 0;
 backButtonExtend.anchor.y = 0.5;
 backButtonExtend.startX = portWidth / 2 - 92;
-backButtonExtend.x = portWidth / 2 - 92;
-backButtonExtend.y = 480 + yOffset;
+backButtonExtend.x = portWidth / 2 - 100;
+backButtonExtend.y = 350 + yOffset + 20;
 
 let playButton = new PIXI.Sprite(t_playButton);
 playButton.interactive = true;
@@ -118,7 +118,7 @@ playButton.scale.y = 1;
 playButton.anchor.x = 0.5;
 playButton.anchor.y = 0.5;
 playButton.x = portWidth / 2 + 100;
-playButton.y = 460 + yOffset;
+playButton.y = 350 + yOffset;
 
 monkeyApp.squares = [];
 for (i = 0; i < dimX; i++) {
@@ -181,7 +181,7 @@ function changeMonkey() {
 	hideIt(monkeyApp, clickMe2);
 }
 
-function setMonkey(see, getHistory) {
+function setMonkey(see) {
 	oldSeed = seed;
 	seed = see ? see : document.getElementById("monkeySeed").value;
 
