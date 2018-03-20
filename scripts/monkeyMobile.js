@@ -1,6 +1,6 @@
-const pScale2 = 1;
-const dimX = 300;
-const dimY = 300;
+const pScale2 = 4.5;
+const dimX = 70;
+const dimY = Math.floor(70 * 1.3);
 const portWidth = Math.floor(dimX * pScale2);
 const portHeight = Math.floor(dimY * pScale2);
 const seedLength = 10;
@@ -71,7 +71,7 @@ colorButton.scale.y = 1;
 colorButton.anchor.x = 0.5;
 colorButton.anchor.y = 0.5;
 colorButton.x = portWidth / 2;
-colorButton.y = 350 + yOffset;
+colorButton.y = 460 + yOffset;
 
 let backButton = new PIXI.Sprite.fromImage("/assets/backIcon.png");
 backButton.interactive = true;
@@ -82,7 +82,7 @@ backButton.scale.y = 1;
 backButton.anchor.x = 0.5;
 backButton.anchor.y = 0.5;
 backButton.x = portWidth / 2 - 100;
-backButton.y = 350 + yOffset;
+backButton.y = 460 + yOffset;
 
 let backButtonEnd = new PIXI.Sprite.fromImage("/assets/backIconEnd.png");
 backButtonEnd.interactive = true;
@@ -93,8 +93,8 @@ backButtonEnd.scale.y = 1;
 backButtonEnd.anchor.x = 0.5;
 backButtonEnd.anchor.y = 0.5;
 backButtonEnd.startX = portWidth / 2 - 100;
-backButtonEnd.x = portWidth / 2 - 98;
-backButtonEnd.y = 350 + yOffset;
+backButtonEnd.x = portWidth / 2 - 100;
+backButtonEnd.y = 460 + yOffset;
 
 let backButtonExtend = new PIXI.Sprite(t_rect);
 backButtonExtend.interactive = true;
@@ -107,7 +107,7 @@ backButtonExtend.anchor.x = 0;
 backButtonExtend.anchor.y = 0.5;
 backButtonExtend.startX = portWidth / 2 - 92;
 backButtonExtend.x = portWidth / 2 - 100;
-backButtonExtend.y = 350 + yOffset + 20;
+backButtonExtend.y = 460 + yOffset + 20;
 
 let playButton = new PIXI.Sprite(t_playButton);
 playButton.interactive = true;
@@ -118,7 +118,7 @@ playButton.scale.y = 1;
 playButton.anchor.x = 0.5;
 playButton.anchor.y = 0.5;
 playButton.x = portWidth / 2 + 100;
-playButton.y = 350 + yOffset;
+playButton.y = 460 + yOffset;
 
 monkeyApp.squares = [];
 for (i = 0; i < dimX; i++) {
