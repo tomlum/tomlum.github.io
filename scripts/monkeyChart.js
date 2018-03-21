@@ -1,8 +1,19 @@
+const bright_xs = [];
+const bright_ys = [];
+let counter = 0;
+for (let i = 288; i >= 0; i-=8){
+	for (let j = 0; j < 37; j++){
+		bright_xs[j+counter*37] = i
+		bright_ys[(j*37+counter)] = (288-i)
+	}
+	counter++;
+}
+
 function shapeBrightData(d) {
 	return [
 		{
-			z: d.x,
-			y: d.y,
+			z: bright_xs,
+			y: bright_ys,
 			x: d.z,
 			mode: "markers",
 			hoverinfo: "text",
