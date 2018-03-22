@@ -298,6 +298,5 @@ function keepPlaying() {
 	}
 }
 
-function rgb(r, g, b) {
-	return PIXI.utils.rgb2hex([r, g, b]);
-}
+const loadingDiv = document.getElementById("loading");
+loadingDiv.parentNode.removeChild(loadingDiv);

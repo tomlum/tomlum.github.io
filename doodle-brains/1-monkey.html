@@ -15,15 +15,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Van Gogh by way of Monkeys">
+	<meta name="description" content="Van Gogh by way of Monkeys">
 
 	<!-- Pixi -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.6.2/pixi.min.js" crossorigin="anonymous"></script>
 	<!-- Alea -->
 	<script src="https://cdn.jsdelivr.net/npm/alea@0.0.9/alea.min.js" crossorigin="anonymous">
 	</script>
-	<!-- Chroma Color Scale -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js" crossorigin="anonymous"></script>
+	<!-- Common JS Tools -->
+	<script src="/scripts/tools.js"></script>
 	<!-- Common Pixi Tools -->
 	<script src="/scripts/pixiTools.js"></script>
 	<!-- Plotly -->
@@ -76,6 +76,10 @@
 			"/>
 			<a name="monkey"></a>
 			<div id="1monkey" style=""></div>
+			<h2 id="loading">
+				<br>
+				Loading...
+			</h2>
 		</div>
 		<br>
 	</div>
@@ -92,23 +96,23 @@
 					<img alt = "A Young Me" src = "https://s3.us-east-2.amazonaws.com/tomlum/me.png">
 				</div>
 				<p>
-					Except it's not really. It's a digital image, made up of pixels, 120,000 of them. Here’s another grid of 120,000 pixels, very much like my yearbook photo.
+					Except it's not really. It's a digital image, made up of pixels, 90,000 of them. Here’s another grid of 90,000 pixels, very much like my yearbook photo.
 
 				</p>
 				<div class="center">
 					<img alt = "Pale Blue Dot" src = "https://s3.us-east-2.amazonaws.com/tomlum/pbd.png">
 				</div>
 				<p>
-					Except it's not really much like my yearbook photo, because it's Voyager I's <a href="https://en.wikipedia.org/wiki/Pale_Blue_Dot" target="_blank">Pale Blue Dot</a> photograph of Earth from 3.7 billion miles away. Exactly one of those 120,000 pixels is planet Earth. 
+					Except it's not really much like my yearbook photo, because it's Voyager I's <a href="https://en.wikipedia.org/wiki/Pale_Blue_Dot" target="_blank">Pale Blue Dot</a> photograph of Earth from 3.7 billion miles away. Exactly one of those 90,000 pixels is planet Earth. 
 				</p>
 				<p>
-					What I'm trying to get at is that these images are simultaneously utterly regular and utterly irreplaceable.  They both speak volumes, and yet here they are both just sitting on this no-name website.  So what if instead of going to these astronomical lengths to photograph this <abbr title = "(And I suppose the Pale Blue Dot too)">breath-taking grid of pixels</abbr>  <b>what if we did it the other way around: just shook up a frame of pixels until it made something meaningful?</b>
+					What I'm trying to get at is that these images are simultaneously utterly regular and utterly irreplaceable.  They both speak volumes, and yet here they are both just sitting on this no-name website.  So what if instead of going to these (literally) astronomical lengths to photograph this <abbr title = "(And I suppose the Pale Blue Dot too)">breath-taking grid of pixels</abbr>,  <b>what if we did it the other way around: just shook up a frame of pixels until it made something meaningful?</b>
 				</p>
 				<div class="center">
 					<img src="https://s3.us-east-2.amazonaws.com/tomlum/shake_sketch.png"/>
 				</div>
 				<p>
-					In theory*, there is nothing stopping us from randomizing 120,000 pixels and creating that exact pale blue dot photograph, pixel for pixel, without ever having to send the Voyager into space. We could also create a photorealistic image of you and Caesar shaking hands, or you reading the front page of tomorrow’s New York Times. Not only can we create any picture, we can create <b>every</b> picture.  Or, of course, just random noise.
+					In theory*, there is nothing stopping us from randomizing 90,000 pixels and creating that exact pale blue dot photograph, pixel for pixel, without ever having to send the Voyager into space. We could also create a photorealistic image of you and Caesar shaking hands, or you reading the front page of tomorrow’s New York Times. Not only can we create any picture, we can create <b>every</b> picture.  Or, of course, just random noise.
 				</p>
 				<div class="center">
 					<img alt = "Random Noise" src = "https://s3.us-east-2.amazonaws.com/tomlum/noisePainting.png" style="padding-top:20px;padding-bottom:0px"></img>
@@ -125,10 +129,10 @@
 				</div>
 
 				<p style="padding-top: 25px;">  
-					You may have realized this is really just a visual variation of the <b>Infinite Monkeys</b> thought experiment, whereby an infinite number of monkeys banging on infinite typewriters after infinite time could, in theory, randomly type out the complete works of Shakespeare, verbatim. 
+					You may have realized this is really just a visual variation of the <b>Infinite Monkeys</b> thought experiment, whereby an infinite number of monkeys banging on infinite typewriters after infinite time could, by chance, type out the complete works of Shakespeare, verbatim. 
 				</p>
 				<p>
-					A bunch of monkeys could also produce the randomness above, but what's beautiful about the noise is that it is discrete and unique. If you were to generate another random 120,000 pixels, you would have just as likely a chance of creating the pale blue dot photo as you would that particular random array of pixels. This is the philosophy behind the revolutionary, historic, critically aclaimed <b><u>1 Monkey App</u></b>. It does the job of one of the infinite monkeys, it generates a random portrait, and for proof of randomness: a “title” that anyone can enter on their own app to re-create your work.
+					A bunch of monkeys could also produce the randomness above, but what remains beautiful about the noise is that it is discrete and unique. If you were to generate another random 90,000 pixels, you would have just as likely a chance of creating the pale blue dot photo as you would that particular random array of pixels. This is the philosophy behind the revolutionary, historic, <abbr title="They say you are your own worst critic">critically aclaimed</abbr><b><u>1 Monkey App</u></b>. It does the job of one of the infinite monkeys, it generates a random portrait, and for proof of randomness: a “title” that anyone can enter on their own app to re-create your work.
 				</p>
 			</div>
 			<br>
@@ -192,7 +196,7 @@
 					One reason for that is because Monkeys aren't a good source of randomness. And this is to be expected, even humans aren't very good at being random. Our thoughts don't come from a vacuum, but from our previous train of thought and our environment, which is why when I ask you to not think of a purple elephant, it’s very hard not to.
 				</p>
 				<p>
-					Even computers, who are very often relied on to be random, are only doing a really, really good job at faking randomness. Computers are, after all, deterministic machines by design, which is why random number generation is often more properly called Pseudo Random Number Generation (PRNG). Essentially, if you take a hard to guess number, like the exact current time in milliseconds, and perform a really complicated jumbling function on it, you can get a pretty random, hard to predict number. If you want to learn more about randomness (otherwise known as stochasticity), I highly recommend <a target="_blank" href="http://www.radiolab.org/story/91684-stochasticity/"> this stupendous radiolab episode</a>. But just like me in 7th grade, the real problem isn’t about how random we can be: even if we had a perfectly random machine, there is a stronger current we are pushing against. 
+					Even computers, who are very often relied on to be random, are only doing a really, really good job at faking randomness. Computers are, after all, deterministic machines by design, which is why random number generation is often more properly called Pseudo Random Number Generation (PRNG). Essentially, if you take a hard to guess number, like the exact current time in milliseconds, and perform a really complicated jumbling function on it, you can get a pretty random looking, hard to predict number. If you want to learn more about randomness (otherwise known as stochasticity), I highly recommend <a target="_blank" href="http://www.radiolab.org/story/91684-stochasticity/"> this stupendous radiolab episode</a>. But just like me in 7th grade, the real problem isn’t about how random we can be: even if we had a perfectly random machine, there is a stronger current we are pushing against. 
 				</p>
 			</p>
 		</div>
@@ -214,24 +218,27 @@
 					<div id="hueApp">
 					</div>
 					<div style="text-align:left;display: inline-block; width:230px">
+						<h3 style="color:#fff;display:inline;text-align:left;padding-left:70px">Color #</h3><h3 id="colorNumber" style="display:inline">0</h3>
 						<h3 style="color:#000;display:inline;text-align:left;padding-left:70px">Red: </h3><h3 id="hueTextR" style="display:inline">0</h3>
 						<br>
 						<h3 style="color:#000;display:inline;text-align:left;padding-left:70px">Green: </h3><h3 id="hueTextG" style="display:inline">0</h3>
 						<br>
 						<h3 style="color:#000;display:inline;text-align:left;padding-left:70px">Blue: </h3><h3 id="hueTextB" style="display:inline">0</h3>
 						<br>
-						<h3 style="color:#000;display:inline;text-align:left;padding-left:70px">Color #</h3><h3 id="colorNumber" style="display:inline">0</h3>
 						<br>
 					</div>
 				</div>
 				<p>
-					If you were curious to see this animation all the way through, just make sure you have 170 free hours.  But if you don’t have the time, David Naylor was kind enough to create the entire palette of your monitor in <a target="_blank" href="http://davidnaylor.org/blog/2005/02/all-16777216-rgb-colours/">one single, very big image</a>.
+					If you were curious to see this animation all the way through, just make sure you have roughly 170 free hours.  But if you don’t have the time, David Naylor was kind enough to create the entire palette of your monitor in <a target="_blank" href="http://davidnaylor.org/blog/2005/02/all-16777216-rgb-colours/">one single, very big image</a>.
 				</p>
 				<p>
-					The dimensions of the 1 Monkey App are 300 x 300, totaling 90,000 pixels. What this means is that the number of images that are possible in 1 Monkey's tiny frame are 16,777,216<sup>60,000</sup>, or about 10<sup>648,370</sup>.  This is a truly impossible to comprehend number.  Astronomical numbers don't even put a dent into it.  10<sup>648,288</sup> universes of atoms fit into this number.  And an astounding thing is that all it takes to make that number impossibly bigger is to add another pixel to the frame, essentially 16-billion-ifying it once more. 
+					Just like the yearbook photo and Pale Blue Dot above, the dimensions of the web version of the 1 Monkey app are 300 x 300, totaling 90,000 pixels. What this means is that the number of images that are possible in 1 Monkey's tiny frame are 16,777,216<sup>90,000</sup>, or about 10<sup>648,370</sup>.  This is a truly <b>impossible</b> to comprehend number.  Astronomical numbers don't even put a dent into it.  10<sup>648,288</sup> universes of atoms fit into this number.  And an astounding thing is that all it takes to make that number impossibly bigger is to add one more pixel to the frame, essentially 16-billion-ifying it once more. 
 				</p>
 				<p>
-					But, a number that’s infinitely larger than even that number is, of course, infinity: the important crux of the infinite monkey theorem.  Even if the chance for a pixel perfect Pale Blue Dot is 1 &frasl; (16,777,216<sup>6,370</sup>), given infinite time, that exact roll of the dice must happen.  Shakespeare’s texts are only proven to be <i>possible</i> to generate, not <i>probable</i>.  But… why? What is it that makes Shakespeare different than monkey gibberish (if you ask anyone besides a kid forced to read it for school)?  These facts alone don’t preclude the ability to generate Starry Night on our first try, yet if you give 1 Monkey a shot you’ll find that your results are more… Pollock than Van Gogh.  So what makes our random portrait so different than the pale blue dot? Is the protagonist of our story something else?  Again??
+					But, a number that’s infinitely larger than even that number is, of course, infinity: the important crux of the infinite monkey theorem.  Even if the chance for a pixel perfect Pale Blue Dot is 1 &frasl; (16,777,216<sup>90,000</sup>), given infinite time, that exact roll of the dice must happen.  Shakespeare’s texts are only proven to be <i>possible</i> to generate, not <i>probable</i>.
+				</p>
+				<p>
+					But… why? What is it that makes Shakespeare different than monkey gibberish (if you ask anyone not forced to read it for school)?  These facts alone don’t preclude the ability to generate Starry Night on our first try, yet if you give 1 Monkey a shot you’ll find that your results are more… Pollock than Van Gogh.  So what makes our random portrait so different than the pale blue dot? Is the protagonist of our story something else?  Again??
 				</p>
 			</div>
 		</div>
@@ -244,7 +251,7 @@
 					Order Up!
 				</h2>
 				<p>
-					One answer is that photographs, books, paintings, all have order, rather than randomness.  I used Pollock a second ago as a stand-in for something random, but truthfully even Pollock paintings have significantly more order than our random portraits.  Let’s take a look at three images that we can clearly line up from least to most order.
+					One answer is that photographs, books, paintings, all have order, rather than randomness.  I used Pollock a second ago as a stand-in for something random, but truthfully even Pollock's paintings have significantly more order than our random portraits.  Let’s take a look at three images that we can clearly line up from least to most order.
 				</p>
 				<div class="center" style="margin:20px">
 					<div style="display:inline-block;width:30%;">
@@ -258,13 +265,13 @@
 					</div>
 				</div>
 				<p>
-					Leftmost we have our random noise portrait from earlier, center we have a section from Pollock’s <i>Convergence</i>, and rightmost we have a portrait of Barrack Obama.  Just by glancing at these images we can see order increases from left to right, but we didn’t get a CS degree so we could deduce things with our eyeballs.  We need to think of how to <b>measure order</b>, and then create a compelling visualization to deduce with our eyeballs.
+					Leftmost we have our random noise portrait from earlier, center we have a section from Pollock’s <i>Convergence</i>, and rightmost we have a portrait of Barrack Obama.  Just by glancing at these images we can see order increases from left to right.  But we didn’t get a CS degree so we could deduce things with our eyeballs.  We need to think of how to <b>measure order</b>, and then create a compelling visualization to deduce with our eyeballs.
 				</p>
 				<p>
-					The first visualization below samples pixels from these images and places them on a z axis (coming towards you) according to the pixel’s brightness.  What this does is highlight the shapes that are found in the image: patches of space that have a congruent brightness.  This emphasizes the spatial order of the image.
+					The first row of visualizations below samples pixels from these images and places them on a z axis (coming towards you) according to the pixel’s brightness.  What this does is highlight the shapes that are found in the image: patches of space that have a congruent brightness.  This brings out the <b>spatial order</b> of the image.
 				</p>
 				<p>
-					The second visualization shows the distribution of colors from these images in 3D space, where the axes are the amount of red, green, and blue.  While this doesn’t speak to spatial order, it does show the range of variance of colors, the chromatic order, in a sense.
+					The second visualization samples the colors used in these images, and shows their distribution in 3D space, where the axes are the amount of red, green, and blue.  While this doesn’t speak to spatial order, it does show the range of variance of colors, the <b>chromatic order</b>, in a sense.
 				</p>
 				<div style="background-color:#777;padding-top:20px;padding-bottom:20px;border: white 1px solid;">
 					<div class="center">
@@ -318,16 +325,17 @@
 					</div>
 				</div>
 				<p>
-					As you can see, Obama clearly wins out in the measure of spatial order.  The white background, as well as his suit, stand in sharp, distinct shapes.  Even the gradients of light on his face are near each other as they slope into the z axis.  Our two works of art on the other hand are pretty similarly chaotic when it comes to spatial order.  There are no easily discernable patches of bright or dark shapes that.  However, when we look at the color cubes, we see that while our random noise fills the entire space, the colors used by Pollock are much more ordered and limited, and, funny enough, look a lot like the palette of Obama’s portrait.
+					As you can see, Obama clearly wins out in the measure of spatial order.  The white background, as well as his suit, stand in sharp, distinct shapes.  Even the gradients of light on his face are near each other as they slope into the z axis.  Our two works of art on the other hand are pretty similarly chaotic when it comes to spatial order.  There are no easily discernable patches of bright or dark shapes that catch the eye.  However, when we look at the color cubes, we see that while our random noise fills the entire space, the colors used by Pollock are much more ordered and limited, and even look a lot like the palette of Obama’s portrait.
 				</p>
 				<p>
-					So it seems that disordered and chaotic images are much more likely than ordered, meaningful images.  To put a cold hard number to this intuition, let’s consider the possibility that we generate a 1 Monkey portrait that doesn’t have any stark green in it, just as Obama and our Pollock do not.  We’ll consider a green to be any color where the green value is 100 greater than the red or blue value.  This allows colors like white, with rgb(255,255,255) to be not registered as green, despite having a lot of green light.  To calculate how many greens are in this range, we can think of how many possible reds and blue values there are for each Green value from 100 to 255.  
+					So it seems that 1 Monkey often generates random, chaotic images, unlike more ordered, meaningful images.  To put a cold hard number to this intuition, let’s consider the possibility that we generate a 1 Monkey portrait that doesn’t have any stark green in it, just as Obama and our Pollock do not.  We’ll consider a green to be any color where the green value is 100 greater than the red or blue value.  This allows colors like white, with rgb(255,255,255) to be not registered as green, despite having a lot of green light.  To calculate how many greens are in this range, we can think of how many possible reds and blue values there are for each Green value from 100 to 255.  
 				</p>
 				<div style="text-align:center">
 					<div style="display:inline-block;width:27%;text-align:center;font-size:15px;outline:dashed 1px;padding:10px">
 						Green = 100
 						<br>
-						-----------------------
+						<hr class="calcLine">
+						<hr class="calcLine">
 						<br>
 						[1 Possible Value, 0]<sup>2</sup>
 						<br>= 1
@@ -335,7 +343,8 @@
 					<div style="display:inline-block;width:27%;text-align:center;font-size:15px;outline:dashed 1px;padding:10px">
 						Green = 101
 						<br>
-						-----------------------
+						<hr class="calcLine">
+						<hr class="calcLine">
 						<br>
 						[2 Possible Values, 0-1]<sup>2</sup>
 						<br>= 4
@@ -343,7 +352,8 @@
 					<div style="display:inline-block;width:27%;text-align:center;font-size:15px;outline:dashed 1px;padding:10px">
 						Green = 102
 						<br>
-						-----------------------
+						<hr class="calcLine">
+						<hr class="calcLine">
 						<br>
 						[3 Possible Values, 0-2]<sup>2</sup>
 						<br>= 9
@@ -356,9 +366,9 @@
 					<abbr title="though, let's be real, I'm a cs person, I used for loops"><img style="width:80px" src="https://s3.us-east-2.amazonaws.com/tomlum/summation.png"/></abbr>
 				</div>
 				<p>
-					Or <a href="https://youtu.be/G0xoqYlpLBg" target="_blank">1,277,666 greens</a>.  So, what are the chances of creating a 300x300 image with none of these distinct greens?  About 1 in 10^3097.  Just to get an image that doesn’t have green in it.  Not an image that looks like Obama, or has any discernable shapes, just an image that doesn’t have green.  
+					Or <a href="https://youtu.be/G0xoqYlpLBg" target="_blank">1,277,666 greens</a>.  So, what are the chances of creating a 300 x 300 image with none of these distinct greens?  About 1 in 10<sup>3097</sup>.  Or picking the right atom in 10<sup>3015</sup> universes.  Just to get an image that doesn’t have green in it.  Not an image that looks like Obama, or has any discernable shapes, just an image that doesn’t have green.  
 
-					So, meaningful images have order, which is inherently the opposite of randomness, which is what we are using to generate our images. Dice are meant to be unbiased, but what we are waiting for are the few moments they appear biased and meaningful.  And 1 Monkey is a first-hand example that there are more chaotic possibilities than there are ordered ones. 
+					So, meaningful images have order, which is inherently the opposite of randomness, which is what we are using to generate our images. Dice are meant to be unbiased, but what we are waiting for are the few moments they appear perfectly biased and meaningful.  And 1 Monkey is a first-hand example that there are more chaotic possibilities than there are ordered ones. 
 				</p>
 				<div class="center" style="width:60%">
 					<img src="https://s3.us-east-2.amazonaws.com/tomlum/wedid_sketch.png"/>
@@ -426,10 +436,10 @@
 				</p>
 
 				<p>
-					This is doubly strange when we consider the fact that you’ve already seen this image before: this Big Green Square is actually the eponymous Pale Blue Dot in the photograph taken by the Voyager.  And when in that context, it is almost the entire meaning of that photograph.  But how can a single pixel represent the entire Earth?  If that is the case, is our picture of random noise just 90,000 multi-colored Earths?
+					This is doubly strange when we consider the fact that you’ve already seen this image before: this Big Green Square is actually the eponymous Pale Blue Dot in the photograph taken by the Voyager.  And when in that context, it is almost the entire meaning of that photograph.  But how can a single pixel represent the entire Earth?  If that is the case, is our picture of random noise not just 90,000 multi-colored Earths?
 				</p>
 				<p>
-					As ludicrous as that notion is, it’s not that far from the truth.  Something you might’ve noticed is that 1 Monkey portraits are not entirely meaningless.  While it may fail as an Obama portrait generator, 1 Monkey is really good at making images that seem to almost look like ephemerally meaningful images, like finding shapes in clouds, or staring into a Rorschach blot.  This well studied phenomena we perform without thinking is known as <a target="_blank" href="https://en.wikipedia.org/wiki/Pareidolia">Pareidolia</a>, an effect where, even from basic or nonsensical stimuli, the brain perceives meaningful images.
+					As ludicrous as that notion sounds, it’s not that far from the truth.  Something you might’ve already noticed is that 1 Monkey portraits don't <i>feel</i> entirely meaningless.  While it may fail as an Obama portrait generator, 1 Monkey is really good at making images that seem to almost look like ephemerally meaningful images, like finding shapes in clouds, or staring into a Rorschach blot.  This well studied phenomena we perform without thinking is known as <a target="_blank" href="https://en.wikipedia.org/wiki/Pareidolia">Pareidolia</a>, an effect where, even from basic or nonsensical stimuli, the brain perceives meaningful images.
 				</p>
 				<p>
 					And this to me is the beautiful twist of the 1 Monkey app: its designed purpose is to create meaningful images, and while it horrifically fails by many an objective measure, in a subjective manner it will always win because <b>your brain is a meaning machine</b>.
@@ -453,7 +463,7 @@
 					<img src="https://s3.us-east-2.amazonaws.com/tomlum/lines_sketch.png"/>
 				</div>
 				<p>
-					You already know the answer now is not the image themselves, but you.  The next question in the queue is then: what makes you so different?
+					You already know the answer now is not the images themselves, but you.  The next question in the queue is then: what makes you so different?
 				</p>
 			</div>
 		</div>
@@ -479,13 +489,13 @@
 						You can play around with 1 Monkey as a <a target="_blank" href="/apps/1-monkey">standalone webapp</a>, as well as the <a target="_blank" href="/apps/1-monkey-mobile">mobile app version</a>, with a different resolution and aspect ratio.
 					</li>
 					<li>
-						I apologize that the mobile version doesn't have a 300x300 version, I couldn't get react native to use Pixi, so the performance I was getting (with my brief knowledge of react native) just couldn't take that size.
+						I apologize that the mobile version doesn't have a 300 x 300 version, I couldn't get react native to use Pixi, so the performance I was getting (with my brief knowledge of react native) just couldn't take that size.
 					</li>
 					<li>
 						If you want to see more of the full color spectrum in action, check out <a target="_blank" href="https://allrgb.com">AllRgb.com</a>, a website devoted to artwork made using all 16 million RGB colors.
 					</li>
 					<li>
-						If you want to see a famously impossibly big number, check out Numberphile's great video on <a target="_blank" href="https://youtu.be/GuigptwlVHo">Graham's Number</a>
+						If you want to see a famously impossibly big number, check out Numberphile's great video on <a target="_blank" href="https://youtu.be/GuigptwlVHo">Graham's Number</a>.
 					</li>
 					<li>
 						I'm going to have to mention that <a target="_blank" href="http://www.radiolab.org/story/91684-stochasticity/">Radio Lab Episode on Stochasticity</a> one more time because honestly it's fantastic, and I had to force myself to stay on topic and not dive into ten more pages of thoughts on Randomness.  Not gonna lie, this episode along with a bunch of other Radio Lab episodes pushed me into my Comp Sci & Cog Sci majors.
