@@ -174,3 +174,12 @@ img{
 .logo {
     margin-bottom: -70px;
 }
+
+.pixi {
+    max-width: 100%;
+}
+
+.pixi > canvas{
+    max-width: 100%;
+    margin: auto;
+}

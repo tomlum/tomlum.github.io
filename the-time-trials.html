@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+  <head><link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png?v=A0Rrm0rq0k">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=A0Rrm0rq0k">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=A0Rrm0rq0k">
+  <link rel="manifest" href="/manifest.json?v=A0Rrm0rq0k">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=A0Rrm0rq0k" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicon.ico?v=A0Rrm0rq0k">
+  <meta name="theme-color" content="#aaaaaa">
+  <meta property="og:image" content="https://s3.us-east-2.amazonaws.com/tomlum/monkeyLogoBG.png">
+  <title>The Time Trials</title>
+  <meta name="description" content="Time is a Wish Your Brain Makes">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script> -->
+  <!-- Custom CSS -->
+  <link href="css/tomlum.css" rel="stylesheet">
+  <script>
+  (function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+  (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-46705501-4', 'auto');
+  ga('send', 'pageview');
+  </script>
+  
+  <!-- Pixi -->
+  <script src="pixi.min.js" crossorigin="anonymous"></script>
+  <!-- Custom CSS -->
+  <link href="css/tomlum.css" rel="stylesheet">
+  <link href="css/timeTrials.css" rel="stylesheet">
+</head>
+<body>
+  <div class="center">
+    <h1 class="challengeTitle" style="padding-bottom: 0px; margin-bottom: 0px">
+    The Time Trials
+    </h1>
+    <h3 style="color:#2a2a2a; margin: 0px">
+    or, "Time is a Wish your Brain Makes"
+    </h3>
+    <div class="spacer">
+    </div>
+    <div class="lPortrait">
+      <img src="/assets/timeTrials/ciciHappy.png">
+    </div>
+    <div class="section">
+      <div class="lText">
+        <p>
+          Welcome one and all to the TIME TRIALS!
+        </p>
+        <p>
+          I'm your host and reigning champ, Cici!  The sentient Caesium atom!
+        </p>
+        <p>
+          Our competitors will undergo a series of challenges to determine who is the <b>Champion of Time!</b>
+        </p>
+        <p>
+          So without further ado, let's get on with the first challenge!
+        </p>
+      </div>
+    </div>
+    <div class="section" style="background-color: #979">
+      <h1 class="challengeTitle">
+      <u>I: Long-Term Time</u>
+      </h1>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          Our first challenger is nearly 200,000 years old!  You know them, you love them, it's... HOMO SAPIENS!
+        </p>
+      </div>
+      <div class="center">
+        <img src="/assets/timeTrials/person.png">
+        <div style="background-color: #444; width: 80%; padding: 20px; margin: auto; color: #fff; text-align: left">
+          <u><b>SPECIES</b></u>:<br><div style="font-size:18px"> Homo Sapien<br/></div>
+          <u><b>SIZE</b></u>:<br><div style="font-size:18px"> Varies<br/></div>
+          <u><b>KNOWN FOR</b></u>:<br><div style="font-size:18px"> Inventing the Sundial, Hourglass, Watch, etc.<br/> Having consciousness (allegedly).<br/></div>
+        </div>
+      </div>
+      <div class="spacer">
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          And facing off against them, the single celled spectre, the eukaryote that will carry YOU out... SYNECHOCOCCUS RF-1!
+        </p>
+      </div>
+      <div class="center">
+        <img src="/assets/timeTrials/bacteria.png">
+        <div style="background-color: #444; width: 80%; padding: 20px; margin: auto; color: #fff; text-align: left">
+          <u><b>SPECIES</b></u>:<br><div style="font-size:18px"> Synechococcus RF-1<br/></div>
+          <u><b>SIZE</b></u>:<br><div style="font-size:18px"> 0.8 - 1.5 µm<br/></div>
+          <u><b>KNOWN FOR</b></u>:<br><div style="font-size:18px"> Living in water. Being smol.<br/></div>
+        </div>
+      </div>
+      <div class="spacer">
+      </div>
+      
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          For our first challenge, our brave competitors will have to do a task as old as time.
+        </p>
+        <p>
+          ...Well, technically that's not accurate, but at least as old as the Earth!
+        </p>
+        <p>
+          The first Time Trials is...
+        </p>
+        <p>
+          <b>Measure the passing of 24 hours!</b>
+        </p>
+        <p>
+          As soon as it's high noon, when the sun is at the peak of the sky, shout it out!
+        </p>
+        <p>
+          Synechococcus, you just uh... expell a bunch of nitrogen.
+        </p>
+        <p>
+          Ready?  Flip the switch to get started!
+        </p>
+        <p> And don't forget to turn it off when you've seen enough to judge who did best!
+        </p>
+      </div>
+      <div id="tt1" class="pixi">
+      </div>
+      <div class="spacer">
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          Wow they did a great job!  But after all, it is a pretty easy challenge.  Especially for me!  I don't know if you know, but a second is actually defined as me cycling between energy states 9,192,631,770 times!
+        </p>
+        <p>
+          So this is pretty easy, I just have to count to 794,243,384,928,000.
+          Here let me start...
+        </p>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Hey... wait a second.
+        </p>
+        <p>
+          First of all, that pun was intended, and second of all, something's not quite right...
+        </p>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          Oh!  I forgot!  It isn't fair if you both can just use the sun to count 24 hours!  You have to do it on your own!
+        </p>
+        <p>
+          I know, we'll just put you in a room with the lights always on!  Give it a shot now!
+        </p>
+      </div>
+      <div id="tt_2" class="pixi">
+      </div>
+      <div class="spacer">
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Well... wow.
+        </p>
+        <p>
+          Within just 3 days, the human thinks it's high noon when it's the dead of night.  I'd understand that from the little Synechococcus, but it's actually doing a better job than the human!
+        </p>
+        <p>
+          I mean... don't they both have <b>Circadian Rhythms</b> that pretty accurately measure 24 hours?  I thought this would be a home run for them. <br> I guess when they don't have something to sync up their rythms they're not very accurate...
+          <div class="citation">
+            <div title="Aschoff, J., Gerecke, U., & Wever, R. (1967). Desynchronization of human circadian rhythms. The Japanese journal of physiology, 17(4), 450-457.">
+              > Aschoff et al. (1967). Desynchronization of human circadian rhythms
+            </div>
+            <br>
+            <div title="Grobbelaar, N., Huang, T.C., Lin, H.Y., & Chow, T.J. (1986) Dinitrogen-fixing endogenous rhythm in synechococcus RF-1. Fems Microbiology Letters, 37(2), 173-177.">
+              > Grobbelaar et al. (1986) Dinitrogen-fixing
+              endogenous rhythm in synechococcus RF-1
+            </div>
+          </div>
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Well, wait, hold on, this is ridiculous!
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          Oh my gosh!  <b>The Human Brain!</b>  You're sentient to!
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Uh... yeah.  I'm a little anthropomorphic too but that's not the point.
+          </p>
+          <p>
+            This is such an <b>unrealistic scenario</b>.  When am I ever going to be locked in a room with the lights on for days?  And even if I was, I'd have a watch with me, or my phone.
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Well Brainy... can I call you Brainy?
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            I like to go by Brianne
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Brainy, what do you think happens to time in a room with the lights on?  Do you think it slows down?
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Well... no... but...
+          </p>
+          <p>
+            Ugh fine, <b>I'm not very good at keeping track of long periods of time.</b>  Happy?  But I'm really good at pattern recognition, want to see?
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          Well folks looks like the human lost that one pretty handily!  I'd hate to be them right now!
+        </p>
+        <p>
+          Let's see how they do on an easier challenge!
+        </p>
+      </div>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="section" style="background-color: #797">
+      <h1 class="challengeTitle">
+      <u>I: Medium-Term Time</u>
+      </h1>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          All right Homo Sapien, let's see how you face off against... A Film Camera!
+        </p>
+      </div>
+      <div class="center">
+        <img src="/assets/timeTrials/camera.png">
+        <div style="background-color: #444; width: 80%; padding: 20px; margin: auto; color: #fff; text-align: left">
+          <div style="background-color: #444; width: 80%; padding: 20px; margin: auto; color: #fff; text-align: left">
+            <u><b>SPECIES</b></u>:<br><div style="font-size:18px">N/A<br/></div>
+            <u><b>SIZE</b></u>:<br><div style="font-size:18px"> Varies<br/></div>
+            <u><b>KNOWN FOR</b></u>:<br><div style="font-size:18px"> Citizen Kane.  Star Wars: The Phantom Menace.<br/></div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer">
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Okay!  I get it!  I'm not great at time, but really?  An inanimate object??  That I invented???  Do they even still look like that?
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          For this challenge, we'll be playing a little red light/green light!  When the mouse moves it's a green circle, and when it's not, it's a red square.  Try it out!
+        </p>
+      </div>
+      <div id="tt_3" class="pixi">
+      </div>
+      <div class="spacer">
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          The challenge is pretty simple: just tell us how long the marker was a red square, and how long it was a green circle!
+        </p>
+      </div>
+      <div id="tt_4" class="pixi">
+      </div>
+      <div class="spacer">
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          I... wh- Brainy?  Brainy! What on Earth is going on?  Care to explain yourself?  What- what does it even mean for something to increase vertically without horizontally??
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Um, I mean... it's all just sort of related to memory, how long events <b>feel</b>.  It's called <b>time dilation</b>, in the psych sense, not the physics sense.
+            You know, my memories don't all take up the same space, and they're not stored sequentially like a film camera, they're just kind of all over the place.
+          </p>
+          <p>
+            Don't get me wrong, I know when things happened in time, I just can't like... replay my memories like a movie all the way through.
+          </p>
+          <p>
+            So to be honest, thinking about time as a line isn't a good way to think about it for me.
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          I'm just going to pretend you didn't even say that.  Just... why does it keep changing size??
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Well...  when the thingy is moving I'm focusing on it, so I'm not really paying attention to time.  And when it's not moving it's really boring, so it just feels like it's taking forever.  You know, like, "time flies when you're having fun!"
+          </p>
+          <div class="citation">
+            <div title="Chaston, A., & Kingstone, A. (2004). Time estimation: The effect of  cortically  mediated  attention. Brain  and  Cognition, 55, 286–289.">
+              Chaston & Kingstone (2004). Time estimation: The effect of  cortically  mediated  attention
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Okay, okay, but then what about when the ball moves super fast?
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Well when it moves too fast then it's scary, and my adrenaline rushes, and I pay a ton of attention to it.  So it seems like it must've happened for a long time.
+          </p>
+          <div class="citation">
+            <div title="Stetson, C., Fiesta, M. P., & Eagleman, D. M. (2007). Does time really slow down during a frightening event?. PLoS One, 2(12), e1295.">
+              Stetson et al. (2007). Does time really slow down during a frightening event?
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          Oh, okay, well that kind of makes sense.  When you're in a dangerous situation, you're able to perceive faster, and so you perceive more!
+        </p>
+        <p>
+          It's sort of like if your mind normally recorded at 60 frames per second, but when you're in danger, it speeds up to 140 frames per second.  Then, when you play it back, it's like in slow-mo, and it takes longer!
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Well... um... no, actually.  When I'm in danger I don't actually perceive faster.  I perceive the same amount.  I'm just paying more attention to a bunch of things, so it feels like it's longer.  But it's not like I get super-human slow-mo vision.
+          </p>
+          <div class="citation" title="Stetson, C., Fiesta, M. P., & Eagleman, D. M. (2007). Does time really slow down during a frightening event?. PLoS One, 2(12), e1295.">
+            Stetson et al. (2007).
+          </div>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Oh...
+        </p>
+        <p>
+          Wait, wait, wait.  Let me see if I'm getting this straight: time moves fast when you're paying attention to something, but when you're paying too much attention it gets slow again??  That doesn't make any sense!!!
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Yeah, I mean, it's pretty all over the place.  For instance, I said boring things seem like they take forever right?  But also, when I think about other boring things, like my commute to work, over time they start to feel like they don't take any time at all!
+          </p>
+          <p>
+            It seems like any change in the different parts of me (the brain) and how I'm feeling can affect it in a whole bunch of ways.  And if there's anything I don't understand, it's my feelings.  Therapy helps though!
+          </p>
+        </div>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            But, look on the bright side!  This is actually pretty cool and useful!  I mean, think about it: I'm not stuck onto rails, <b>time changes with how I'm feeling!</b>  I learn more from dangerous moments! I can spend less energy focusing on time and instead spend it on focusing!  And painfully boring days don't take up as much of my memory as exciting moments, like going to Disney Land!  Isn't that so cool?
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciSuperEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          ...
+        </p>
+      </div>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class="section" style="background-color: #977">
+      <h1 class="challengeTitle">
+      <u>I: Short-Term Time</u>
+      </h1>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Well.  Human, you've failed every easy challenge I've given you.  I have literally only one challenge left that I don't think even you could fail.
+        </p>
+        <p>
+          Actually, you know what, given your track record I'm excited to see how you manage to fail this one.
+        </p>
+        <p>
+          All you have to do.  Is say.  Which order these two things happened in.  Got it?  You don't even have to challenge anyone.  Just.  Do it.
+        </p>
+        <p>
+          We're going to click on/hit this drum.  And tell me whether you <b>SAW</b> the drum get hit, or <b>HEARD</b> the drum get hit.
+        </p>
+        <p>
+          I'll even give you a hint, the speed of light is 299,792,458 meters per second.  Very fast.  The speed of sound is only 343 meters per second.  Not as fast.  You know how you see thunder much sooner than you hear it?
+        </p>
+        <p>
+          Hear, I'll make it even easier, I'll stand all the way back here, so the drum's about 12 feet away from you.  Now you should heard the sound roughly <b>10 milliseconds</b> after the light.  I've done the research, even you can perceive that difference in time.
+          <div class="citation">
+            <div title="Hirsh, I.J, Sherrick, C.E. (1961) Perceived order in different sense modalities. Journal of Experimental Psychology, 62(5), 423-432.">
+              > Hirsh & Sherrick (1961) Perceived order in different sense modalities.
+            </div>
+          </div>
+        </p>
+        <p>
+          Ready?  Let's hit the drum a few times.
+        </p>
+      </div>
+      <div id="tt_5" class="pixi">
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Brainy... Just for once...
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Okay, wait, this one's actually a really clever thing I can do!
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Okay so, walk me through this.  First of all, what is the gray and pink stuff?
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            So the top line on the surface is my objective <b>sensation</b>.  That's the information that actually hits my eyes and ears.  And the light hits my eyes first, because, like you said, it's much faster than sound.
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Which would be great... but...?
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Well, my subjective <b>perception</b> is what I actually <b>feel</b>.  Not what hits my eyes and ears, but what happens when those sense organs and I (the <b>brain</b>) finish processing it.  That's the big purple nebulous area.
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          So why on Earth is your perception not only different from your sensation, but <b>literally changing each time?</b>
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Okay, so, think about it.  When you hit the drum, it <b>causes</b> both the light and the sound.  So at the origin, they happen <b>at the same time</b>.  But, by the time they reach my senses, there's a delay, because they travel at different speeds.
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          Right.  That is how space and time works.  It's why the stars we see in the sky lightyears away may be completely different than what we see.  If I throw you a banana, the banana that I throw is slightly more green than the one you catch.  The same with light and vision and sound.  I think we're on the same page.  Though I think I may also just be getting hungry.
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Well here's the cool part.  Each time you hit the drum, the lag between the sight and sound is really short, and roughly the same.  So if you keep doing it, I get to thinking...
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Oh no.  I hate when you get to thinking.
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            If the lag is always the same amount, then that probably means something <b>caused</b> them both.  And each time it happens I get more and more sure about it, like, statistically!  And so, if I'm pretty sure they were caused by the same thing, well, why don't I just imagine they happened at the same time?
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Excuse me?
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            I just move them together, so they happen at the same time in my mind, because I'm pretty darn sure they did!  And then it becomes one, single, easy to digest concept.  I call it, <b>Lag Adaptation!</b> 
+            <div class="citation">
+              <div title="Fujisaki, W., Shimojo, S., Kashino, M., & Nishida, S. Y. (2004). Recalibration of audiovisual simultaneity. Nature Neuroscience, 7(7), 773-778.">
+                > Fujisaki et al. (2004). Recalibration of audiovisual simultaneity.
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Okay, okay, okay, let me get this straight.  You're using the <b>statistics</b> of time to imagine <b>causality?</b>
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Yup!
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Even though to prove objectively that the drum hit caused the light and sound, you'd have to be both where you are and at the drum at the same time?  You're imagining you can be in more than one place at the same time?
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Sure!  For small delays, <b>I basically get to pretend like the rules of space and time don't apply!</b>  They're so complicated anyway, <i>this way of thinking about the world is so much easier</i>!  To be honest, I don't even really have to think about it, it just happens!
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Brainy... how... far does this go exactly?
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Well, that depends.  Do you have a light switch in here?
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Yes, but it's a bit wonky, so there's delay from when you hit the switch and it turns on- oh no.
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Oh yes.
+          </p>
+        </div>
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Okay, but the delay on the light is 100 milliseconds.  That's ten times more than the drum!  And they also don't happen at the same place or time, there's no single <b>origin</b> like last time!
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            You raise good points!  But that's never stopped me before!
+          </p>
+        </div>
+      </div>
+      <div id="tt_6" class="pixi">
+      </div>
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciHappy.png">
+      </div>
+      <div class="lText">
+        <p>
+          Okay, whew, well you didn't manage to squish them to be the same moment this time.
+        </p>
+      </div>
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            True, but that's only because the lag is 100 milliseconds, you were right that that's starting to get too big for even me.  Still I was able to squish the moments together by about 45 milliseconds!  A new personal record!
+          </p>
+        </div>
+      </div>
+
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          I... I need to sit down, I think I'm going to be ill.
+        </p>
+      </div>
+
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            But Cici this is important!  45 Milliseconds is actually almost <b>three times as much</b> as I'd be able to do with the drum.  Can you guess why?
+            <div class="citation">
+              <div title="Stetson, C., Cui, X., Montague, P. R., & Eagleman, D. M. (2006). Motor-sensory recalibration leads to an illusory reversal of action and sensation. Neuron, 51(5), 651-659.">
+                > Stetson et al. (2006). Motor-sensory recalibration leads to an illusory reversal of action and sensation.
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          To spite me?
+        </p>
+      </div>
+
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            It's because it wasn't two senses, it was my sense and my <b>action</b>!  I do lag adaptation with my senses to know about causality in the world.  But more important is know that <b>I</b> have causality <b>with</b> the world; <b>Learning how my actions cause change in the world!</b>
+          </p>
+          <p>
+            Picture it Cici: I've been walking around in the wilderness and I keep stepping on twigs and making them snap.  I need to be able to know whether it was my action that caused a snap, or a predator.  So I squish together my steps and the sounds.  The same goes for any sense caused by my actions, that's why I'm so good at all kinds of fine motor skills, I can smush my actions and the <b>feedback</b> into one thing!
+          </p>
+        </div>
+      </div>
+
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Well... if you're done... I think I have my verdict for how well you placed in the Time Trials.
+        </p>
+      </div>
+
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            Wait, wait, hold on, can you maybe get a new lightbulb in there?  If the delay is shorter I know I can smush them together, I know it!  Please, please, please?
+          </p>
+        </div>
+      </div>
+
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          ...Fine.  Do your little squishing thing.
+        </p>
+      </div>
+
+      <div id="tt_7" class="pixi">
+      </div>
+
+
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          <b>EXCUSE ME?!</b> Brainy, did I just see what I think I saw???
+        </p>
+      </div>
+
+
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Oops, ignore the first few times, uh... I mean... hey, I did end up getting there! I just needed to take a few tries to re-adjust.
+          </p>
+        </div>
+      </div>
+
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>
+          Brainy... did you just honestly... 'Perceive'... that the light somehow turned on <b>before</b> you flipped the switch?
+
+          <div class="citation">
+            <div title="Stetson, C., Cui, X., Montague, P. R., & Eagleman, D. M. (2006). Motor-sensory recalibration leads to an illusory reversal of action and sensation. Neuron, 51(5), 651-659.">
+              Stetson et al. (2006)
+            </div>
+          </div>
+        </p>
+      </div>
+
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            um...
+          </p>
+        </div>
+      </div>
+
+      <div class="lPortrait">
+        <img src="/assets/timeTrials/ciciEh.png">
+      </div>
+      <div class="lText">
+        <p>  Weren't you squishing with time dilation before??  What happened to <b>squishing</b>, smushing, whatever!!  Squishing never <b>reversed the order of things!!!</b>  That was the <i>whole point of this challenge</i>!  It's not even a real challenge!  I just made it up because I've never seen someone do what you did!  You literally just sensed two things happen in order, and then flipped them around!!!  It doesn't even make sense, do you think the light somehow knew you were going to press it?
+        </p>
+      </div>
+
+      <div class="right">
+        <img src="/assets/timeTrials/brainEh.png" width="80">
+        <div class="rText">
+          <p>
+            Yeah... I guess squishing isn't really correct.  I guess it's more like moving?  
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="/assets/timeTrials/brainHappy.png" width="80">
+        <div class="rText">
+          <p>
+            But I mean... hey, remember that time I was able to look at the sun and know what time it was?  Pretty cool right?  How do you think I did then at these whole time trials?
+          </p>
+        </div>
+      </div>
+    </div>
+
+      <div class="right">
+        <img src="/assets/timeTrials/last.png" width="80">
+        <div class="rText">
+          <p>
+            Well at least I got a medal.  Cici said they actually don't usually bother making a last place medal.  But she was really insistant on it.
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="/assets/timeTrials/lastHappy.png" width="80">
+        <div class="rText">
+          <p>
+            But you know what?  Who really cares about these elaborate challenges?  I mean, I get it, I'm not good at keeping track of time, but I've invented things to help me with that!  I might not be good at remembering how long things took, but that's because I'm focusing on what things <i>mean</i>, not how long they took.  And sure, sometimes you can trick my time perception, but that's just the weakness to my statistics super power!
+          </p>
+          <p>
+            My time might not be objectively correct, but it's subjectively <i>awesome</i>.  I get to time lapse boring moments and slow down important ones with time dilation.  And with lag adaptation I get to break space-time and live in a simpler world that makes more sense.
+          </p>
+        </div>
+      </div>
+
+    <script src="scripts/timeTrials.js">
+    </script>
+  </body>
+  <footer>
+  </footer>
+</html>

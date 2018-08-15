@@ -1,0 +1,79 @@
+.challengeTitle{
+	font-family: Cinzel;
+	color: #000;
+	padding: 20px;
+    margin-top: 0px;
+}
+
+.spacer{
+	height: 100px;
+}
+
+.left{
+	text-align: left;
+}
+.right{
+	text-align: right;
+}
+
+.lText{
+	background-color: #bbb;
+	text-align: left;
+	margin-right: 15%;
+	padding: 15px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	margin-bottom: 50px;
+}
+.lPortrait{
+	text-align: left;
+	width: 100px;
+}
+.lText > p {
+	padding-top: 5px;
+	font-family: Futura;
+	font-size: 19px;
+	margin-bottom: 15px;
+	color: #333;
+	text-align: left;
+	text-indent: 5px;
+}
+
+.rPortrait{
+	text-align: right;
+	width: 100px;
+}
+
+.rText{
+	background-color: #f2bff3;
+	text-align: left;
+	margin-left: 15%;
+	padding: 15px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	margin-bottom: 50px;
+}
+.rText > p {
+	padding-top: 5px;
+	font-family: Futura;
+	font-size: 19px;
+	margin-bottom: 15px;
+	color: #333;
+	text-align: left;
+	text-indent: 5px;
+}
+
+.section {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.pixi {
+	border: 3px solid  #fff;
+	padding: 3px;
+}
+
+.citation {
+	text-align: right;
+	font-size: 10px;
+}
