@@ -18,7 +18,7 @@ const piHour = pi2 / 24;
 const width = 500;
 const height = 281;
 
-const dayTime = 0.014;
+const dayTime = 0.01;
 
 const dotColors = {
 	red: PIXI.utils.rgb2hex([1, 0, 0]),
