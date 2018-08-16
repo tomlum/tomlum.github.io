@@ -1,3 +1,8 @@
+// Oh no, you're looking at the code.
+// This was made for a game jam in less than a week,
+// so it's just about the ugliest code you're ever going to see.
+// Sorry about that ¯\_(ツ)_/¯
+
 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 
 function add(app, child) {
@@ -47,8 +52,8 @@ function init1() {
 	s_switch1.cursor = "pointer";
 	s_switch1.anchor.x = 1;
 	s_switch1.anchor.y = 0;
-	s_switch1.scale.x = 1;
-	s_switch1.scale.y = 1;
+	s_switch1.scale.x = 1.5;
+	s_switch1.scale.y = 1.5;
 	s_switch1.x = width;
 	s_switch1.y = 0;
 	s_switch1.interactive = true;
@@ -103,7 +108,7 @@ function init1() {
 	s_day1.style.fill = "#979";
 	s_day1.anchor.x = 1;
 	s_day1.anchor.y = 0;
-	s_day1.x = width - 30;
+	s_day1.x = width - 40;
 	s_day1.y = 10;
 
 	add(TT1, s_sky1);
@@ -189,8 +194,8 @@ function init_2() {
 	s_switch_2.cursor = "pointer";
 	s_switch_2.anchor.x = 1;
 	s_switch_2.anchor.y = 0;
-	s_switch_2.scale.x = 1;
-	s_switch_2.scale.y = 1;
+	s_switch_2.scale.x = 1.5;
+	s_switch_2.scale.y = 1.5;
 	s_switch_2.x = width;
 	s_switch_2.y = 0;
 	s_switch_2.interactive = true;
@@ -346,8 +351,8 @@ function init_3() {
 	s_switch_3.cursor = "pointer";
 	s_switch_3.anchor.x = 1;
 	s_switch_3.anchor.y = 0;
-	s_switch_3.scale.x = 1;
-	s_switch_3.scale.y = 1;
+	s_switch_3.scale.x = 1.5;
+	s_switch_3.scale.y = 1.5;
 	s_switch_3.x = width;
 	s_switch_3.y = 0;
 	s_switch_3.interactive = true;
@@ -384,8 +389,8 @@ function init_3() {
 	const s_dot_3 = PIXI.Sprite.fromImage("/assets/timeTrials/stop.png");
 	s_dot_3.anchor.x = 0.9;
 	s_dot_3.anchor.y = 0.9;
-	s_dot_3.scale.x = 1;
-	s_dot_3.scale.y = 1;
+	s_dot_3.scale.x = 2;
+	s_dot_3.scale.y = 2;
 	s_dot_3.x = width / 2;
 	s_dot_3.y = height / 2;
 	s_dot_3.interactive = true;
@@ -460,8 +465,8 @@ function init_4() {
 	s_switch_4.cursor = "pointer";
 	s_switch_4.anchor.x = 1;
 	s_switch_4.anchor.y = 0;
-	s_switch_4.scale.x = 1;
-	s_switch_4.scale.y = 1;
+	s_switch_4.scale.x = 1.5;
+	s_switch_4.scale.y = 1.5;
 	s_switch_4.x = width;
 	s_switch_4.y = 0;
 	s_switch_4.interactive = true;
@@ -498,8 +503,8 @@ function init_4() {
 	const s_dot_4 = PIXI.Sprite.fromImage("/assets/timeTrials/stop.png");
 	s_dot_4.anchor.x = 0.9;
 	s_dot_4.anchor.y = 0.9;
-	s_dot_4.scale.x = 1;
-	s_dot_4.scale.y = 1;
+	s_dot_4.scale.x = 2;
+	s_dot_4.scale.y = 2;
 	s_dot_4.x = width / 2;
 	s_dot_4.y = height / 2;
 	s_dot_4.cursor = "pointer";
@@ -679,8 +684,8 @@ function init_5() {
 	s_switch_5.cursor = "pointer";
 	s_switch_5.anchor.x = 1;
 	s_switch_5.anchor.y = 0;
-	s_switch_5.scale.x = 1;
-	s_switch_5.scale.y = 1;
+	s_switch_5.scale.x = 1.5;
+	s_switch_5.scale.y = 1.5;
 	s_switch_5.x = width;
 	s_switch_5.y = 0;
 	s_switch_5.interactive = true;
@@ -699,30 +704,30 @@ function init_5() {
 	s_sense_5.anchor.x = 0.5;
 	s_sense_5.anchor.y = 0;
 	s_sense_5.scale.x = width;
-	s_sense_5.scale.y = 3;
+	s_sense_5.scale.y = 3 + 30;
 	s_sense_5.x = width / 2;
-	s_sense_5.y = height * 2 / 3;
-	s_sense_5.tint = PIXI.utils.rgb2hex([0.3, 0.3, 0.3]);
+	s_sense_5.y = height * 2 / 3 - 30 - 20;
+	s_sense_5.tint = PIXI.utils.rgb2hex([0.5, 0.5, 0.5]);
 	const t_sense_5 = new PIXI.Text("Sense", { font: "20px Futura" });
 	t_sense_5.anchor.x = 0;
 	t_sense_5.anchor.y = 1;
-	t_sense_5.x = 30;
-	t_sense_5.y = height * 2 / 3;
+	t_sense_5.x = 20;
+	t_sense_5.y = height * 2 / 3 - 20;
 	t_sense_5.style.fill = PIXI.utils.rgb2hex([0.3, 0.3, 0.3]);
 
 	const s_perception_5 = new PIXI.Sprite(t_square);
 	s_perception_5.anchor.x = 0.5;
 	s_perception_5.anchor.y = 0.5;
 	s_perception_5.scale.x = width;
-	s_perception_5.scale.y = 102;
+	s_perception_5.scale.y = 152;
 	s_perception_5.x = width / 2;
-	s_perception_5.y = height - 40;
+	s_perception_5.y = height - 40 - 20;
 	s_perception_5.tint = PIXI.utils.rgb2hex([0.6, 0.25, 0.6]);
 	const t_perception_5 = new PIXI.Text("Perception", { font: "20px Futura" });
 	t_perception_5.anchor.x = 0;
 	t_perception_5.anchor.y = 1;
-	t_perception_5.x = 30;
-	t_perception_5.y = height - 40;
+	t_perception_5.x = 20;
+	t_perception_5.y = height - 40 - 20;
 	t_perception_5.style.fill = PIXI.utils.rgb2hex([0.9, 0.5, 0.9]);
 
 	const s_drum_5 = new PIXI.Sprite(t_drumUp);
@@ -780,14 +785,35 @@ function init_5() {
 	s_background_5.x = 0;
 	s_background_5.y = 0;
 
+	const s_timeline_5 = PIXI.Sprite.fromImage(
+		"/assets/timeTrials/timeArrow.png"
+	);
+	s_timeline_5.anchor.x = 0;
+	s_timeline_5.anchor.y = 0.5;
+	s_timeline_5.scale.x = 1;
+	s_timeline_5.scale.y = 1;
+	s_timeline_5.x = 0;
+	s_timeline_5.y = height * 2 / 3 - 50;
+	s_timeline_5.tint = PIXI.utils.rgb2hex([0, 0, 0]);
+	const t_timeline_5 = new PIXI.Text("Direction of Time", {
+		font: "13px Futura"
+	});
+	t_timeline_5.anchor.x = 1;
+	t_timeline_5.anchor.y = 1;
+	t_timeline_5.x = width - 10;
+	t_timeline_5.y = height * 2 / 3 - 50;
+	t_timeline_5.style.fill = PIXI.utils.rgb2hex([0.4, 0.4, 0.4]);
+
 	add(TT_5, s_background_5);
 	add(TT_5, s_switch_5);
 	add(TT_5, s_perception_5);
+	add(TT_5, s_sense_5);
+	add(TT_5, s_timeline_5)
+add(TT_5, t_timeline_5)
 	add(TT_5, s_vision_line_5);
 	add(TT_5, s_sound_line_5);
 	add(TT_5, s_vision_line_2_5);
 	add(TT_5, s_sound_line_2_5);
-	add(TT_5, s_sense_5);
 	add(TT_5, t_sense_5);
 	add(TT_5, t_perception_5);
 	add(TT_5, s_drum_5);
@@ -803,12 +829,12 @@ function init_5() {
 		if (TT_5.start) {
 			if (s_drum_5.hit) {
 				if (TT_5.phase === 1) {
-					s_vision_5.y = Math.min(height * 2 / 3, s_vision_5.y + 1.5);
+					s_vision_5.y = Math.min(height * 2 / 3, s_vision_5.y + 2.1);
 					s_sound_5.y = Math.min(
 						height * 2 / 3,
-						s_sound_5.y + (Math.acos(0.3)/1.57079633) * 1.5
+						s_sound_5.y + Math.acos(0.3) / 1.57079633 * 2.1
 					);
-					s_sound_5.x = s_sound_5.x + (Math.asin(0.3)/1.57079633) * 1.5;
+					s_sound_5.x = s_sound_5.x + Math.asin(0.3) / 1.57079633 * 2.1;
 
 					if (s_vision_5.y >= height * 2 / 3 && s_sound_5.y >= height * 2 / 3) {
 						TT_5.phase = 2;
@@ -870,8 +896,8 @@ function init_6() {
 	s_switch_6.cursor = "pointer";
 	s_switch_6.anchor.x = 1;
 	s_switch_6.anchor.y = 0;
-	s_switch_6.scale.x = 1;
-	s_switch_6.scale.y = 1;
+	s_switch_6.scale.x = 1.5;
+	s_switch_6.scale.y = 1.5;
 	s_switch_6.x = width;
 	s_switch_6.y = 0;
 	s_switch_6.interactive = true;
@@ -890,30 +916,30 @@ function init_6() {
 	s_sense_6.anchor.x = 0.5;
 	s_sense_6.anchor.y = 0;
 	s_sense_6.scale.x = width;
-	s_sense_6.scale.y = 3;
+	s_sense_6.scale.y = 3 + 30;
 	s_sense_6.x = width / 2;
-	s_sense_6.y = height * 2 / 3;
-	s_sense_6.tint = PIXI.utils.rgb2hex([0.3, 0.3, 0.3]);
+	s_sense_6.y = height * 2 / 3 - 30 - 20;
+	s_sense_6.tint = PIXI.utils.rgb2hex([0.5, 0.5, 0.5]);
 	const t_sense_6 = new PIXI.Text("Sense", { font: "20px Futura" });
 	t_sense_6.anchor.x = 0;
 	t_sense_6.anchor.y = 1;
-	t_sense_6.x = 30;
-	t_sense_6.y = height * 2 / 3;
+	t_sense_6.x = 20;
+	t_sense_6.y = height * 2 / 3 - 20;
 	t_sense_6.style.fill = PIXI.utils.rgb2hex([0.3, 0.3, 0.3]);
 
 	const s_perception_6 = new PIXI.Sprite(t_square);
 	s_perception_6.anchor.x = 0.5;
 	s_perception_6.anchor.y = 0.5;
 	s_perception_6.scale.x = width;
-	s_perception_6.scale.y = 102;
+	s_perception_6.scale.y = 152;
 	s_perception_6.x = width / 2;
-	s_perception_6.y = height - 40;
+	s_perception_6.y = height - 40 - 20;
 	s_perception_6.tint = PIXI.utils.rgb2hex([0.6, 0.25, 0.6]);
 	const t_perception_6 = new PIXI.Text("Perception", { font: "20px Futura" });
 	t_perception_6.anchor.x = 0;
 	t_perception_6.anchor.y = 1;
-	t_perception_6.x = 30;
-	t_perception_6.y = height - 40;
+	t_perception_6.x = 20;
+	t_perception_6.y = height - 40 - 20;
 	t_perception_6.style.fill = PIXI.utils.rgb2hex([0.9, 0.5, 0.9]);
 
 	const s_bulb_6 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulbOn.png");
@@ -939,8 +965,8 @@ function init_6() {
 				s_finger_6.hit = true;
 				s_finger_6.texture = t_lightSwitchOn;
 				s_vision_6.y = height / 2 - 100;
-				s_sound_6.y = -height
-				s_bulb_6.y = -height
+				s_sound_6.y = -height;
+				s_bulb_6.y = -height;
 				s_vision_6.x = width / 2 - 100;
 				s_sound_6.x = width / 2 + 166;
 
@@ -983,15 +1009,36 @@ function init_6() {
 	s_background_6.x = 0;
 	s_background_6.y = 0;
 
+	const s_timeline_6 = PIXI.Sprite.fromImage(
+		"/assets/timeTrials/timeArrow.png"
+	);
+	s_timeline_6.anchor.x = 0;
+	s_timeline_6.anchor.y = 0.5;
+	s_timeline_6.scale.x = 1;
+	s_timeline_6.scale.y = 1;
+	s_timeline_6.x = 0;
+	s_timeline_6.y = height * 2 / 3 - 50;
+	s_timeline_6.tint = PIXI.utils.rgb2hex([0, 0, 0]);
+	const t_timeline_6 = new PIXI.Text("Direction of Time", {
+		font: "13px Futura"
+	});
+	t_timeline_6.anchor.x = 1;
+	t_timeline_6.anchor.y = 1;
+	t_timeline_6.x = width - 10;
+	t_timeline_6.y = height * 2 / 3 - 50;
+	t_timeline_6.style.fill = PIXI.utils.rgb2hex([0.4, 0.4, 0.4]);
+
 	add(TT_6, s_background_6);
 	add(TT_6, s_switch_6);
-	add(TT_6, s_bulb_6);
 	add(TT_6, s_perception_6);
+	add(TT_6, s_sense_6);
+	add(TT_6, s_timeline_6);
+	add(TT_6, t_timeline_6);
+	add(TT_6, s_bulb_6);
 	add(TT_6, s_vision_line_6);
 	add(TT_6, s_sound_line_6);
 	add(TT_6, s_vision_line_2_6);
 	add(TT_6, s_sound_line_2_6);
-	add(TT_6, s_sense_6);
 	add(TT_6, t_sense_6);
 	add(TT_6, t_perception_6);
 	add(TT_6, s_finger_6);
@@ -1010,7 +1057,7 @@ function init_6() {
 			if (s_finger_6.hit) {
 				if (TT_6.phase === 1) {
 					if (delay_timer_6 >= delay) {
-						s_sound_6.y = Math.min(height * 2 / 3, s_sound_6.y + 1.5);
+						s_sound_6.y = Math.min(height * 2 / 3, s_sound_6.y + 2.1);
 						s_sound_line_6.clear();
 						s_sound_line_6.moveTo(width / 2 + 166, height / 2 - 100);
 						s_sound_line_6.lineStyle(3, 0xffff00);
@@ -1022,7 +1069,7 @@ function init_6() {
 							s_sound_6.y = height / 2 - 100;
 						}
 					}
-					s_vision_6.y = Math.min(height * 2 / 3, s_vision_6.y + 1.5);
+					s_vision_6.y = Math.min(height * 2 / 3, s_vision_6.y + 2.1);
 
 					if (s_vision_6.y >= height * 2 / 3 && s_sound_6.y >= height * 2 / 3) {
 						TT_6.phase = 2;
@@ -1032,7 +1079,9 @@ function init_6() {
 						s_sound_6.oy = s_sound_6.y;
 						s_vision_6.target_d =
 							(s_sound_6.x - s_vision_6.x) / 2 -
-							(s_sound_6.x - s_vision_6.x) / 2 * Math.max(0.5, TT_6.habituation);
+							(s_sound_6.x - s_vision_6.x) /
+								2 *
+								Math.max(0.5, TT_6.habituation);
 						TT_6.habituation -= 0.2;
 					}
 
@@ -1068,8 +1117,6 @@ function init_6() {
 
 init_6();
 
-
-
 function init_7() {
 	const ratio = width / height;
 
@@ -1082,8 +1129,8 @@ function init_7() {
 	s_switch_7.cursor = "pointer";
 	s_switch_7.anchor.x = 1;
 	s_switch_7.anchor.y = 0;
-	s_switch_7.scale.x = 1;
-	s_switch_7.scale.y = 1;
+	s_switch_7.scale.x = 1.5;
+	s_switch_7.scale.y = 1.5;
 	s_switch_7.x = width;
 	s_switch_7.y = 0;
 	s_switch_7.interactive = true;
@@ -1102,29 +1149,48 @@ function init_7() {
 	s_sense_7.anchor.x = 0.5;
 	s_sense_7.anchor.y = 0;
 	s_sense_7.scale.x = width;
-	s_sense_7.scale.y = 3;
+	s_sense_7.scale.y = 3 + 30;
 	s_sense_7.x = width / 2;
-	s_sense_7.y = height * 2 / 3;
-	s_sense_7.tint = PIXI.utils.rgb2hex([0.3, 0.3, 0.3]);
+	s_sense_7.y = height * 2 / 3 - 30 - 20;
+	s_sense_7.tint = PIXI.utils.rgb2hex([0.5, 0.5, 0.5]);
 	const t_sense_7 = new PIXI.Text("Sense", { font: "20px Futura" });
 	t_sense_7.anchor.x = 0;
 	t_sense_7.anchor.y = 1;
-	t_sense_7.x = 30;
-	t_sense_7.y = height * 2 / 3;
+	t_sense_7.x = 20;
+	t_sense_7.y = height * 2 / 3 - 20;
 	t_sense_7.style.fill = PIXI.utils.rgb2hex([0.3, 0.3, 0.3]);
+
+	const s_timeline_7 = PIXI.Sprite.fromImage(
+		"/assets/timeTrials/timeArrow.png"
+	);
+	s_timeline_7.anchor.x = 0;
+	s_timeline_7.anchor.y = 0.5;
+	s_timeline_7.scale.x = 1;
+	s_timeline_7.scale.y = 1;
+	s_timeline_7.x = 0;
+	s_timeline_7.y = height * 2 / 3 - 50;
+	s_timeline_7.tint = PIXI.utils.rgb2hex([0, 0, 0]);
+	const t_timeline_7 = new PIXI.Text("Direction of Time", {
+		font: "13px Futura"
+	});
+	t_timeline_7.anchor.x = 1;
+	t_timeline_7.anchor.y = 1;
+	t_timeline_7.x = width - 10;
+	t_timeline_7.y = height * 2 / 3 - 50;
+	t_timeline_7.style.fill = PIXI.utils.rgb2hex([0.4, 0.4, 0.4]);
 
 	const s_perception_7 = new PIXI.Sprite(t_square);
 	s_perception_7.anchor.x = 0.5;
 	s_perception_7.anchor.y = 0.5;
 	s_perception_7.scale.x = width;
-	s_perception_7.scale.y = 102;
+	s_perception_7.scale.y = 152;
 	s_perception_7.x = width / 2;
 	s_perception_7.y = height - 40;
 	s_perception_7.tint = PIXI.utils.rgb2hex([0.6, 0.25, 0.6]);
 	const t_perception_7 = new PIXI.Text("Perception", { font: "20px Futura" });
 	t_perception_7.anchor.x = 0;
 	t_perception_7.anchor.y = 1;
-	t_perception_7.x = 30;
+	t_perception_7.x = 20;
 	t_perception_7.y = height - 40;
 	t_perception_7.style.fill = PIXI.utils.rgb2hex([0.9, 0.5, 0.9]);
 
@@ -1151,8 +1217,8 @@ function init_7() {
 				s_finger_7.hit = true;
 				s_finger_7.texture = t_lightSwitchOn;
 				s_vision_7.y = height / 2 - 100;
-				s_sound_7.y = -height
-				s_bulb_7.y = -height
+				s_sound_7.y = -height;
+				s_bulb_7.y = -height;
 				s_vision_7.x = width / 2 - 100;
 				s_sound_7.x = width / 2 + 47;
 
@@ -1196,14 +1262,17 @@ function init_7() {
 	s_background_7.y = 0;
 
 	add(TT_7, s_background_7);
+	add(TT_7, t_timeline_7);
 	add(TT_7, s_switch_7);
-	add(TT_7, s_bulb_7);
+
 	add(TT_7, s_perception_7);
+	add(TT_7, s_sense_7);
+	add(TT_7, s_timeline_7);
+	add(TT_7, s_bulb_7);
 	add(TT_7, s_vision_line_7);
 	add(TT_7, s_sound_line_7);
 	add(TT_7, s_vision_line_2_7);
 	add(TT_7, s_sound_line_2_7);
-	add(TT_7, s_sense_7);
 	add(TT_7, t_sense_7);
 	add(TT_7, t_perception_7);
 	add(TT_7, s_finger_7);
@@ -1242,8 +1311,8 @@ function init_7() {
 						s_vision_7.oy = s_vision_7.y;
 						s_sound_7.ox = s_sound_7.x;
 						s_sound_7.oy = s_sound_7.y;
-						s_vision_7.target_d = Math.max(147/2, 147 * TT_7.habituation);
-						TT_7.habituation -= .35;
+						s_vision_7.target_d = Math.max(147, 147*1.7 * TT_7.habituation);
+						TT_7.habituation -= 0.35;
 					}
 
 					s_vision_line_7.clear();
