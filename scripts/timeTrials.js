@@ -942,7 +942,7 @@ function init_6() {
 	t_perception_6.y = height - 40 - 20;
 	t_perception_6.style.fill = PIXI.utils.rgb2hex([0.9, 0.5, 0.9]);
 
-	const s_bulb_6 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulbOn.png");
+	const s_bulb_6 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulb.png");
 	s_bulb_6.anchor.x = 0.5;
 	s_bulb_6.anchor.y = 0.4;
 	s_bulb_6.scale.x = 1.5;
@@ -958,6 +958,7 @@ function init_6() {
 	s_finger_6.x = width / 2 - 100;
 	s_finger_6.y = height / 2 - 100;
 	s_finger_6.interactive = true;
+	s_finger_6.cursor = "pointer";
 	s_finger_6.on("pointerdown", function() {
 		if (TT_6.start) {
 			if (!s_finger_6.hit) {
@@ -988,9 +989,9 @@ function init_6() {
 	s_vision_6.scale.y = 1.5;
 	s_vision_6.x = width / 2 - 100;
 	s_vision_6.y = -height;
-	const s_sound_6 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulbOn.png");
+	const s_sound_6 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulb.png");
 	s_sound_6.anchor.x = 0.5;
-	s_sound_6.anchor.y = 0.4;
+	s_sound_6.anchor.y = 0.5;
 	s_sound_6.scale.x = 1.5;
 	s_sound_6.scale.y = 1.5;
 	s_sound_6.x = width / 2 + 166;
@@ -1034,11 +1035,11 @@ function init_6() {
 	add(TT_6, s_sense_6);
 	add(TT_6, s_timeline_6);
 	add(TT_6, t_timeline_6);
-	add(TT_6, s_bulb_6);
 	add(TT_6, s_vision_line_6);
 	add(TT_6, s_sound_line_6);
 	add(TT_6, s_vision_line_2_6);
 	add(TT_6, s_sound_line_2_6);
+	add(TT_6, s_bulb_6);
 	add(TT_6, t_sense_6);
 	add(TT_6, t_perception_6);
 	add(TT_6, s_finger_6);
@@ -1194,7 +1195,7 @@ function init_7() {
 	t_perception_7.y = height - 40;
 	t_perception_7.style.fill = PIXI.utils.rgb2hex([0.9, 0.5, 0.9]);
 
-	const s_bulb_7 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulbOn.png");
+	const s_bulb_7 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulb.png");
 	s_bulb_7.anchor.x = 0.5;
 	s_bulb_7.anchor.y = 0.4;
 	s_bulb_7.scale.x = 1.5;
@@ -1240,9 +1241,9 @@ function init_7() {
 	s_vision_7.scale.y = 1.5;
 	s_vision_7.x = width / 2 - 100;
 	s_vision_7.y = -height;
-	const s_sound_7 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulbOn.png");
+	const s_sound_7 = PIXI.Sprite.fromImage("/assets/timeTrials/lightBulb.png");
 	s_sound_7.anchor.x = 0.5;
-	s_sound_7.anchor.y = 0.4;
+	s_sound_7.anchor.y = 0.5;
 	s_sound_7.scale.x = 1.5;
 	s_sound_7.scale.y = 1.5;
 	s_sound_7.x = width / 2 + 47;
@@ -1268,11 +1269,11 @@ function init_7() {
 	add(TT_7, s_perception_7);
 	add(TT_7, s_sense_7);
 	add(TT_7, s_timeline_7);
-	add(TT_7, s_bulb_7);
 	add(TT_7, s_vision_line_7);
 	add(TT_7, s_sound_line_7);
 	add(TT_7, s_vision_line_2_7);
 	add(TT_7, s_sound_line_2_7);
+	add(TT_7, s_bulb_7);
 	add(TT_7, t_sense_7);
 	add(TT_7, t_perception_7);
 	add(TT_7, s_finger_7);
