@@ -74,8 +74,18 @@
 	padding-bottom: 1px;
 }
 
+i {
+	font-family: 'M PLUS 1p';
+	font-size: 20px;
+}
+
 .citation {
 	font-family: 'M PLUS 1p';
 	text-align: right;
 	font-size: 13px;
+}
+
+.innerCitation {
+	margin-left: auto;
+	width: 70%;
 }
