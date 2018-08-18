@@ -1083,7 +1083,7 @@ function init_6() {
 	TT_6.phase = 1
 	TT_6.timer = 0
 	TT_6.habituation = 1
-	const delay = 110
+	const delay = 93
 	let delay_timer_6 = 0
 
 	let TT_percept_d = 2 / (s_perception_6.y - s_sense_6.y)
@@ -1251,6 +1251,7 @@ function init_7() {
 	s_finger_7.x = width / 2 - 100
 	s_finger_7.y = height / 2 - 100
 	s_finger_7.interactive = true
+	s_finger_7.cursor = 'pointer'
 	s_finger_7.on('pointerdown', function() {
 		if (TT_7.start) {
 			if (!s_finger_7.hit) {
