@@ -1,0 +1,15 @@
+.code-sample-section{
+	padding: 0px 20px;
+	text-align: left;
+}
+
+.code-sample-section >	p{
+	margin-bottom: 10px;
+}
+.code-sample-section >	h1{
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.code-sample-section >	h1 > a{
+	margin-right: 20px;
+}
