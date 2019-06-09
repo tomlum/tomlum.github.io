@@ -1,0 +1,160 @@
+.icons {
+  display: flex;
+  justify-content: center;
+}
+.icons > img{
+  padding-top:17px;
+  padding-bottom:17px;
+}
+.logo {
+  margin-bottom: -70px;
+}
+.icon {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+}
+h1, h2, h3, div, text, option{
+  font-family: Arial;
+  color: #222;
+}
+body {
+  margin: 16px;
+  background-color: #F1F1F1    
+}
+.legend{
+  border: solid 2px #ccc;
+  padding: 10px;
+  padding: 5px 20px;
+  margin: auto;
+}
+.legend-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+.bar-group{
+  cursor: pointer;
+}
+.bar-text{
+  font-size: 16px;
+  /*font-weight: bold;*/
+  cursor: pointer;
+}
+.bar {
+	fill: #6F257F;
+}
+.hidden-bar{
+  fill: rgba(0,0,0,0);
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #999;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+.x path {
+	display: none;
+}
+.toolTip {
+  font-size: 16px;
+	position: absolute;
+  display: none;
+  min-width: 100px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  box-shadow: 5px 5px rgba(0,0,0,0.2);
+  padding: 14px;
+  text-align: center;
+}
+h3, option{
+  font-size: 16px;
+  font-weight: bold;
+}
+#selectSort, #selectLyricType{
+  height: 25px;
+}
+text {
+  user-select: none;
+  font-size: 16px;
+}
+.made-by{
+  text-align: center;
+  color: #777;
+  transform: rotate(-90deg);
+}
+.header{
+  display: flex;
+  color: #222;
+  font-size: 15px;
+}
+.fire{
+  display: inline;
+  color: #8a2a01;
+}
+.post-script{
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin-left: 40%;
+  margin-top: 30px;
+  color: #777;
+}
+p {
+  text-indent: -10px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+a {
+  color: #644;
+}
+
+@keyframes loading-anim {
+  0%, 100% {
+    padding: 5px 5px 0px 0px;
+  }
+  25% {
+    padding: 0px 5px 5px 0px;
+  }
+  50% {
+    padding: 0px 0px 5px 5px;
+  }
+  75% {
+    padding: 5px 0px 0px 5px;
+  }
+}
+
+#loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  animation: loading-anim 1s ease-in-out infinite;
+}
+
+.o2{
+  display: none;
+}
+@media screen and (max-width: 950px) {
+    .header {
+      flex-direction: column;
+    }
+
+    .legend {
+      order: 1;
+      align-items: center;
+    }
+
+    .o{
+      display: none;
+    }
+    .o2{
+      display: inline;
+    }
+
+    .post-script{
+      max-width: 100%;
+      margin-left: 0%;
+    }
+}

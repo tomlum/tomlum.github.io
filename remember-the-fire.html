@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png?v=A0Rrm0rq0k">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=A0Rrm0rq0k">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=A0Rrm0rq0k">
+    <link rel="manifest" href="/manifest.json?v=A0Rrm0rq0k">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=A0Rrm0rq0k" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico?v=A0Rrm0rq0k">
+    <meta name="theme-color" content="#aaaaaa">
+    <title>Tom Lum</title>
+    <meta property="og:image" content="https://s3.us-east-2.amazonaws.com/tomlum/logo.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The website for the things I make">
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-46705501-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- CSS -->
+    <link href="css/remember-the-fire.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
+    <script src="./utils/d3-selection-multi.v0.4.min.js"></script>
+    <script src="./scripts/remember-the-fire.js"></script>
+</head>
+
+<body>
+    <div class="icons">
+      <div>
+        <!-- SOCIAL BUTTONS -->
+        <a class="icon" href="/">
+            <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-logo.png" width="70">
+        </a>
+        <a class="icon" href="https://www.youtube.com/channel/UCim0JOU5CqZG3jKhU2c_yeg" target="_blank">
+            <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-youtube.png" alt="Twitter" width="70">
+        </a>
+        <a class="icon" href="https://twitter.com/tomlumperson" target="_blank">
+            <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-twitter.png" alt="Twitter" width="70">
+        </a>
+        <a class="icon" href="mailto:TomLumPerson@gmail.com" target="_blank">
+            <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-mail.png" alt="Mail" width="70">
+        </a>
+        <br>
+      </div>
+    </div>
+    <hr style="height: 3px;background-color: #222;">
+    <br/>
+
+    <div class="header">
+      <div class="legend" style="display: flex;
+        flex-direction: column;
+        justify-content: center;">
+
+        <h3>Sort by <select id="selectSort">
+            <option value="order" selected>lyric order</option>
+            <option value="most">most views</option>
+            <option value="least">least views</option>
+            <option value="most2014">most views (2014)</option>
+            <option value="least2014">least views (2014)</option>
+            <option value="biggest increase">biggest increase in views</option>
+            <option value="biggest decrease">biggest decrease in views</option>
+        </select>
+        </h3>
+        <svg id="legend-chart" width="260" height="70"></svg>
+      </div>
+      <div style="display: flex; flex: 1; text-align: center; justify-content: center; align-items: center;">
+        <h1>
+          <div class="fire">Did We Remember the Fire?</div><br>The Modern Relevancy of <br class="o2">Every Line of <br class="o">Billy Joel's <br class="o2"><a href="https://www.youtube.com/watch?v=eFTLKWw542g" class="fire">"We Didn't Start the Fire"</a>
+        </h1>
+      </div>
+    </div>
+    <div id="loading"> Loading... </div>
+    <svg id="chart" width="100%" height="0"></svg>
+
+    <div class="post-script">
+      <p>
+        • Data was collected using Wikipedia's extraordinary <a href="https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews">page view api</a></p>.
+      <p>
+        • Chart was created using the excellent <a href="https://d3js.org/">D3</a>.
+      </p>
+      <p>
+        • 2014 scaled values were calculated by dividing each value by the 2014 mean and then multiplying them by the 2019 mean.
+      </p>
+    </div>
+    
+</body>
+<footer>
+</footer>
+
+</html>

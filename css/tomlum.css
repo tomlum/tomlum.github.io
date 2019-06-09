@@ -12,10 +12,15 @@ body {
     -ms-user-select: none;
 }
 
+.icons{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
 .center{
- text-align:center;
- max-width: 750px;
- margin:auto;
+    text-align:center;
+    max-width: 750px;
+    margin:auto;
 }
 
 button{
@@ -84,6 +89,7 @@ hr {
     height: 10px;
     background-color: #bbb;
     /*margin:0px 0px;*/
+    margin-bottom: 0px;
     width:300px;
 }
 
@@ -155,7 +161,7 @@ p {
     text-decoration: none;
 }
 
-.center > img{
+.icons > img{
     padding-top:17px;
     padding-bottom:17px;
 }
