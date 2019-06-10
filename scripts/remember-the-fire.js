@@ -11,11 +11,11 @@ function commafy(x) {
 }
 
 const lyricsData = [
-  {lyric:"Harry Truman", wikiName: "Harry S. Truman", addendum: " (Harry S. Truman)", count:188572, oldCount: 179888.44070428162, url: "Harry_S._Truman", type: "person"},
+  {lyric:"Harry Truman", wikiName: "Harry S. Truman", addendum: " (Harry S. Truman)", count:188572, oldCount: 179888.44070428162, url: "Harry_S._Truman._Truman", type: "person"},
   {lyric:"Doris Day", wikiName: "Doris Day", addendum: "", count:180062, oldCount: 160540.7601079542, url: "Doris_Day", type: "person"},
   {lyric:"Red China", wikiName: "Communist Party of China", addendum: " (Communist Party of China)", count:78351, oldCount: 51836.316760066264, url: "Communist_Party_of_China", type: "history"},
   {lyric:"Johnnie Ray", wikiName: "Johnnie Ray", addendum: " (Johnnie Ray)", count:15651, oldCount: 15744.855185173505, url: "Johnnie_Ray", type: "person"},
-  {lyric:"South Pacific", wikiName: "South Pacific (musical)", addendum: " (musical)", count:24372, oldCount: 31186.06667384453, url: "South_Pacific_(musical)", type: "art"},
+  {lyric:"South Pacific", wikiName: "South Pacific (musical)", addendum: " (musical)", count:24372, oldCount: 31186.06667384453, url: "South_Pacific_(musical)(musical)", type: "art"},
   {lyric:"Walter Winchell", wikiName: "Walter Winchell", addendum: "", count:9309, oldCount: 9198.54496098534, url: "Walter_Winchell", type: "person"},
   {lyric:"Joe DiMaggio", wikiName: "Joe DiMaggio", addendum: "", count:86712, oldCount: 117249.8445208863, url: "Joe_DiMaggio", type: "person"},
   {lyric:"Joe McCarthy", wikiName: "Joe McCarthy", addendum: " (Joseph McCarthy)", count:79975, oldCount: 64601.74563343585, url: "Joseph_McCarthy", type: "person"},
@@ -31,7 +31,7 @@ const lyricsData = [
   {lyric:"Brando", wikiName: "Marlon Brando", addendum: " (Marlon Brando)", count:366801, oldCount: 318729.21108953404, url: "Marlon_Brando", type: "person"},
   {lyric:"The King and I", wikiName: "The King and I", addendum: "", count:44626, oldCount: 47176.3155402731, url: "The_King_and_I", type: "art"},
   {lyric:"The Catcher in the Rye", wikiName: "The Catcher in the Rye", addendum: "", count:171571, oldCount: 181419.05280705943, url: "The_Catcher_in_the_Rye", type: "art"},
-  {lyric:"Eisenhower", wikiName: "Dwight D. Eisenhower", addendum: " (Dwight D. Eisenhower)", count:253897, oldCount: 241614.86643614294, url: "Dwight_D._Eisenhower", type: "person"},
+  {lyric:"Eisenhower", wikiName: "Dwight D. Eisenhower", addendum: " (Dwight D. Eisenhower)", count:253897, oldCount: 241614.86643614294, url: "Dwight_D._Eisenhower._Eisenhower", type: "person"},
   {lyric:"Vaccine", wikiName: "Polio Vaccine", addendum: " (Polio Vaccine)", count:46848, oldCount: 47831.93805231315, url: "Polio_vaccine", type: "history"},
   {lyric:"England's got a new Queen", wikiName: "Elizabeth II", addendum: " (Elizabeth II)", count:1435839, oldCount: 840591.0976911213, url: "Elizabeth_II", type: "person"},
   {lyric:"Marciano", wikiName: "Rocky Marciano", addendum: " (Rocky Marciano)", count:77587, oldCount: 107322.554688295, url: "Rocky_Marciano", type: "person"},
@@ -45,7 +45,7 @@ const lyricsData = [
   {lyric:"Campanella", wikiName: "Roy Campanella", addendum: " (Roy Campanella)", count:12462, oldCount: 14281.168631828898, url: "Roy_Campanella", type: "person"},
   {lyric:"Communist Bloc", wikiName: "Communist Bloc", addendum: "", count:336, oldCount: 920.8459857197666, url: "Communist_Bloc", type: "history"},
   {lyric:"Roy Cohn", wikiName: "Roy Cohn", addendum: "", count:89624, oldCount: 20221.430825038642, url: "Roy_Cohn", type: "person"},
-  {lyric:"Juan Peron", wikiName: "Juan Peron", addendum: "", count:47829, oldCount: 32968.26926801011, url: "Juan_Per%C3%B3n", type: "person"},
+  {lyric:"Juan Peron", wikiName: "Juan Peron", addendum: "", count:47829, oldCount: 32968.26926801011, url: "Juan_Per%C3%B3n%C3%B3n", type: "person"},
   {lyric:"Toscanini", wikiName: "Arturo Toscanini", addendum: " (Arturo Toscanini)", count:11466, oldCount: 12305.625561522964, url: "Arturo_Toscanini", type: "person"},
   {lyric:"Dacron", wikiName: "Dacron", addendum: "", count:3649, oldCount: 2602.6602557355445, url: "Dacron", type: "history"},
   {lyric:"Dien Bien Phu Falls", wikiName: "Battle of Dien Bien Phu", addendum: " (Battle of Dien Bien Phu)", count:30851, oldCount: 38146.3238148973, url: "Battle_of_Dien_Bien_Phu", type: "history"},
@@ -57,19 +57,19 @@ const lyricsData = [
   {lyric:"Peter Pan", wikiName: "Peter Pan", addendum: "", count:96478, oldCount: 139079.96725637483, url: "Peter_Pan", type: "art"},
   {lyric:"Elvis Presley", wikiName: "Elvis Presley", addendum: "", count:802167, oldCount: 587983.0900795619, url: "Elvis_Presley", type: "person"},
   {lyric:"Disneyland", wikiName: "Disneyland", addendum: "", count:99339, oldCount: 148854.8155597016, url: "Disneyland", type: "art"},
-  {lyric:"Chou En Lai", wikiName: "Zhou Enlai", addendum: " (Zhou Enlai)", count:81669, oldCount: 107421.70365041826, url: "Brigitte_Bardot", type: "person"},
-  {lyric:"Bardot", wikiName: "Brigitte Bardot", addendum: " (Brigitte Bardot)", count:37923, oldCount: 33183.9182606282, url: "Hungarian_Revolution_of_1956", type: "person"},
-  {lyric:"Budapest", wikiName: "Hungarian Revolution of 1956", addendum: " (Hungarian Revolution of 1956)", count:82494, oldCount: 11819.795647118995, url: "Civil_rights_movement", type: "history"},
-  {lyric:"Alabama", wikiName: "Civil rights movement", addendum: " (Civil rights movement)", count:152873, oldCount: 102290.7448605396, url: "Nikita_Khrushchev", type: "history"},
-  {lyric:"Krushchev", wikiName: "Nikita Khrushchev", addendum: " (Nikita Khrushchev)", count:179498, oldCount: 419422.4182978627, url: "Grace_Kelly", type: "person"},
-  {lyric:"Princess Grace", wikiName: "Grace Kelly", addendum: " (Grace Kelly)", count:502, oldCount: 867.5534185785149, url: "Peyton_Place", type: "person"},
-  {lyric:"Peyton Place", wikiName: "Peyton Place", addendum: "", count:98380, oldCount: 54339.82805367855, url: "Suez_Crisis", type: "art"},
-  {lyric:"Trouble in the Suez", wikiName: "Suez Crisis", addendum: " (Suez Crisis)", count:40836, oldCount: 36701.2276919508, url: "Little_Rock_Nine", type: "history"},
-  {lyric:"Little Rock", wikiName: "Little Rock Nine", addendum: " (Little Rock Nine)", count:22329, oldCount: 25688.25672410983, url: "Boris_Pasternak", type: "history"},
-  {lyric:"Pasternak", wikiName: "Boris Pasternak", addendum: " (Boris Pasternak)", count:52330, oldCount: 82929.43128192025, url: "Mickey_Mantle", type: "person"},
-  {lyric:"Mickey Mantle", wikiName: "Mickey Mantle", addendum: "", count:72887, oldCount: 108803.59231001118, url: "Jack_Kerouac", type: "person"},
-  {lyric:"Kerouac", wikiName: "Jack Kerouac", addendum: " (Jack Kerouac)", count:55566, oldCount: 61634.71294189732, url: "Sputnik_1", type: "person"},
-  {lyric:"Sputnik", wikiName: "Sputnik I", addendum: " (Sputnik I)", count:32585, oldCount: 23881.266889413437, url: "Zhou_Enlai", type: "history"},
+  {lyric:"Chou En Lai", wikiName: "Zhou Enlai", addendum: " (Zhou Enlai)", count:81669, oldCount: 107421.70365041826, url: "Zhou_Enlai", type: "person"},
+  {lyric:"Bardot", wikiName: "Brigitte Bardot", addendum: " (Brigitte Bardot)", count:37923, oldCount: 33183.9182606282, url: "Brigitte_Bardot", type: "person"},
+  {lyric:"Budapest", wikiName: "Hungarian Revolution of 1956", addendum: " (Hungarian Revolution of 1956)", count:82494, oldCount: 11819.795647118995, url: "Hungarian_Revolution_of_1956", type: "history"},
+  {lyric:"Alabama", wikiName: "Civil rights movement", addendum: " (Civil rights movement)", count:152873, oldCount: 102290.7448605396, url: "Civil_rights_movement", type: "history"},
+  {lyric:"Krushchev", wikiName: "Nikita Khrushchev", addendum: " (Nikita Khrushchev)", count:179498, oldCount: 419422.4182978627, url: "Nikita_Khrushchev", type: "person"},
+  {lyric:"Princess Grace", wikiName: "Grace Kelly", addendum: " (Grace Kelly)", count:502, oldCount: 867.5534185785149, url: "Grace_Kelly", type: "person"},
+  {lyric:"Peyton Place", wikiName: "Peyton Place", addendum: "", count:98380, oldCount: 54339.82805367855, url: "Peyton_Place", type: "art"},
+  {lyric:"Trouble in the Suez", wikiName: "Suez Crisis", addendum: " (Suez Crisis)", count:40836, oldCount: 36701.2276919508, url: "Suez_Crisis", type: "history"},
+  {lyric:"Little Rock", wikiName: "Little Rock Nine", addendum: " (Little Rock Nine)", count:22329, oldCount: 25688.25672410983, url: "Little_Rock_Nine", type: "history"},
+  {lyric:"Pasternak", wikiName: "Boris Pasternak", addendum: " (Boris Pasternak)", count:52330, oldCount: 82929.43128192025, url: "Boris_Pasternak", type: "person"},
+  {lyric:"Mickey Mantle", wikiName: "Mickey Mantle", addendum: "", count:72887, oldCount: 108803.59231001118, url: "Mickey_Mantle", type: "person"},
+  {lyric:"Kerouac", wikiName: "Jack Kerouac", addendum: " (Jack Kerouac)", count:55566, oldCount: 61634.71294189732, url: "Jack_Kerouac", type: "person"},
+  {lyric:"Sputnik", wikiName: "Sputnik I", addendum: " (Sputnik I)", count:32585, oldCount: 23881.266889413437, url: "Sputnik_1", type: "history"},
   {lyric:"Bridge on the River Kwai", wikiName: "The Bridge on the River Kwai", addendum: "", count:44642, oldCount: 77321.31811182342, url: "The_Bridge_on_the_River_Kwai", type: "art"},
   {lyric:"Lebanon", wikiName: "1958 Lebanon Crisis", addendum: " (1958 Lebanon Crisis)", count:7030, oldCount: 7408.906194660518, url: "1958_Lebanon_crisis", type: "history"},
   {lyric:"Charles de Gaulle", wikiName: "Charles de Gaulle", addendum: "", count:92382, oldCount: 82159.78746343845, url: "Charles_de_Gaulle", type: "person"},
@@ -77,18 +77,18 @@ const lyricsData = [
   {lyric:"Starkweather homicide", wikiName: "Charles Starkweather", addendum: " (Charles Starkweather)", count:32481, oldCount: 25002.8895234328, url: "Charles_Starkweather", type: "person"},
   {lyric:"Children of Thalidomide", wikiName: "Thalidomide", addendum: " (Thalidomide)", count:74394, oldCount: 75540.35487968438, url: "Thalidomide", type: "history"},
   {lyric:"Buddy Holly", wikiName: "Buddy Holly", addendum: "", count:138173, oldCount: 180058.2333019177, url: "Buddy_Holly", type: "person"},
-  {lyric:"Ben-Hur", wikiName: "Ben-Hur (1959 Film)", addendum: " (1959 Film)", count:82105, oldCount: 81248.856373931, url: "Ben-Hur_(1959_film)", type: "art"},
+  {lyric:"Ben-Hur", wikiName: "Ben-Hur (1959 Film)", addendum: " (1959 Film)", count:82105, oldCount: 81248.856373931, url: "Ben-Hur_(1959_film)-Hur_(1959_film)", type: "art"},
   {lyric:"Space Monkey", wikiName: "Monkeys and apes in space", addendum: " (Monkeys and apes in space)", count:13114, oldCount: 12738.162908785682, url: "Monkeys_and_apes_in_space", type: "history"},
   {lyric:"Mafia", wikiName: "American Mafia", addendum: " (American Mafia)", count:119648, oldCount: 97066.83391867041, url: "American_Mafia", type: "history"},
   {lyric:"Hula hoops", wikiName: "Hula hoops", addendum: "", count:10911, oldCount: 14379.078231925614, url: "Hula_hoop", type: "history"},
   {lyric:"Castro", wikiName: "Fidel Castro", addendum: " (Fidel Castro)", count:181502, oldCount: 302035.00459203037, url: "Fidel_Castro", type: "person"},
   {lyric:"Edsel is a no-go", wikiName: "Edsel", addendum: " (Edsel)", count:19815, oldCount: 32566.715971410908, url: "Edsel", type: "history"},
-  {lyric:"U-2", wikiName: "1960 U-2 Incident", addendum: " (1960 U-2 Incident)", count:21584, oldCount: 38818.05803328238, url: "1960_U-2_incident", type: "history"},
+  {lyric:"U-2", wikiName: "1960 U-2 Incident", addendum: " (1960 U-2 Incident)", count:21584, oldCount: 38818.05803328238, url: "1960_U-2_incident-2_incident", type: "history"},
   {lyric:"Syngman Rhee", wikiName: "Syngman Rhee", addendum: "", count:18650, oldCount: 16048.498881675987, url: "Syngman_Rhee", type: "person"},
   {lyric:"Payola", wikiName: "Payola", addendum: "", count:14849, oldCount: 19855.819027209123, url: "Payola", type: "history"},
-  {lyric:"Kennedy", wikiName: "John F. Kennedy", addendum: " (John F. Kennedy)", count:566399, oldCount: 491623.9318780463, url: "John_F._Kennedy", type: "person"},
+  {lyric:"Kennedy", wikiName: "John F. Kennedy", addendum: " (John F. Kennedy)", count:566399, oldCount: 491623.9318780463, url: "John_F._Kennedy._Kennedy", type: "person"},
   {lyric:"Chubby Checker", wikiName: "Chubby Checker", addendum: " (Chubby Checker)", count:29487, oldCount: 27771.6242907248, url: "Chubby_Checker", type: "person"},
-  {lyric:"Psycho", wikiName: "Psycho (1960 film)", addendum: " (1960 film)", count:85857, oldCount: 149488.12955526393, url: "Psycho_(1960_film)", type: "art"},
+  {lyric:"Psycho", wikiName: "Psycho (1960 film)", addendum: " (1960 film)", count:85857, oldCount: 149488.12955526393, url: "Psycho_(1960_film)(1960_film)", type: "art"},
   {lyric:"Belgians in the Congo", wikiName: "Congo Crisis", addendum: " (Congo Crisis)", count:31804, oldCount: 17533.254589471784, url: "Congo_Crisis", type: "history"},
   {lyric:"Hemingway", wikiName: "Ernest Hemingway", addendum: " (Ernest Hemingway)", count:296433, oldCount: 393389.6189303745, url: "Ernest_Hemingway", type: "person"},
   {lyric:"Eichmann", wikiName: "Adolf Eichmann", addendum: " (Adolf Eichmann)", count:229728, oldCount: 97928.19052711622, url: "Adolf_Eichmann", type: "person"},
@@ -96,7 +96,7 @@ const lyricsData = [
   {lyric:"Dylan", wikiName: "Bob Dylan", addendum: " (Bob Dylan)", count:306029, oldCount: 292628.2468105862, url: "Bob_Dylan", type: "person"},
   {lyric:"Berlin", wikiName: "Berlin Wall", addendum: " (Berlin Wall)", count:252693, oldCount: 214372.44973075105, url: "Berlin_Wall", type: "history"},
   {lyric:"Bay of Pigs Invasion", wikiName: "Bay of Pigs Invasion", addendum: "", count:93646, oldCount: 110399.89060019563, url: "Bay_of_Pigs_Invasion", type: "history"},
-  {lyric:"Lawrence of Arabia", wikiName: "Lawrence of Arabia", addendum: "", count:98041, oldCount: 181388.0687563959, url: "Lawrence_of_Arabia_(film)", type: "art"},
+  {lyric:"Lawrence of Arabia", wikiName: "Lawrence of Arabia", addendum: "", count:98041, oldCount: 181388.0687563959, url: "Lawrence_of_Arabia_(film)(film)", type: "art"},
   {lyric:"British Beatlemania", wikiName: "The Beatles", addendum: " (The Beatles)", count:434683, oldCount: 466709.0370584979, url: "The_Beatles", type: "person"},
   {lyric:"Ole Miss", wikiName: "Ole Miss riot of 1962", addendum: " (Ole Miss riot of 1962)", count:4839, oldCount: 5842.352593113028, url: "Ole_Miss_riot_of_1962", type: "history"},
   {lyric:"John Glenn", wikiName: "John Glenn", addendum: "", count:78537, oldCount: 573538.3256602297, url: "John_Glenn", type: "history"},
@@ -117,8 +117,8 @@ const lyricsData = [
   {lyric:"Palestine", wikiName: "Israeli-Palestinian conflict", addendum: " (Israeli-Palestinian conflict)", count:80738, oldCount: 74058.07789594166, url: "flict", type: "history"},
   {lyric:"Terror on the air line", wikiName: "Operation Entebbe", addendum: " (Operation Entebbe)", count:57339, oldCount: 59655.451785511774, url: "Operation_Entebbe", type: "history"},
   {lyric:"Ayatollah's in Iran", wikiName: "Iranian Revolution", addendum: " (Iranian Revolution)", count:77193, oldCount: 72215.1465624756, url: "Iranian_Revolution", type: "history"},
-  {lyric:"Russians in Afghanistan", wikiName: "Soviet-Afghan War", addendum: " (Soviet-Afghan War)", count:1129, oldCount: 2394.447435276701, url: "Soviet-Afghan_War", type: "history"},
-  {lyric:"Wheel of Fortune", wikiName: "Wheel of Fortune (U.S. game show)", addendum: "  (U.S. game show)", count:90659, oldCount: 69849.20445380932, url: "w)", type: "art"},
+  {lyric:"Russians in Afghanistan", wikiName: "Soviet-Afghan War", addendum: " (Soviet-Afghan War)", count:1129, oldCount: 2394.447435276701, url: "Soviet-Afghan_War-Afghan_War", type: "history"},
+  {lyric:"Wheel of Fortune", wikiName: "Wheel of Fortune (U.S. game show)", addendum: "  (U.S. game show)", count:90659, oldCount: 69849.20445380932, url: "w))", type: "art"},
   {lyric:"Sally Ride", wikiName: "Sally Ride", addendum: "", count:46992, oldCount: 54483.59404875727, url: "Sally_Ride", type: "person"},
   {lyric:"Heavy metal suicide", wikiName: "Heavy metal music", addendum: " (Heavy metal music)", count:75222, oldCount: 106059.64478324998, url: "Heavy_metal_music", type: "art"},
   {lyric:"Foreign debts", wikiName: "Foreign debts", addendum: " (United States balance of trade)", count:545, oldCount: 142.5266330521846, url: "United_States_balance_of_trade", type: "history"},
@@ -241,7 +241,9 @@ function updateData(){
   newBarGroups.append("rect")
     .attrs({
       class: "hidden-bar",
-      height: yScale.bandwidth()*(1/(1-0.2))
+      fill: "orange",
+      height: yScale.bandwidth()*(1/(1-0.2)),
+      y: -2
     })
     .on("mousemove", d => {
         tooltip
@@ -256,13 +258,13 @@ function updateData(){
   newBarGroups.append("text").attrs({
     class: "bar-text",
     x: -8,
-    y: 8,
+    y: 12,
     "text-anchor": "end"
   })
   newBarGroups.append("rect").attrs({
       class: "bar-tick",
       x: -6,
-      y: 5,
+      y: 7,
       width: 4,
       height: 1,
       fill: "gray"
@@ -310,12 +312,6 @@ function updateData(){
       height: 0
     }) 
   }
-    
-  chart.selectAll(".hidden-bar")
-    .attrs({
-      x: 1,
-      y: 0
-    })
 
   // Text
   switch(lyricType){
