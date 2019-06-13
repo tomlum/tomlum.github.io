@@ -19,6 +19,9 @@ h1, h2, h3, div, text, option{
   font-family: Arial;
   color: #222;
 }
+h1{
+  font-size: 25px;
+}
 body {
   margin: 16px;
   background-color: #F1F1F1    
@@ -30,14 +33,14 @@ body {
   margin: auto;
 }
 .legend-text {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
 }
 .bar-group{
   cursor: pointer;
 }
 .bar-text{
-  font-size: 16px;
+  font-size: 12px;
   /*font-weight: bold;*/
   cursor: pointer;
 }
@@ -58,7 +61,7 @@ body {
 	display: none;
 }
 .toolTip {
-  font-size: 16px;
+  font-size: 12px;
 	position: absolute;
   display: none;
   min-width: 100px;
@@ -75,9 +78,13 @@ h3, option{
 #selectSort, #selectLyricType{
   height: 25px;
 }
-text {
-  user-select: none;
+.check-text{
   font-size: 16px;
+}
+text {
+  font-weight: bold;
+  user-select: none;
+  font-size: 12px;
 }
 .made-by{
   text-align: center;

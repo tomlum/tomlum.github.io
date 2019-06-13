@@ -328,7 +328,7 @@ function updateData(){
   redraw()
 }
 
-const margin = {top: 80, right: 20, bottom: 30, left: 220}
+const margin = {top: 80, right: 20, bottom: 30, left: 185}
 let width = 200
 // CHART
 const chartDiv = document.getElementById("chart")
@@ -359,12 +359,13 @@ const xAxisLabel = chart.append("text")
     .attr("y", -50)
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .text("Wikipedia Page Views in One Month")
+    .text("Wikipefkjefedia Page Views in One Month")
 xAxis.append("image").attrs({
   "xlink:href": "https://tomlum.s3.us-east-2.amazonaws.com/billy.png",
-  width: 100,
-  y: -72,
-  x: -106
+  width: 90,
+  height: 80,
+  y: -75,
+  x: -92
 })
         // .attr("x", function(d) { return -25;})
         // .attr("y", function(d) { return -25;})
@@ -387,6 +388,7 @@ function makeCheckBox(text, func, color, x, y, initial = true){
 
   legend.append("text")
   .attrs({
+    class: "check-text",
     x: 20,
     y: 1,
     "dominant-baseline": "middle",
