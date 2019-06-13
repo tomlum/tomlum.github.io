@@ -143,6 +143,13 @@ a {
 .o2{
   display: none;
 }
+
+@media screen and (max-width: 500px) {
+    #billy {
+      display: none;
+    }
+}
+
 @media screen and (max-width: 950px) {
     .header {
       flex-direction: column;
@@ -163,5 +170,15 @@ a {
     .post-script{
       max-width: 100%;
       margin-left: 0%;
+    }
+
+    #chart{
+      margin-left: -14px;
+      margin-right: -14px;
+    }
+
+    #title{
+      margin-top: -5px;
+      margin-bottom: 25px;
     }
 }

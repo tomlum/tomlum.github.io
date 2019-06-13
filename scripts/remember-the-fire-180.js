@@ -359,8 +359,9 @@ const xAxisLabel = chart.append("text")
     .attr("y", -50)
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .text("Wikipefkjefedia Page Views in One Month")
+    .text("Wikipedia Page Views in One Month")
 xAxis.append("image").attrs({
+  id: "billy",
   "xlink:href": "https://tomlum.s3.us-east-2.amazonaws.com/billy.png",
   width: 90,
   height: 80,
