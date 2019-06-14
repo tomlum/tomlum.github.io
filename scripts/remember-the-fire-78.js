@@ -154,6 +154,7 @@ const colorMap = {
 }
 
 let chartData = []
+let chartMax = 0
 function updateData(){
 
   // ------ FILTERS -------
@@ -190,9 +191,10 @@ function updateData(){
 
   // ------ Axes Adjustments ------ 
 
+  chartMax = d3.max(chartData, d => d.count)
   const xScale = d3.scaleLinear()
     .range([0, width])
-    .domain([0, d3.max(chartData, d => d.count)])
+    .domain([0, chartMax])
 
   xAxis
     .attr("class", "x axis")
@@ -328,7 +330,7 @@ function updateData(){
   redraw()
 }
 
-const margin = {top: 80, right: 20, bottom: 30, left: 185}
+const margin = {top: 80, right: 20, bottom: 30, left: 165}
 let width = 200
 // CHART
 const chartDiv = document.getElementById("chart")
@@ -470,8 +472,9 @@ function redraw(){
   chart.selectAll(".hidden-bar")
     .attr("width", d => width)
 
+
   xAxis.call(d3.axisTop(xScale)
-    .ticks(width/85)
+    .ticks(Math.max(width/85, 3))
     .tickFormat(d3.formatPrefix("1.0", 1e4))
   )
 

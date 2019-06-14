@@ -144,9 +144,15 @@ a {
   display: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 501px) {
     #billy {
       display: none;
+    }
+    text {
+      font-size: 10px;
+    }
+    .bar-text {
+      font-size: 10px;
     }
 }
 
