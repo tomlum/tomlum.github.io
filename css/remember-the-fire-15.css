@@ -144,18 +144,6 @@ a {
   display: none;
 }
 
-@media screen and (max-width: 501px) {
-    #billy {
-      display: none;
-    }
-    text {
-      font-size: 10px;
-    }
-    .bar-text {
-      font-size: 10px;
-    }
-}
-
 @media screen and (max-width: 950px) {
     .header {
       flex-direction: column;
@@ -188,3 +176,21 @@ a {
       margin-bottom: 25px;
     }
 }
+
+
+@media screen and (max-width: 501px) {
+    #billy {
+      display: none;
+    }
+    text {
+      font-size: 10px;
+    }
+    #chart{
+      margin-left: -45px;
+      margin-right: -14px;
+    }
+    .bar-text {
+      font-size: 10px;
+    }
+}
+

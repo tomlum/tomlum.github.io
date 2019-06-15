@@ -330,7 +330,7 @@ function updateData(){
   redraw()
 }
 
-const margin = {top: 80, right: 20, bottom: 30, left: 165}
+const margin = {top: 80, right: 20, bottom: 30, left: 185}
 let width = 200
 // CHART
 const chartDiv = document.getElementById("chart")
