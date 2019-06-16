@@ -155,6 +155,7 @@ const colorMap = {
 
 let chartData = []
 let chartMax = 0
+let height = 0
 function updateData(){
 
   // ------ FILTERS -------
@@ -185,7 +186,7 @@ function updateData(){
 
   // ------ Height Adjustment ------ 
 
-  const height = 20*chartData.length
+  height = 20*chartData.length
 
   chartFrame.apply(transit).attr("height", height+margin.bottom+margin.top)
 
@@ -362,7 +363,8 @@ const xAxisLabel = chart.append("text")
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Wikipedia Page Views in One Month")
-xAxis.append("image").attrs({
+    
+chart.append("image").attrs({
   id: "billy",
   "xlink:href": "https://tomlum.s3.us-east-2.amazonaws.com/billy.png",
   width: 90,
@@ -370,10 +372,6 @@ xAxis.append("image").attrs({
   y: -75,
   x: -92
 })
-        // .attr("x", function(d) { return -25;})
-        // .attr("y", function(d) { return -25;})
-        // .attr("height", 50)
-        // .attr("width", 50);
 
 function makeCheckBox(text, func, color, x, y, initial = true){
   const legend = legendFrame.append("g").attr("class", "legend-text")
@@ -473,10 +471,12 @@ function redraw(){
     .attr("width", d => width)
 
 
-  xAxis.call(d3.axisTop(xScale)
+  xAxis
+    .call(d3.axisTop(xScale)
     .ticks(Math.max(width/85, 3))
+    .tickSize(height)
     .tickFormat(d3.formatPrefix("1.0", 1e4))
-  )
+  ).attr("transform", "translate(0," + height + ")")
 
   xAxisLabel.attr("x",0 + (width / 2))
   d3.select('.tick').remove()
