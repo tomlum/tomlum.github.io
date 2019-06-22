@@ -77,6 +77,7 @@ h3, option{
 }
 #selectSort, #selectLyricType{
   height: 25px;
+  font-size: 16px;
 }
 .check-text{
   font-size: 16px;
