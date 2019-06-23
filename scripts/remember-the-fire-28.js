@@ -192,7 +192,7 @@ function updateData(){
 
   // ------ Axes Adjustments ------ 
 
-  chartMax = d3.max(chartData, d => d.count)
+  chartMax = d3.max(chartData, d => Math.max(d.count, d.oldCount))
   const xScale = d3.scaleLinear()
     .range([0, width])
     .domain([0, chartMax])
@@ -331,7 +331,7 @@ function updateData(){
   redraw()
 }
 
-const margin = {top: 80, right: 20, bottom: 30, left: 185}
+const margin = {top: 80, right: 17, bottom: 30, left: 185}
 let width = 200
 // CHART
 const chartDiv = document.getElementById("chart")
@@ -473,7 +473,7 @@ function redraw(){
 
   xAxis
     .call(d3.axisTop(xScale)
-    .ticks(Math.max(width/85, 3))
+    .ticks(Math.max(width/70, 5))
     .tickSize(height)
     .tickFormat(d3.formatPrefix("1.0", 1e4))
   ).attr("transform", "translate(0," + height + ")")
