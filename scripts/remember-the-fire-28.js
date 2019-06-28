@@ -11,7 +11,7 @@ function commafy(x) {
 }
 
 const lyricsData = [
-  {lyric:"Harry Truman", wikiName: "Harry S. Truman", addendum: " (Harry S. Truman)", count:188572, oldCount: 163452, url: "Harry_S._Truman._Truman", type: "person"},
+  {lyric:"Harry Truman", wikiName: "Harry S. Truman", addendum: " (Harry S. Truman)", count:188572, oldCount: 163452, url: "Harry_S._Truman", type: "person"},
   {lyric:"Doris Day", wikiName: "Doris Day", addendum: "", count:180062, oldCount: 146857, url: "Doris_Day", type: "person"},
   {lyric:"Red China", wikiName: "Communist Party of China", addendum: " (Communist Party of China)", count:78351, oldCount: 60654, url: "Communist_Party_of_China", type: "history"},
   {lyric:"Johnnie Ray", wikiName: "Johnnie Ray", addendum: " (Johnnie Ray)", count:15651, oldCount: 14543, url: "Johnnie_Ray", type: "person"},
