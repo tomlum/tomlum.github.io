@@ -1,6 +1,6 @@
 body {
     font-size: 20px;
-    font-family: Futura, "Trebuchet MS", 'Arial';
+    font-family: Georgia, Serif;
     background-color: #777;
     margin:auto;
     min-width:300px;
@@ -23,6 +23,10 @@ body {
     margin:auto;
 }
 
+.click{
+    cursor: pointer;
+}
+
 button{
     font-size: 15px;
     font-family: Futura, "Trebuchet MS", 'Arial';
@@ -38,32 +42,32 @@ h1 {
     color:#bbb;
 }
 
-pre {
+h1 {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 22px;
-    text-align:center;
     color:#fff;
-    margin-top: 10px;
+    text-align:center;
+    margin: 0px;
 }
 
 h2 {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 22px;
+    color:#bbb;
     text-align:center;
-    color:#fff;
-    margin-top: 10px;
+    margin: 0px;
 }
-
 h3 {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 16px;
     text-align:center;
-    color:#fff;
+    color:#aaa;
 }
 
 i {
     font-size: 23px;
     font-family: "Times New Roman", Georgia, Serif;
+}
+
+.futura{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 .quote {
@@ -89,8 +93,7 @@ hr {
     height: 10px;
     background-color: #bbb;
     /*margin:0px 0px;*/
-    margin-bottom: 0px;
-    width:300px;
+    margin: 0px;
 }
 
 .wide {
@@ -112,7 +115,6 @@ hr {
 }
 
 a {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     color:#dfdfdf;
     text-decoration: none;
     cursor: pointer;

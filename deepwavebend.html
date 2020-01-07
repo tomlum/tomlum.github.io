@@ -1,0 +1,343 @@
+<html lang="en">
+<head><link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png?v=A0Rrm0rq0k">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=A0Rrm0rq0k">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=A0Rrm0rq0k">
+  <link rel="manifest" href="/manifest.json?v=A0Rrm0rq0k">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=A0Rrm0rq0k" color="#5bbad5">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico?v=A0Rrm0rq0k">
+  <meta name="theme-color" content="#aaaaaa">
+  <meta property="og:image" content="https://s3.us-east-2.amazonaws.com/tomlum/timeTrialsLogo.png">
+  <title>Deep Wave Bend</title>
+  <meta name="description" content="A neural network gutiar pedal">
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-46705501-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  <!-- Tensorflow -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/1.3.2/tf.min.js" crossorigin="anonymous"></script>
+  <!-- Custom CSS -->
+  <link href="css/tomlum2.css" rel="stylesheet">
+  <style>
+    button:disabled{
+      color: #000;
+      background-color: #fff;
+      border-color: #444;
+    }
+    #waveBarContainer{
+      margin: auto;
+      height: 100px;
+      width: 100%;
+      background-color: #fff;
+      position: relative;
+      box-sizing: border-box;
+      border-bottom: none;
+    }
+    #waveBarContainer.disabled{
+      color: #000;
+      background-color: #fff;
+      border-color: #444;
+    }
+
+    .waveBar{
+      position: absolute;
+      background-color: #fdad69
+    }
+
+    .linkButton{
+      display: inline-block;
+      margin-top: 5px;
+      border: solid 3px #222;
+      background-color: #444;
+      padding: 5px;
+    }
+    .linkButton:hover{
+      background-color: #333;
+    }
+
+    .clickBorder{
+      border: solid 3px #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div class="icons">
+      <div>
+        <!-- SOCIAL BUTTONS -->
+        <a class="icon" href="/">
+            <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-logo.png" width="70">
+        </a>
+        <a class="icon" href="https://www.youtube.com/channel/UCim0JOU5CqZG3jKhU2c_yeg" target="_blank">
+            <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-youtube.png" alt="Youtube" width="70">
+        </a>
+        <a class="icon" href="https://twitter.com/tomlumperson" target="_blank">
+            <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-twitter.png" alt="Twitter" width="70">
+        </a>
+        <a class="icon" href="mailto:TomLumPerson@gmail.com" target="_blank">
+            <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-mail.png" alt="Mail" width="70">
+        </a>
+        <br>
+      </div>
+    </div>
+    <br/>
+    <hr/>
+    <div style="padding: 10px 0px;">
+      <h1 style="font-size: 30px; margin-bottom: 0px">
+        Deep Wave Bend
+        <br/>
+      </h1>
+      <h2 style="color: #fff; font-size: 20px; margin: 0px">
+        A Neural Network Guitar Pedal
+      </h2>
+    </div>
+    <hr/>
+    <br/>
+
+    <div id="errorMessage">
+    </div>
+
+    <div style="margin: 15px 15px 40px; padding: 30px 10px; background-color: #666; border-radius: 30px;">
+      <div id="audioSelectButton" style="display: flex; justify-content: center; color: #111">
+        <label for="audioSelect" class="clickBorder futura" style="
+          cursor: pointer; 
+          display: flex;
+          align-items: center;
+          height: 40px;
+          background-color: #fff;
+          border-right: none;
+          box-sizing: border-box;
+          margin-right: -3px;
+          padding-right: 8px;
+          padding-left: 5px;">
+          🎸 Input:
+        </label>
+        <div id="lockedAudioSelect" class="clickBorder futura" style="display: none; cursor: pointer; font-size: 20px; background-color: #fff; align-items: center; padding: 0px 5px; border-left: none; margin-left: -5px;">
+        </div>
+        <select id="audioSelect" class="clickBorder" style="cursor: pointer; font-family: Futura, Trebuchet MS, Arial; font-size: 20px; height: 40px; background-color: #fff;">
+        </select>
+      </div>
+      <div style="position: relative;">
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img style="margin-top: -2px;" src="data/neuralnetwork.gif">
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center; position: absolute; left: 0; right: 0; top: 0; bottom: 0;">
+          <span>Neural</span>
+          <div style="width: 130px;"></div>
+          <span>Network</span>
+        </div>
+      </div>
+
+      <div id="nnBigButton" style="position: relative; width: 220px;
+    margin: auto; cursor: pointer;">
+        <div
+          id="waveBarContainer"
+          class="clickBorder"
+        >
+        </div>
+
+        <div id="pointer" style="position: absolute; left: -55; top: 65%; bottom: 0%; font-size: 50px;">
+          👉
+        </div>
+
+        <button
+          id="nnButton"
+          class="clickBorder"
+          style="width: 100%; font-size: 20px; color: #111; cursor: pointer; min-height: 40px"
+        >
+          🎹 Load & Start ▷
+        </button>
+      </div>
+
+    </div>
+
+    <div style="text-align: justify; max-width: 600px; margin: auto; color: #111;">
+      <p style=>
+        This neural network is trained to turn a guitar into a piano in real time.
+        <a href="https://twitter.com/tomlumperson">Click here to see it in action!</a>
+        The version of the pedal above is an experimental "lite" version that downloads the network and then runs locally in your browser! 
+      </p>
+      <br/>
+      <p>
+        If you want to run the full version I use and you're familiar with running python, you can find the instructions for running it in the repo here.
+      </p>
+      <div class="futura" style="text-align: center;">
+        <a href="https://github.com/tomlum/DeepWaveBend/" target="_blank" class="linkButton">🐍 Repo to Run with Python 🐍</a>
+      </div>
+      <br/>
+      <p>
+        If you want to train, customize, or <i>improve</i>, this network, the google colab I use to <b>train</b> the network is here!
+      </p>
+      <div class="futura" style="text-align: center;">
+        <a href="https://colab.research.google.com/drive/1R8RkEpCx-nF14CDtBC31VDjcdb9Jfvfq" target="_blank" class="linkButton">🧪 Google CoLab ⚗️</a>
+      </div>
+    </div>
+  </div>
+  <div class="icons" style="margin-top: 100px; margin-bottom: 30px;">
+    <div>
+      <!-- SOCIAL BUTTONS -->
+      <a class="icon" href="/">
+          <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-logo.png" width="70">
+      </a>
+      <a class="icon" href="https://www.youtube.com/channel/UCim0JOU5CqZG3jKhU2c_yeg" target="_blank">
+          <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-youtube.png" alt="Youtube" width="70">
+      </a>
+      <a class="icon" href="https://twitter.com/tomlumperson" target="_blank">
+          <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-twitter.png" alt="Twitter" width="70">
+      </a>
+      <a class="icon" href="mailto:TomLumPerson@gmail.com" target="_blank">
+          <img src="https://s3.us-east-2.amazonaws.com/tomlum/dark-mail.png" alt="Mail" width="70">
+      </a>
+      <br>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <script>
+    let nnOn = false
+    let nnStream = null
+    let audioCtx = null
+    let scriptNode = null
+    let model = null
+    let waveBarData = []
+    const waveBars = []
+    const waveBarNum = 10
+    const waveBarContainer = document.getElementById('waveBarContainer')
+    const errorMessage = document.getElementById('errorMessage')
+
+    // Initialize waveBar elements
+    for (let i = 0; i < waveBarNum; i++){
+      const waveBar = document.createElement('div');
+      waveBar.style.left = `${i*(100/waveBarNum)}%`
+      waveBar.style.right = `${(waveBarNum-i-1)*(100/waveBarNum)}%`
+      waveBar.style.bottom = 0
+      waveBar.style.top = 80-Math.random()*60
+      waveBar.classList.add("waveBar")
+      waveBars.push(waveBar)
+      waveBarData.push(0)
+      waveBarContainer.appendChild(waveBar);
+    }
+
+    const nnButton = document.getElementById('nnButton')
+    const nnBigButton = document.getElementById('nnBigButton')
+    const audioSelect = document.getElementById('audioSelect')
+    const lockedAudioSelect = document.getElementById('lockedAudioSelect')
+    const audioSelectButton = document.getElementById('audioSelectButton')
+    
+    async function start(){
+
+      await navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(function(stream) {
+        stream.getTracks().forEach(function(track) {
+          track.stop();
+        });
+      })
+      .catch(function(err) {
+        const errorText = document.createElement('h3');
+        errorText.innerHTML="You'll need to allow microphone permissions for this website to run the neural network in the browser"
+        errorText.style.color="#ff8d8d"
+        errorMessage.appendChild(errorText)
+      });
+
+      navigator.mediaDevices.enumerateDevices()
+      .then(function(devices) {
+        devices.forEach(function(device) {
+          if(device.kind === "audioinput"){
+            const option = document.createElement('option');
+            option.id = device.deviceId;
+            option.value = device.deviceId;
+            option.text = device.label;
+            audioSelect.appendChild(option);
+          }
+        });
+      })
+
+      function handleStream(stream) {
+        const audioTracks = stream.getAudioTracks();
+        console.log('Using audio device: ' + audioTracks[0].label);
+        const source = audioCtx.createMediaStreamSource(stream);
+        source.connect(scriptNode)
+        scriptNode.connect(audioCtx.destination)
+      }
+      nnBigButton.onclick = async function(){
+        if(!nnOn){
+          lockedAudioSelect.style.display = "flex"
+          lockedAudioSelect.innerHTML = document.getElementById(audioSelect.value).text
+          audioSelect.style.display = "none"
+        } else {
+          audioSelect.style.display = "block"
+          lockedAudioSelect.style.display = "none"
+        }
+        if(!model){
+          waveBarContainer.classList.toggle("disabled")
+          document.getElementById('pointer').style.display = "none"
+          nnButton.innerHTML = "Loading..."
+          nnButton.disabled = true
+          model = await tf.loadLayersModel('data/model.json', false)
+          // Done loading
+          waveBarContainer.classList.toggle("disabled")
+          nnButton.disabled = false
+          waveBars.forEach(function(waveBar){
+            waveBar.style.top = "100%"
+          });
+        }
+        if(!nnOn){
+          nnButton.innerHTML = "🎹 ⏸️"
+          nnOn = true
+          audioCtx = new AudioContext();
+          scriptNode = audioCtx.createScriptProcessor(512, 1, 1);
+          scriptNode.onaudioprocess = function(audioProcessingEvent) {
+            // The input buffer is the song we loaded earlier
+            var inputBuffer = audioProcessingEvent.inputBuffer;
+            var outputBuffer = audioProcessingEvent.outputBuffer;
+            var inputData = inputBuffer.getChannelData(0);
+            const prediction = model.predict(tf.tensor([inputData])).dataSync()
+            outputBuffer.copyToChannel (prediction,0,0);
+
+            // Animate waveBars
+            waveBars.forEach(function(waveBar, i)
+             {
+              const waveValue = (100-Math.abs(inputData[i])*100)
+              const newValue = (waveBarData[i]*7 + waveValue)/8
+              waveBar.style.top = newValue
+              waveBarData[i] = newValue
+            });
+          }
+
+          navigator.mediaDevices.getUserMedia({ audio: {deviceId: {exact: audioSelect.value}}})
+          .then(function(stream) {
+            nnStream = stream
+            handleStream(stream)
+          })
+          .catch(function(err) {
+            console.log(err)
+          });
+        } else {
+          audioSelect.style.display = "block"
+          nnButton.innerHTML = "🎹 ▶️"
+          nnOn = false
+          audioCtx.close()
+          nnStream.getTracks().forEach(function(track) {
+            track.stop();
+          });
+        }
+      };
+    }
+    start()
+  </script>
+</footer>
+</html>
