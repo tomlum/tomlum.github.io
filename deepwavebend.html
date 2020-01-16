@@ -149,7 +149,7 @@
         >
         </div>
 
-        <div id="pointer" style="position: absolute; left: -55; top: 65%; bottom: 0%; font-size: 50px;">
+        <div id="pointer" style="position: absolute; left: -55; top: 57%; bottom: 0%; font-size: 50px;">
           👉
         </div>
 
@@ -161,6 +161,13 @@
           🎹 Load & Start ▷
         </button>
       </div>
+      <script>
+        let volume = .5
+      </script>
+      🔈
+      <input type="range" id="volume" name="volume"
+       min="0" max="100">
+      🔊
 
     </div>
 
@@ -219,6 +226,8 @@
     const waveBarContainer = document.getElementById('waveBarContainer')
     const errorMessage = document.getElementById('errorMessage')
 
+
+
     // Initialize waveBar elements
     for (let i = 0; i < waveBarNum; i++){
       const waveBar = document.createElement('div');
@@ -266,9 +275,13 @@
         });
       })
 
+      volumeInput = document.getElementById("volume")
+      volumeInput.addEventListener("click", () => {
+        volume = volumeInput.value/100
+      });
+
       function handleStream(stream) {
         const audioTracks = stream.getAudioTracks();
-        console.log('Using audio device: ' + audioTracks[0].label);
         const source = audioCtx.createMediaStreamSource(stream);
         source.connect(scriptNode)
         scriptNode.connect(audioCtx.destination)
@@ -306,7 +319,9 @@
             var outputBuffer = audioProcessingEvent.outputBuffer;
             var inputData = inputBuffer.getChannelData(0);
             const prediction = model.predict(tf.tensor([inputData])).dataSync()
-            outputBuffer.copyToChannel (prediction,0,0);
+            for (let i = 0; i < inputBuffer.length; i++){
+              outputBuffer.getChannelData(0)[i] = prediction[i]*volume
+            }
 
             // Animate waveBars
             waveBars.forEach(function(waveBar, i)
