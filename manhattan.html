@@ -25,6 +25,7 @@
 <script>
 
 	tvs=[]
+	timeouts=[]
 	function inView(elm, threshold = 0) {
 
 		const rect = elm.getBoundingClientRect();
@@ -41,15 +42,15 @@
 	}
 	function LoadImage(id){
 		if(tvs[id] && inView(tvs[id]).inside){
-			window.setTimeout(LoadImage2(id),2000);
+			timeouts[id] = window.setTimeout(LoadImage2(id),2000);
 		} else {
+			window.clearTimeout(timeouts[id])
 			tvs[id].src = ""
 		}
 	}
 
 	function LoadImage2(id)
 	{
-		console.log("reloading", id)
 		if (tvs[id]) {
 			tvs[id].src = `http://207.251.86.238/cctv${id}.jpg?ran=${Math.random()}`	
 		} else {
@@ -297,7 +298,6 @@
 
 
 	scrollStop(function () {
-	    console.log( 'Scrolling has stopped.' );
 	    data.forEach(x => {
 	    	LoadImage(x.id)
 		})
@@ -307,12 +307,11 @@
 	minLat = data.sort((a,b) => {return a.latitude-b.latitude})[0].latitude
 	maxLat = data.sort((b,a) => {return a.latitude-b.latitude})[0].latitude
 	maxLon = data.sort((a,b) => {return a.longitude-b.longitude})[0].longitude
-	console.log(minLat, maxLon)
 	body = document.getElementById("body")
 	data.forEach(x => {
 		let img = document.createElement("DIV");
 		window.setTimeout(LoadImage2(x.id),2000);
-		img.innerHTML = `<a href="http://207.251.86.238/cctv${x.id}.jpg?ran=0"><div class="node" style="top:${(-(x.latitude-maxLat))*scale+(x.y || 0)}px;left:${(x.longitude-maxLon)*scale+(x.x || 0)}px">${x.place}<img alt="LOADING" onload="LoadImage(${x.id})" id=${x.id} src=""></div></a>`
+		img.innerHTML = `<a href="http://207.251.86.238/cctv${x.id}.jpg?ran=0"><div class="node" style="top:${(-(x.latitude-maxLat))*scale+(x.y || 0)}px;left:${(x.longitude-maxLon)*scale+(x.x || 0)}px">${x.place}<img alt="LOADING" onload="LoadImage(${x.id})" id=${x.id} src="" onerror=null></div></a>`
 		body.appendChild(img)
 	})
 	data.forEach(x => {
