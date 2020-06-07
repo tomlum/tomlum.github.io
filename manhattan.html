@@ -313,7 +313,7 @@
 	data.forEach(x => {
 		let img = document.createElement("DIV");
 		window.setTimeout(LoadImage2(x.id),2000);
-		img.innerHTML = `<a href="http://207.251.86.238/cctv${x.id}.jpg?ran=0"><div class="node" style="top:${(-(x.latitude-maxLat))*scale+(x.y || 0)}px;left:${(x.longitude-maxLon)*scale+(x.x || 0)}px">${x.place}<img alt="LOADING" onload="LoadImage(${x.id})" id=${x.id} src="" onerror=null></div></a>`
+		img.innerHTML = `<a href="http://207.251.86.238/cctv${x.id}.jpg?ran=0"><div class="node" style="top:${(-(x.latitude-maxLat))*scale+(x.y || 0)}px;left:${(x.longitude-maxLon)*scale+(x.x || 0)}px">${x.place}<img alt="LOADING" onload="LoadImage(${x.id})" id=${x.id} src="" onerror="LoadImage(${x.id})"></div></a>`
 		body.appendChild(img)
 	})
 	data.forEach(x => {
