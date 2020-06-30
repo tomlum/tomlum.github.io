@@ -87,6 +87,7 @@
 	};
 
 
+	const scale = 80000
 	data=[{id: 261, latitude: 40.79142677512476, longitude: -73.93807411193848, place: "1 Ave @ 110 St"},
 	{id: 254, latitude: 40.800426144169315, longitude: -73.93155097961426, place: "1 Ave @ 124 St"},
 	{id: 1083, latitude: 40.731361, longitude: -73.982486, place: "1 Ave @ 14 St"},
@@ -296,7 +297,10 @@
 	{id: 217, latitude: 40.71437869906487, longitude: -74.00197505950928, place: "Worth St @ Centre St", x:100},
 	{id: 323, latitude: 40.71275225059959, longitude: -73.99828433990479, place: "Worth Street @ Bowery"},
 	{id: 322, latitude: 40.71480156915783, longitude: -74.0027904510498, place: "Worth Street @ Lafayette Street"},
-	{id: 826, latitude: 40.761216, longitude: -73.957815, place: "York Ave @ 63 St"}]
+	{id: 826, latitude: 40.761216, longitude: -73.957815, place: "York Ave @ 63 St"},
+	{id: 348, y:11493+200, x:1159, place: "Brooklyn Bridge Ped Walk Way"},
+	{id: 14, y:11493-300, x:1159-300,  place: "Brooklyn Bridge @ Centre Street"},
+	]
 
 
 	scrollStop(function () {
@@ -305,7 +309,6 @@
 		})
 	});
 
-	const scale = 80000
 	minLat = data.sort((a,b) => {return a.latitude-b.latitude})[0].latitude
 	maxLat = data.sort((b,a) => {return a.latitude-b.latitude})[0].latitude
 	maxLon = data.sort((a,b) => {return a.longitude-b.longitude})[0].longitude
@@ -313,7 +316,11 @@
 	data.forEach(x => {
 		let img = document.createElement("DIV");
 		window.setTimeout(LoadImage2(x.id),2000);
+		if(!x.latitude){
+		img.innerHTML = `<a href="http://207.251.86.238/cctv${x.id}.jpg?ran=0"><div class="node" style="top:${x.y}px;left:${x.x}px">${x.place}<img alt="LOADING" onload="LoadImage(${x.id})" id=${x.id} src="" onerror="LoadImage(${x.id})"></div></a>`
+		} else {
 		img.innerHTML = `<a href="http://207.251.86.238/cctv${x.id}.jpg?ran=0"><div class="node" style="top:${(-(x.latitude-maxLat))*scale+(x.y || 0)}px;left:${(x.longitude-maxLon)*scale+(x.x || 0)}px">${x.place}<img alt="LOADING" onload="LoadImage(${x.id})" id=${x.id} src="" onerror="LoadImage(${x.id})"></div></a>`
+		}
 		body.appendChild(img)
 	})
 	data.forEach(x => {
