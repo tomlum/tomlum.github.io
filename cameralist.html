@@ -33,12 +33,16 @@
 		camera = data.find(x => x.id === id)
 		let img = document.createElement("DIV");
 		window.setTimeout(LoadImage2(id),2000);
-		img.innerHTML = `<div id=${camera.id}div style="display: flex; flex-direction: column;">${camera.place}<img id=${camera.id} alt="LOADING" onload="LoadImage(${camera.id})" src="" onerror="LoadImage(${camera.id})"></div>`
+		img.innerHTML = `<div id=${camera.id}div style="display: flex; flex-direction: column;">
+		<div style="display: flex; justify-content: space-between;">${camera.place}<div style="color: red;" id="${camera.id}x">x</div></div>
+		<img id=${camera.id} alt="LOADING" onload="LoadImage(${camera.id})" src="" onerror="LoadImage(${camera.id})"></div>`
 		body.appendChild(img)
+		document.getElementById(`${id}x`).addEventListener("click", function(){ deleteCamera(id) });
 
 		tvs[id] = document.getElementById(`${id}`)
 	}
 	function deleteCamera(id){
+		console.log(`${id}div`)
 		document.getElementById(`${id}div`).remove()
 		tvs[id] = {}
 	}
@@ -329,7 +333,9 @@
 		window.setTimeout(LoadImage2(x.id),2000);
 		text.innerHTML = `<button style="margin: 5px; cursor: pointer;">[${x.id}-${x.place}]</button>`
 		text.onclick = function(){
-			addCamera(x.id)
+			if(!(tvs[x.id] && tvs[x.id].id)){
+				addCamera(x.id)
+			}
 		}
 		texts.appendChild(text)
 	});
