@@ -8,8 +8,8 @@
   <link rel="shortcut icon" href="/favicon.ico?v=A0Rrm0rq0k">
   <meta name="theme-color" content="#aaaaaa">
   <meta property="og:image" content="https://s3.us-east-2.amazonaws.com/tomlum/timeTrialsLogo.png">
-  <title>Deep Wave Bend</title>
-  <meta name="description" content="A neural network gutiar pedal">
+  <title>Neural Network Guitar Pedal</title>
+  <meta name="description" content="Deep Wave Bend: A neural network gutiar pedal that turns a guitar into a piano in real time">
   <script>
     (function(i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
@@ -106,8 +106,18 @@
     <hr/>
     <br/>
 
-    <div id="errorMessage">
-    </div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FzNboB1I7bM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    
+    <br/>
+    <br/>
+
+    <p style=>
+        This neural network is trained to turn a guitar into a piano in real time.
+        Watch the video above to see it in action!
+        The version of the pedal below is an experimental "lite" version that downloads the network and then runs locally in your browser! 
+      </p>
+      <br/>
 
     <div style="margin: 15px 15px 40px; padding: 30px 10px; background-color: #666; border-radius: 30px;">
       <div id="audioSelectButton" style="display: flex; justify-content: center; color: #111">
@@ -169,15 +179,10 @@
        min="0" max="100">
       🔊
 
+    <div id="errorMessage">
     </div>
-
+    </div>
     <div style="text-align: justify; max-width: 600px; margin: auto; color: #111;">
-      <p style=>
-        This neural network is trained to turn a guitar into a piano in real time.
-        <a href="https://twitter.com/TomLumPerson/status/1214941154690707457">Click here to see it in action!</a>
-        The version of the pedal above is an experimental "lite" version that downloads the network and then runs locally in your browser! 
-      </p>
-      <br/>
       <p>
         If you want to run the full version I use and you're familiar with running python, you can find the instructions for running it in the repo here.
       </p>
@@ -185,12 +190,20 @@
         <a href="https://github.com/tomlum/DeepWaveBend/" target="_blank" class="linkButton">🐍 Repo to Run with Python 🐍</a>
       </div>
       <br/>
+      <p style="color: #ffb87b">
+        NOTE: This network was trained on my specific guitar and setup, so your mileage may vary with your guitar and setup.
+      </p>
+      <br/>
       <p>
         If you want to train, customize, or <i>improve</i>, this network, the google colab I use to <b>train</b> the network is here!
       </p>
       <div class="futura" style="text-align: center;">
         <a href="https://colab.research.google.com/drive/1R8RkEpCx-nF14CDtBC31VDjcdb9Jfvfq" target="_blank" class="linkButton">🧪 Google CoLab ⚗️</a>
       </div>
+      <br/>
+      <p>
+        If you have ideas or want to colaborate on something, let me know!
+      </p>
     </div>
   </div>
   <div class="icons" style="margin-top: 100px; margin-bottom: 30px;">
@@ -247,34 +260,36 @@
     const lockedAudioSelect = document.getElementById('lockedAudioSelect')
     const audioSelectButton = document.getElementById('audioSelectButton')
     
-    async function start(){
-
+    async function loadmic() {
       await navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(function(stream) {
-        stream.getTracks().forEach(function(track) {
-          track.stop();
+        .then(function(stream) {
+          stream.getTracks().forEach(function(track) {
+            track.stop();
+          });
+        })
+        .catch(function(err) {
+          const errorText = document.createElement('h3');
+          errorText.innerHTML="You'll need to allow microphone permissions for this website to run the neural network in the browser"
+          errorText.style.color="#ff8d8d"
+          errorMessage.appendChild(errorText)
         });
-      })
-      .catch(function(err) {
-        const errorText = document.createElement('h3');
-        errorText.innerHTML="You'll need to allow microphone permissions for this website to run the neural network in the browser"
-        errorText.style.color="#ff8d8d"
-        errorMessage.appendChild(errorText)
-      });
 
-      navigator.mediaDevices.enumerateDevices()
-      .then(function(devices) {
-        devices.forEach(function(device) {
-          if(device.kind === "audioinput"){
-            const option = document.createElement('option');
-            option.id = device.deviceId;
-            option.value = device.deviceId;
-            option.text = device.label;
-            audioSelect.appendChild(option);
-          }
-        });
-      })
+        navigator.mediaDevices.enumerateDevices()
+        .then(function(devices) {
+          devices.forEach(function(device) {
+            if(device.kind === "audioinput"){
+              const option = document.createElement('option');
+              option.id = device.deviceId;
+              option.value = device.deviceId;
+              option.text = device.label;
+              audioSelect.appendChild(option);
+            }
+          });
+        })
 
+    }
+
+    async function start(){
       volumeInput = document.getElementById("volume")
       volumeInput.addEventListener("click", () => {
         volume = volumeInput.value/100
@@ -287,6 +302,7 @@
         scriptNode.connect(audioCtx.destination)
       }
       nnBigButton.onclick = async function(){
+          await loadmic()
         if(!nnOn){
           lockedAudioSelect.style.display = "flex"
           lockedAudioSelect.innerHTML = document.getElementById(audioSelect.value).text
