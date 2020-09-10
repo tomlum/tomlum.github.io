@@ -1,209 +1,208 @@
 body {
-    font-size: 20px;
-    font-family: Futura, "Trebuchet MS", 'Arial';
-    background-color: #777;
-    margin:auto;
-    min-width:300px;
+  font-size: 20px;
+  font-family: Futura, "Trebuchet MS", "Arial";
+  background-color: #777;
+  margin: auto;
+  min-width: 300px;
 }
 
-.noHighlight{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+.noHighlight {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-.icons{
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
+.icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
 }
-.center{
-    text-align:center;
-    max-width: 750px;
-    margin:auto;
+.center {
+  text-align: center;
+  max-width: 750px;
+  margin: auto;
 }
 
-button{
-    font-size: 15px;
-    font-family: Futura, "Trebuchet MS", 'Arial';
-    min-height:30px;
+button {
+  font-size: 15px;
+  font-family: Futura, "Trebuchet MS", "Arial";
+  min-height: 30px;
 }
 
 li {
-    margin-bottom:15px;
-    font-family: Georgia;
+  margin-bottom: 15px;
+  font-family: Georgia;
 }
 
 h1 {
-    color:#bbb;
+  color: #bbb;
 }
 
 pre {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 22px;
-    text-align:center;
-    color:#fff;
-    margin-top: 10px;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 22px;
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
 }
 
 h2 {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 22px;
-    text-align:center;
-    color:#fff;
-    margin-top: 10px;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 22px;
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
 }
 
 h3 {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size: 16px;
-    text-align:center;
-    color:#fff;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
 }
 
 i {
-    font-size: 23px;
-    font-family: "Times New Roman", Georgia, Serif;
+  font-size: 23px;
+  font-family: "Times New Roman", Georgia, Serif;
 }
 
 .quote {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 .description {
-    text-indent: 1em;
-    text-align:left;
-    padding: auto;
-    padding-top:30px;
-    padding-left: 72px;
-    padding-right: 72px;
+  text-indent: 1em;
+  text-align: left;
+  padding: auto;
+  padding-top: 30px;
+  padding-left: 72px;
+  padding-right: 72px;
 }
 
 .quoteSource {
-    text-align:right;
-    padding-right: 50px;
+  text-align: right;
+  padding-right: 50px;
 }
 
 hr {
-    border: none;
-    height: 10px;
-    background-color: #bbb;
-    /*margin:0px 0px;*/
-    margin-bottom: 0px;
-    width:300px;
+  border: none;
+  height: 10px;
+  background-color: #bbb;
+  /*margin:0px 0px;*/
+  margin-bottom: 0px;
+  width: 300px;
 }
 
 .wide {
-    width:100%;
+  width: 100%;
 }
-
 
 .fade1 {
-    background-color: #999;
-    width:50%;
+  background-color: #999;
+  width: 50%;
 }
 .fade2 {
-    background-color: #aaa;
-    width:60%;
+  background-color: #aaa;
+  width: 60%;
 }
 .fade3 {
-    background-color: #bbb;
-    width:80%;
+  background-color: #bbb;
+  width: 80%;
 }
 
 a {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    color:#dfdfdf;
-    text-decoration: none;
-    cursor: pointer;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: #dfdfdf;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
-    color:#ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 a:active {
-    color:#ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 p {
-    text-indent: 25px;;
-    margin:0px;
-    line-height: 1.3em;
+  text-indent: 25px;
+  margin: 0px;
+  line-height: 1.3em;
 }
 
 .paper {
-    text-align:left;
-    background-color: #909090;
-    padding: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
+  text-align: left;
+  background-color: #909090;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .paper > p {
-    padding:10px;
-    font-family: Georgia;
+  padding: 10px;
+  font-family: Georgia;
 }
 
 .paper > a {
-    font-family: Georgia;
-    color:#eee;
+  font-family: Georgia;
+  color: #eee;
 }
 
 .paper > a:hover {
-    color:#fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .paper > a:active {
-    color:#fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
-.icons > img{
-    padding-top:17px;
-    padding-bottom:17px;
+.icons > img {
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 
-img{
-    max-width:100%;
-    height:auto;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .icon {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 30px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
 }
 
 .click {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .logo {
-    margin-bottom: -70px;
+  margin-bottom: -70px;
 }
 
 .pixi {
-    max-width: 100%;
+  max-width: 100%;
 }
 
-.pixi > canvas{
-    max-width: 100%;
-    margin: auto;
+.pixi > canvas {
+  max-width: 100%;
+  margin: auto;
 }
 
 .topline {
-    padding-top: 15px;
-    border-top: solid 10px;
-    border-color: #bbb;
-    font-size: 23px;
+  padding-top: 15px;
+  border-top: solid 10px;
+  border-color: #bbb;
+  font-size: 23px;
 }
 
-.toplineContainer{
-    display: flex;
-    justify-content: center;
+.toplineContainer {
+  display: flex;
+  justify-content: center;
 }
