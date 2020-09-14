@@ -206,3 +206,11 @@ img {
   display: flex;
   justify-content: center;
 }
+
+a > div > h2 {
+  color: #dfdfdf;
+}
+
+a > div > h2:hover {
+  color: #fff;
+}
