@@ -26,10 +26,10 @@
     />
     <link rel="shortcut icon" href="/favicon.ico?v=A0Rrm0rq0k" />
     <meta name="theme-color" content="#aaaaaa" />
-    <title>Tom Gets a Software Job, 2K20</title>
+    <title>Tom's Software Job Search 2K20</title>
     <meta
       property="og:image"
-      content="https://s3.us-east-2.amazonaws.com/tomlum/me.png"
+      content="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-og-image.png"
     />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,10 +60,10 @@
       ga("send", "pageview");
     </script>
     <!-- Custom CSS -->
-    <link href="css/tomlum.css" rel="stylesheet" />
+    <link href="../css/tomlum.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js"></script>
-    <script src="./utils/d3-selection-multi.v0.4.min.js"></script>
+    <script src="../utils/d3-selection-multi.v0.4.min.js"></script>
 
     <style>
       body {
@@ -162,6 +162,30 @@
         border-radius: 3px;
         margin: 10px 0px;
       }
+      .mauto {
+        margin: auto;
+      }
+      .mt11 {
+        margin-top: 11px;
+      }
+      .legendIcon {
+        width: 25px;
+        height: 25px;
+      }
+      .legendIconContainer {
+        width: 35px;
+        height: 35px;
+        border-radius: 100px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+      }
+      button {
+        border-radius: 3px;
+        margin-left: 5px;
+      }
     </style>
   </head>
   <header></header>
@@ -202,16 +226,26 @@
             width="70"
           />
         </a>
-        <br />
       </div>
     </div>
 
     <div>
       <div class="center">
-        <h1>Tom Gets a Software Job, 2K20</h1>
+        <div class="col align-center mauto">
+          <h1>Tom Gets a Software Job, 2K20</h1>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/FzNboB1I7bM"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          (temp video)
+        </div>
         <div style="display: flex">
           <div class="left">
-            <p>
+            <p class="mt11">
               In 2019
               <a
                 href="https://www.tomlum.com/data-viz/job-search"
@@ -228,24 +262,119 @@
               of the company, so back on that search I went!
             </p>
             <div>
-              <br />
-              <h2>Legend</h2>
+              <h2 class="mt11">Legend</h2>
               <div class="row justify-center">
                 <div class="col">
-                  <div>✉️ Application Sent</div>
-                  <div>👋 Company Reaches Out</div>
-                  <div>🧑‍💻 Coding Interview</div>
-                  <div>📝 Code Test</div>
-                  <div>❌ Rejection</div>
-                  <div>✅ Offer Made</div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-sent.png"
+                      />
+                    </div>
+                    Application Sent
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-wave.png"
+                      />
+                    </div>
+                    Company Reaches Out
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-code.png"
+                      />
+                    </div>
+                    Coding Interview
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-test.png"
+                      />
+                    </div>
+                    Code Test
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-x.png"
+                      />
+                    </div>
+                    Rejection
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-check.png"
+                      />
+                    </div>
+                    Offer Made
+                  </div>
                 </div>
                 <div class="col">
-                  <div>📩 Referral</div>
-                  <div>📞 Phone Screen/Interview</div>
-                  <div>👨‍👩‍👧‍👦 Virtual Onsite Interview</div>
-                  <div>🏠 Take Home Assignment</div>
-                  <div>🙅 I Rejected</div>
-                  <div>🌟 Offer Accepted</div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-referral.png"
+                      />
+                    </div>
+                    Referral
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-phone.png"
+                      />
+                    </div>
+                    Phone Screen/Interview
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-group.png"
+                      />
+                    </div>
+                    Virtual Onsite Interview
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-home.png"
+                      />
+                    </div>
+                    Take Home Assignment
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-reject.png"
+                      />
+                    </div>
+                    I Rejected
+                  </div>
+                  <div class="row align-center" style="margin-top: 5px">
+                    <div class="legendIconContainer">
+                      <img
+                        class="legendIcon"
+                        src="https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-star.png"
+                      />
+                    </div>
+                    Offer Accepted
+                  </div>
                 </div>
               </div>
               <br />
@@ -269,7 +398,7 @@
                 However, if a company ended up never responding to me again,
                 their color fades away.
               </div>
-              <div>
+              <div class="mt11">
                 Names in the chart have been renamed after stages from the video
                 game Super Smash Bros.
               </div>
@@ -281,7 +410,7 @@
         <h2 class="row justify-center">Tom Lum's Software Job Search 2020</h2>
         <br />
         <div class="row align-center justify-center futura">
-          <h2>Order by:</h2>
+          <h2 class="orderBy">Order by:</h2>
           <button id="chrono">Chronological</button>
           <button id="length">Duration</button>
           <button id="size">Company Size</button>
@@ -348,7 +477,7 @@
           must have had something to do with it.
         </p>
         <br />
-        <p>Overall, my main takeaways are much the same as last time:</p>
+        <p>Overall, my main takeaways are much the same as last year:</p>
         <div class="takeaways">
           <div class="bullet">
             <b>[ Apply, Apply, Apply ]</b> It really is a numbers game. Take
@@ -449,6 +578,23 @@
           "November",
           "December",
         ];
+
+        const iconLegendImage = {
+          "✉️": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-sent.png",
+          "👋": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-wave.png",
+          "🧑‍💻":
+            "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-code.png",
+          "📝": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-test.png",
+          "❌": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-x.png",
+          "✅": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-check.png",
+          "📩":
+            "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-referral.png",
+          "📞": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-phone.png",
+          "👨‍👩‍👧‍👦": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-group.png",
+          "🏠": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-home.png",
+          "🙅": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-reject.png",
+          "🌟": "https://s3.us-east-2.amazonaws.com/tomlum/tgaj2k20-star.png",
+        };
         const iconLegend = {
           "✉️": "Application Sent",
           "📩": "Referral",
@@ -771,6 +917,7 @@
                 stage: j,
                 width: job.timeline[j + 1].time - job.timeline[j].time + 1,
                 i,
+                size: 3,
               });
             } else {
               if (icon !== "❌" && icon !== "🙅" && icon !== "🌟") {
@@ -779,6 +926,7 @@
                   i: i,
                   y: i,
                   stage: j,
+                  size: job.size * 3,
                 });
                 const grad = chart.append("linearGradient").attr("id", `g${i}`);
                 grad
@@ -918,9 +1066,9 @@
               enter.append("rect").attrs({
                 class: `bar`,
                 x: (d) => x(d.time),
-                height: barHeight,
+                height: (d) => d.size,
                 width: (d) => x(d.width),
-                y: (d) => y(d.y),
+                y: (d) => y(d.y) - d.size / 2,
                 fill: (d) => barColor(d.y, d.stage),
               }),
             (update) => update,
@@ -934,9 +1082,9 @@
               enter.append("rect").attrs({
                 class: "barGradients",
                 x: (d) => x(d.time + 1),
-                height: barHeight,
+                height: (d) => d.size,
                 width: (d) => x(20),
-                y: (d) => y(d.y),
+                y: (d) => y(d.y) - d.size / 2,
                 fill: (d) => `url(#g${d.y})`,
               }),
             (update) => update,
@@ -954,7 +1102,7 @@
                 cx: (d) => x(d.time) + 10,
                 cy: (d) => y(d.i),
                 r: 10,
-                fill: (d) => (d.icon === "📞" ? "#aaa" : "#333"),
+                fill: "#333",
                 stroke: "#fff",
               }),
             (update) => update,
@@ -966,15 +1114,16 @@
           .join(
             (enter) =>
               enter
-                .append("text")
-                .text((d) => d.icon)
+                .append("image")
                 .attrs({
+                  "xlink:href": (d) => iconLegendImage[d.icon],
                   class: "dot",
-                  x: (d) => x(d.time) + 2.5,
-                  y: (d) => y(d.i) + 5,
-                  "font-size": "12px",
+                  x: (d) => x(d.time) + 2,
+                  y: (d) => y(d.i) - 8,
+                  width: "16",
+                  height: "16",
                 })
-                .styles({ "text-anchor": "center" })
+                .styles({ "text-anchor": "middle" })
                 .on("mousemove", (d) => {
                   tooltip
                     .styles({
@@ -983,11 +1132,13 @@
                       display: "inline-block",
                     })
                     .html(
-                      `${d.icon} ${iconLegend[d.icon]}<br/>"${d.place
-                        .split("_")
-                        .join(" ")}" - ${sizeNames[d.size]} company<br/>[${
-                        monthNames[d.month]
-                      } ${d.day}]`
+                      `<img class="legendIcon" src="${
+                        iconLegendImage[d.icon]
+                      }"/> ${iconLegend[d.icon]} (${monthNames[d.month]} ${
+                        d.day
+                      })<br/>"${d.place.split("_").join(" ")}" - ${
+                        sizeNames[d.size]
+                      } company`
                     );
                 })
                 .on("mouseout", function (d) {
