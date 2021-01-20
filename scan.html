@@ -150,13 +150,19 @@
     </button>
     <a id="downloadButton2" download></a>
 
-    <div style="display:flex; flex-direction: column; margin-bottom: 10px;">
+    <div style="display:flex; flex-direction: column; margin-bottom: 10px;
+    min-height: 50px;">
       <div style="display: flex; justify-content: center;">
         TIME
       </div>
 
-      <div>
-        <input value="50" id="timeInput" style="width: 90%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;
+      <div style="display: flex;">
+        <div id="timeSlider" style="width: 30px; height: 30px; background-color: black; display: flex; justify-content: center; align-items: center; flex-direction: column; cursor: ns-resize;">
+          <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+          <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+          <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+        </div>
+        <input value="50" id="timeInput" style="width: 70%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;
         margin: 0px; margin-right: 3px;
         "/>s
       </div>
@@ -174,18 +180,18 @@
             <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
           </div>
           <div style="display:flex; justify-content: center; height: 100%;
-margin-top: 5px; margin-bottom: 5px;">
-            <input value="200" id="sizeInput" style="width: 70%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;margin: 0px;"/>px
-          </div>
-          <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;">
-            <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-            <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-            <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div></div>
-          </div>
+          margin-top: 5px; margin-bottom: 5px;">
+          <input value="200" id="sizeInput" style="width: 70%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;margin: 0px;"/>px
+        </div>
+        <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;">
+          <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+          <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+          <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div></div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </body>
 <footer>
   <script>
@@ -205,6 +211,8 @@ margin-top: 5px; margin-bottom: 5px;">
     let scanHeight = 200
     const xOffset = 0
     const yOffset = 80
+    let timeDrag = false
+    let timeStartY = 0
 
     const s1 = document.getElementById("s1")
     const s2 = document.getElementById("s2")
@@ -216,6 +224,7 @@ margin-top: 5px; margin-bottom: 5px;">
     const downloadButton = document.getElementById("downloadButton")
     const downloadButton2 = document.getElementById("downloadButton2")
     const countdown = document.getElementById("countdown")
+    const timeSlider = document.getElementById("timeSlider")
 
     downloadButton.onclick = async function (){
 
@@ -467,6 +476,22 @@ margin-top: 5px; margin-bottom: 5px;">
           scanHeight = height
         }
       }
+
+      if(timeDrag){
+        if (e.touches){
+          timeInput.value = Math.ceil(timeStartValue - (e.touches[0].clientY - timeStartY)/10)
+
+          scanTime = Math.ceil(timeStartValue + e.touches[0].clientY - timeStartY)
+        } else {
+          timeInput.value = Math.ceil(timeStartValue - (event.clientY - timeStartY)/10)
+
+          scanTime = Math.ceil(timeStartValue + event.clientY - timeStartY)
+
+          console.log(Math.ceil((event.clientY - timeStartY)/10))
+
+          timeSlider.style.marginTop = `${Math.min(5,Math.max(-5,Math.ceil((event.clientY - timeStartY)/10)))}px`
+        }
+      }
     }
 
     s1.addEventListener('mouseenter', e => {
@@ -521,6 +546,9 @@ margin-top: 5px; margin-bottom: 5px;">
         oldMouseDown = false;
         mouseDown = false;
         sizeSliderDrag = false
+        timeDrag = false
+        timeSlider.style.transition = "ease-out 0.3s"
+        timeSlider.style.marginTop = "0px"
       }
       );
     document.addEventListener('touchend', 
@@ -528,6 +556,9 @@ margin-top: 5px; margin-bottom: 5px;">
         oldMouseDown = false;
         mouseDown = false;
         sizeSliderDrag = false
+        timeDrag = false
+        timeSlider.style.transition = "ease-out 0.3s"
+        timeSlider.style.marginTop = "0px"
 
         lastX = null
         lastY = null
@@ -557,6 +588,22 @@ margin-top: 5px; margin-bottom: 5px;">
         sizeSliderDrag = true
         sizeSliderStartY = e.touches[0].clientY
         sizeSliderStartHeight = parseInt(sizeSlider.style.height.split("px")[0])
+      }
+      ); 
+    timeSlider.addEventListener('mousedown', 
+      function(){
+        timeSlider.style.transition = "none"
+        timeDrag = true
+        timeStartY = event.clientY
+        timeStartValue = parseInt(timeInput.value)
+      }
+      ); 
+    timeSlider.addEventListener('touchstart', 
+      function(e){
+        timeSlider.style.transition = "none"
+        timeDrag = true
+        timeStartY = e.touches[0].clientY
+        timeStartValue = parseInt(timeInput.value)
       }
       ); 
     window.onresize = canvasResize
