@@ -118,7 +118,7 @@
 
     </h1>
   </div>
-  <div style="user-select: none; display: flex; flex-direction: column; flex: 1; padding: 0px 5px; max-width: 130px; box-sizing: border-box;">
+  <div style="user-select: none; display: flex; flex-direction: column; flex: 1; padding: 0px 5px; max-width: 130px; width: 130px; min-width: 130px; box-sizing: border-box;">
     <div style="width: 100%; display: flex; justify-content: center;">
       SCAN
     </div>
@@ -136,16 +136,16 @@
         ⬅️
       </button>
     </div>
-    <button id="scanRandomButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 16px; padding: 0px;">
+    <button id="scanRandomButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
       RANDOM 🎲
     </button>
-    <button id="revealButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 16px; padding: 0px;">
+    <button id="revealButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
       REVEAL 🌟
     </button>
-    <button id="clearButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 16px; padding: 0px;">
+    <button id="clearButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
       CLEAR 🗑️
     </button>
-    <button id="downloadButton" style="width: 100%; height: 40px; margin-bottom: 10px; font-size: 16px; padding: 0px;">
+    <button id="downloadButton" style="width: 100%; height: 40px; margin-bottom: 10px; font-size: 14px; padding: 0px;">
       DOWNLOAD
     </button>
     <a id="downloadButton2" download></a>
@@ -297,9 +297,9 @@ margin-top: 5px; margin-bottom: 5px;">
       }, 2000)
       countdownTimeout1 = setTimeout(function(){
         countdown.innerHTML = "GO!"
-        countdown.style.transition = "linear 2s"
+        countdown.style.transition = `linear ${Math.min(scanTime/3,2)}s`
         countdown.style.opacity = 0
-      }, 3000)
+      }, Math.min(3000))
     }
 
 
@@ -423,23 +423,49 @@ margin-top: 5px; margin-bottom: 5px;">
     let sizeSliderStartHeight = 0
 
     function draw(e){
-      e.preventDefault();
+      if(e.touches){
+        if(document.elementFromPoint(e.touches[0].clientX, e.touches[0].clientY)?.tagName == 'DIV'){
+          mouseDown = false
+        } else {
+          mouseDown = true
+        }
+      }
       if (lastX && mouseDown){
         const line = new PIXI.Graphics(); 
         line.lineStyle(1.5, 0x000000, 1); 
-        line.moveTo(lastX, lastY);
-        line.lineTo(event.clientX, event.clientY-yOffset)
+        if (e.touches && e.touches[0]){
+          line.moveTo(lastX, lastY);
+          line.lineTo(e.touches[0].clientX, e.touches[0].clientY-yOffset)
+        } else {
+          line.moveTo(lastX, lastY);
+          line.lineTo(event.clientX, event.clientY-yOffset)
+        }
         container.addChild(line);
       }
-      lastX = event.clientX
-      lastY = event.clientY-yOffset
+
+
+      if (e.touches && e.touches[0]){
+        lastX = e.touches[0].clientX
+        lastY = e.touches[0].clientY-yOffset
+      } else {
+        lastX = event.clientX
+        lastY = event.clientY-yOffset
+      }
 
       if(sizeSliderDrag){
-        sizeSlider.style.height = `${Math.max(70, sizeSliderStartHeight + event.clientY - sizeSliderStartY)}px`
-        const height = parseInt(sizeSlider.style.height.split("px")[0])
+        if (e.touches){
+          sizeSlider.style.height = `${Math.max(70, sizeSliderStartHeight + e.touches[0].clientY - sizeSliderStartY)}px`
+          const height = parseInt(sizeSlider.style.height.split("px")[0])
 
-        sizeInput.value = height
-        scanHeight = height
+          sizeInput.value = height
+          scanHeight = height
+        } else {
+          sizeSlider.style.height = `${Math.max(70, sizeSliderStartHeight + event.clientY - sizeSliderStartY)}px`
+          const height = parseInt(sizeSlider.style.height.split("px")[0])
+
+          sizeInput.value = height
+          scanHeight = height
+        }
       }
     }
 
@@ -458,24 +484,6 @@ margin-top: 5px; margin-bottom: 5px;">
       mouseDown=oldMouseDown;
     });
 
-    s1.addEventListener('touchenter', e => {
-      mouseDown=false;
-      e.preventDefault();
-    });
-
-    s1.addEventListener('touchleave', e => {
-      mouseDown=oldMouseDown;
-      e.preventDefault();
-    });
-    s2.addEventListener('touchenter', e => {
-      mouseDown=false;
-      e.preventDefault();
-    });
-
-    s2.addEventListener('touchleave', e => {
-      mouseDown=oldMouseDown;
-      e.preventDefault();
-    });
 
     document.addEventListener("pointermove", draw);
     document.addEventListener("touchmove", draw);
@@ -494,13 +502,15 @@ margin-top: 5px; margin-bottom: 5px;">
       }
       );
     canvas.addEventListener('touchstart', 
-      function(){
+      function(e){
+        e.preventDefault()
         oldMouseDown = true;
         mouseDown = true;
       }
       ); 
     canvas.addEventListener('touchend', 
-      function(){
+      function(e){
+        e.preventDefault();
         oldMouseDown = false;
         mouseDown = false;
       }
@@ -518,6 +528,9 @@ margin-top: 5px; margin-bottom: 5px;">
         oldMouseDown = false;
         mouseDown = false;
         sizeSliderDrag = false
+
+        lastX = null
+        lastY = null
       }
       );
 
@@ -539,7 +552,13 @@ margin-top: 5px; margin-bottom: 5px;">
         sizeSliderStartHeight = parseInt(sizeSlider.style.height.split("px")[0])
       }
       ); 
-
+    sizeSlider.addEventListener('touchstart', 
+      function(e){
+        sizeSliderDrag = true
+        sizeSliderStartY = e.touches[0].clientY
+        sizeSliderStartHeight = parseInt(sizeSlider.style.height.split("px")[0])
+      }
+      ); 
     window.onresize = canvasResize
 
   </script>
