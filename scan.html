@@ -110,7 +110,7 @@
     <br />
   </div>
 </div>
-<div style="display: flex;">
+<div style="display: flex; height: calc(100vh - 130px);">
   <div id="canvasContainer" style="position:relative; display:flex; margin: auto; justify-content: flex-start; align-items: center; margin-left: 0px; cursor: crosshair;">
     <div id="s1" style="position:absolute; height: 0px; top: 0; left: 0px; width:100%; background-color: black; opacity: 1;"></div>
     <div id="s2" style="position:absolute; height: 0px; bottom: 0px; right: 0; width:100%; background-color: black; opacity: 1;"></div>
@@ -118,21 +118,21 @@
 
     </h1>
   </div>
-  <div style="user-select: none; display: flex; flex-direction: column; flex: 1; padding: 0px 5px">
+  <div style="user-select: none; display: flex; flex-direction: column; flex: 1; padding: 0px 5px; max-width: 130px; box-sizing: border-box;">
     <div style="width: 100%; display: flex; justify-content: center;">
-      Scan
+      SCAN
     </div>
     <div style="display:flex">
-      <button id="scanDownButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-left: 4px;">
+      <button id="scanDownButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
         ⬇️
       </button>
-      <button id="scanRightButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-left: 4px;">
+      <button id="scanRightButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
         ➡️
       </button>
-      <button id="scanUpButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-left: 4px;">
+      <button id="scanUpButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
         ⬆️
       </button>
-      <button id="scanLeftButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-left: 4px;">
+      <button id="scanLeftButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
         ⬅️
       </button>
     </div>
@@ -145,14 +145,14 @@
     <button id="clearButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 16px; padding: 0px;">
       CLEAR 🗑️
     </button>
-    <button id="downloadButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 16px; padding: 0px;">
+    <button id="downloadButton" style="width: 100%; height: 40px; margin-bottom: 10px; font-size: 16px; padding: 0px;">
       DOWNLOAD
     </button>
     <a id="downloadButton2" download></a>
 
     <div style="display:flex; flex-direction: column; margin-bottom: 10px;">
       <div style="display: flex; justify-content: center;">
-        Scan Time
+        TIME
       </div>
 
       <div>
@@ -164,19 +164,20 @@
 
     <div style="display:flex; flex-direction: column;">
       <div style="display: flex; justify-content: center;">
-        Scanner Size
+        SIZE
       </div>
       <div style="display:flex;">
         <div id="sizeSlider" style="box-sizing: border-box; width: 100%; height: 200px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; box-sizing: border-box; border: solid 2px black; border-top: 0px; border-bottom: 0px; cursor: ns-resize; background-color: white;">
-          <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;">
             <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
             <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
             <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
           </div>
-          <div style="display:flex; justify-content: center;">
+          <div style="display:flex; justify-content: center; height: 100%;
+margin-top: 5px; margin-bottom: 5px;">
             <input value="200" id="sizeInput" style="width: 70%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;margin: 0px;"/>px
           </div>
-          <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;">
             <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
             <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
             <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div></div>
@@ -433,7 +434,7 @@
       lastY = event.clientY-yOffset
 
       if(sizeSliderDrag){
-        sizeSlider.style.height = `${Math.max(60, sizeSliderStartHeight + event.clientY - sizeSliderStartY)}px`
+        sizeSlider.style.height = `${Math.max(70, sizeSliderStartHeight + event.clientY - sizeSliderStartY)}px`
         const height = parseInt(sizeSlider.style.height.split("px")[0])
 
         sizeInput.value = height
