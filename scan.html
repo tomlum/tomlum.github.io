@@ -72,7 +72,7 @@
 </head>
 <header></header>
 
-<body>
+<body style="overflow:hidden;">
   <div class="icons" style="height: 80px; margin: 0px; padding: 10px; padding: 10px; box-sizing: border-box;">
     <div>
       <!-- SOCIAL BUTTONS -->
@@ -423,6 +423,7 @@ margin-top: 5px; margin-bottom: 5px;">
     let sizeSliderStartHeight = 0
 
     function draw(e){
+      e.preventDefault();
       if (lastX && mouseDown){
         const line = new PIXI.Graphics(); 
         line.lineStyle(1.5, 0x000000, 1); 
@@ -459,17 +460,21 @@ margin-top: 5px; margin-bottom: 5px;">
 
     s1.addEventListener('touchenter', e => {
       mouseDown=false;
+      e.preventDefault();
     });
 
     s1.addEventListener('touchleave', e => {
       mouseDown=oldMouseDown;
+      e.preventDefault();
     });
     s2.addEventListener('touchenter', e => {
       mouseDown=false;
+      e.preventDefault();
     });
 
     s2.addEventListener('touchleave', e => {
       mouseDown=oldMouseDown;
+      e.preventDefault();
     });
 
     document.addEventListener("pointermove", draw);
