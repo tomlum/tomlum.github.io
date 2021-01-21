@@ -64,7 +64,7 @@
   <!-- Custom CSS -->
   <link href="css/tomlum.css" rel="stylesheet" />
   <style>
-    .button{
+    button{
       border-radius: 2px;
       border: none;
     }
@@ -123,36 +123,36 @@
       SCAN
     </div>
     <div style="display:flex">
-      <button id="scanDownButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
+      <button id="scanDownButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
          <img
         src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
-        width="30"
+        width="20"
         style="transform: rotate(90deg);"
         />
       </button>
-      <button id="scanRightButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
+      <button id="scanRightButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
                  <img
         src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
-        width="30"
+        width="20"
         style="transform: rotate(0deg);"
         />
       </button>
-      <button id="scanUpButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
+      <button id="scanUpButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
                  <img
         src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
-        width="30"
+        width="20"
         style="transform: rotate(270deg);"
         />
       </button>
       <button id="scanLeftButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
                  <img
         src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
-        width="30"
+        width="20"
         style="transform: rotate(180deg);"
         />
       </button>
     </div>
-    <button id="scanRandomButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
+    <button id="scanRandomButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px; margin-top: 2px;">
       RANDOM 🎲
     </button>
     <button id="revealButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
@@ -166,8 +166,8 @@
     </button>
     <a id="downloadButton2" download></a>
 
-    <div style="display:flex; flex-direction: column; margin-bottom: 10px;
-    min-height: 50px;">
+    <div style="display:flex; flex-direction: column;
+    min-height: 65px;">
       <div style="display: flex; justify-content: center;">
         TIME
       </div>
@@ -367,7 +367,6 @@
       }, scanCountDown+(scanHeight/((canvas.clientHeight)/(scanTime*1000))));
     }
     function scanUp(){
-      console.log(canvas.clientWidth, canvas.clientHeight)
       s1.style.width = `${canvas.clientWidth}px`;
       s2.style.width = `${canvas.clientWidth}px`;
       s1.style.transition = "none"
@@ -502,8 +501,6 @@
           timeInput.value = Math.ceil(timeStartValue - (event.clientY - timeStartY)/10)
 
           scanTime = Math.ceil(timeStartValue + event.clientY - timeStartY)
-
-          console.log(Math.ceil((event.clientY - timeStartY)/10))
 
           timeSlider.style.marginTop = `${Math.min(5,Math.max(-5,Math.ceil((event.clientY - timeStartY)/10)))}px`
         }
