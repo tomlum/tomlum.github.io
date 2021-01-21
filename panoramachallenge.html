@@ -194,7 +194,7 @@
     SIZE
   </div>
   <div style="display:flex;">
-    <div id="sizeSlider" style="box-sizing: border-box; width: 100%; height: 194px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; box-sizing: border-box; border: solid 2px black; border-top: 0px; border-bottom: 0px; cursor: ns-resize; background-color: white;">
+    <div id="sizeSlider" style="box-sizing: border-box; width: 100%; height: 0px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; box-sizing: border-box; border: solid 2px black; border-top: 0px; border-bottom: 0px; cursor: ns-resize; background-color: white;">
       <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;    border-radius: 4px 4px 0px 0px; width: 120px; margin-top: -4px;">
         <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
         <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
@@ -229,7 +229,7 @@
 
     let scanTime = 60
     const scanCountDown = 3000
-    let scanHeight = 250-56
+    let scanHeight = Math.max(250, Math.ceil(window.innerHeight/3))
     const xOffset = 0
     const yOffset = 80
     let timeDrag = false
@@ -487,15 +487,15 @@
       if(sizeSliderDrag){
         if (e.touches){
           sizeSlider.style.height = `${Math.max(64, sizeSliderStartHeight + e.touches[0].clientY - sizeSliderStartY)}px`
-          const height = parseInt(sizeSlider.style.height.split("px")[0])
+          const height = parseInt(sizeSlider.style.height.split("px")[0]-22)
 
-          sizeInput.value = height+56
+          sizeInput.value = height
           scanHeight = height
         } else {
           sizeSlider.style.height = `${Math.max(64, sizeSliderStartHeight + event.clientY - sizeSliderStartY)}px`
-          const height = parseInt(sizeSlider.style.height.split("px")[0])
+          const height = parseInt(sizeSlider.style.height.split("px")[0]-22)
 
-          sizeInput.value = height+56
+          sizeInput.value = height
           scanHeight = height
         }
       }
@@ -512,6 +512,9 @@
         }
       }
     }
+
+    sizeInput.value = scanHeight
+    sizeSlider.style.height = `${scanHeight+22}px`
 
     s1.addEventListener('mouseenter', e => {
       mouseDown=false;
