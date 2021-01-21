@@ -67,6 +67,7 @@
     button{
       border-radius: 2px;
       border: none;
+      background-color: #f3f3f3;
     }
   </style>
 </head>
@@ -156,13 +157,13 @@
       RANDOM 🎲
     </button>
     <button id="revealButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
-      REVEAL 💡
+      REVEAL 👀
     </button>
-    <button id="clearButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
+    <button id="downloadButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
+      DOWNLOAD
+    <button id="clearButton" style="width: 100%; height: 40px; margin-bottom: 10px; font-size: 14px; padding: 0px;">
       CLEAR 🗑️
     </button>
-    <button id="downloadButton" style="width: 100%; height: 40px; margin-bottom: 10px; font-size: 14px; padding: 0px;">
-      DOWNLOAD
     </button>
     <a id="downloadButton2" download></a>
 
@@ -494,13 +495,11 @@
 
       if(timeDrag){
         if (e.touches){
-          timeInput.value = Math.ceil(timeStartValue - (e.touches[0].clientY - timeStartY)/10)
-
-          scanTime = Math.ceil(timeStartValue + e.touches[0].clientY - timeStartY)
+          scanTime = Math.max(1,Math.ceil(timeStartValue + timeStartY-e.touches[0].clientY))
+          timeInput.value = scanTime
         } else {
-          timeInput.value = Math.ceil(timeStartValue - (event.clientY - timeStartY)/10)
-
-          scanTime = Math.ceil(timeStartValue + event.clientY - timeStartY)
+          scanTime = Math.max(1,Math.ceil(timeStartValue + timeStartY-event.clientY))
+          timeInput.value = scanTime
 
           timeSlider.style.marginTop = `${Math.min(5,Math.max(-5,Math.ceil((event.clientY - timeStartY)/10)))}px`
         }
