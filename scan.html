@@ -120,94 +120,96 @@
     </h1>
   </div>
   <div style="user-select: none; display: flex; flex-direction: column; flex: 1; padding: 0px 5px; max-width: 130px; width: 130px; min-width: 130px; box-sizing: border-box;">
-    <div style="width: 100%; display: flex; justify-content: center;">
-      SCAN
-    </div>
-    <div style="display:flex">
-      <button id="scanDownButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
+    <div style="border: solid 3px black;border-radius: 4px;margin-bottom: 5px;">
+      <div id="scanTitle" style="width: 100%; display: flex; justify-content: center;">
+        SCAN
+      </div>
+      <div style="display:flex">
+        <button id="scanDownButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
          <img
-        src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
-        width="20"
-        style="transform: rotate(90deg);"
-        />
-      </button>
-      <button id="scanRightButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
-                 <img
-        src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
-        width="20"
-        style="transform: rotate(0deg);"
-        />
-      </button>
-      <button id="scanUpButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
-                 <img
-        src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
-        width="20"
-        style="transform: rotate(270deg);"
-        />
-      </button>
-      <button id="scanLeftButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
-                 <img
-        src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
-        width="20"
-        style="transform: rotate(180deg);"
-        />
-      </button>
-    </div>
-    <button id="scanRandomButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px; margin-top: 2px;">
+         src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
+         width="20"
+         style="transform: rotate(90deg);"
+         />
+       </button>
+       <button id="scanRightButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
+         <img
+         src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
+         width="20"
+         style="transform: rotate(0deg);"
+         />
+       </button>
+       <button id="scanUpButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px; margin-right: 2px;">
+         <img
+         src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
+         width="20"
+         style="transform: rotate(270deg);"
+         />
+       </button>
+       <button id="scanLeftButton" style="width: 25%; height: 30px; font-size: 16px; padding: 0px; display:flex; justify-content: center; align-items: center; padding-top: 2px;">
+         <img
+         src="https://s3.us-east-2.amazonaws.com/tomlum/scanArrow.png"
+         width="20"
+         style="transform: rotate(180deg);"
+         />
+       </button>
+     </div>
+     <button id="scanRandomButton" style="width: 100%; height: 40px; font-size: 14px; padding: 0px; margin-top: 2px;">
       RANDOM 🎲
     </button>
-    <button id="revealButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
-      REVEAL 👀
-    </button>
-    <button id="downloadButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
-      DOWNLOAD
+  </div>
+  <button id="revealButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
+    REVEAL 👀
+  </button>
+  <button id="downloadButton" style="width: 100%; height: 40px; margin-bottom: 5px; font-size: 14px; padding: 0px;">
+    DOWNLOAD
     <button id="clearButton" style="width: 100%; height: 40px; margin-bottom: 10px; font-size: 14px; padding: 0px;">
       CLEAR 🗑️
     </button>
-    </button>
-    <a id="downloadButton2" download></a>
+  </button>
+  <a id="downloadButton2" download></a>
 
-    <div style="display:flex; flex-direction: column;
-    min-height: 65px;">
-      <div style="display: flex; justify-content: center;">
-        TIME
-      </div>
+  <div style="display:flex; flex-direction: column;
+  min-height: 65px;">
+  <div style="display: flex; justify-content: center;">
+    TIME
+  </div>
 
-      <div style="display: flex;">
-        <div id="timeSlider" style="width: 30px; height: 30px; background-color: black; display: flex; justify-content: center; align-items: center; flex-direction: column; cursor: ns-resize; border-radius: 4px 0px 0px 4px;">
-          <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-          <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-          <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-        </div>
-        <input value="50" id="timeInput" style="width: 70%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;
-        margin: 0px; margin-right: 3px;
-        "/>s
-      </div>
+  <div style="display: flex;">
+    <div id="timeSlider" style="width: 30px; height: 30px; background-color: black; display: flex; justify-content: center; align-items: center; flex-direction: column; cursor: ns-resize; border-radius: 4px 0px 0px 4px;">
+      <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+      <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+      <div style="width: 20px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
     </div>
+    <input value="50" id="timeInput" style="width: 70%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;
+    margin: 0px; margin-right: 3px;
+    "/>s
+  </div>
+</div>
 
-    <div style="display:flex; flex-direction: column;">
-      <div style="display: flex; justify-content: center;margin-bottom:4px;">
-        SIZE
+<div style="display:flex; flex-direction: column;">
+  <div style="display: flex; justify-content: center;margin-bottom:4px;">
+    SIZE
+  </div>
+  <div style="display:flex;">
+    <div id="sizeSlider" style="box-sizing: border-box; width: 100%; height: 144px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; box-sizing: border-box; border: solid 2px black; border-top: 0px; border-bottom: 0px; cursor: ns-resize; background-color: white;">
+      <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;    border-radius: 4px 4px 0px 0px; width: 120px; margin-top: -4px;">
+        <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+        <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+        <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
       </div>
-      <div style="display:flex;">
-        <div id="sizeSlider" style="box-sizing: border-box; width: 100%; height: 144px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; box-sizing: border-box; border: solid 2px black; border-top: 0px; border-bottom: 0px; cursor: ns-resize; background-color: white;">
-          <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;    border-radius: 4px 4px 0px 0px; width: 120px; margin-top: -4px;">
-            <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-            <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-            <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-          </div>
-          <div style="display:flex; justify-content: center; height: 100%;
-          margin-top: 5px; margin-bottom: 5px;">
-          <input value="200" id="sizeInput" style="width: 70%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;margin: 0px;"/>px
-        </div>
-        <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;    border-radius: 0px 0px 4px 4px; width: 120px; margin-bottom: -4px;">
-          <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-          <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
-          <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div></div>
-        </div>
-      </div>
+      <div style="display:flex; justify-content: center; height: 100%;
+      margin-top: 5px; margin-bottom: 5px;">
+      <input value="200" id="sizeInput" style="width: 70%; height: 30px; margin-bottom: 5px; font-size: 16px; padding: 0px; box-sizing: border-box; text-align: right; padding-right: 3px;margin: 0px;"/>px
+    </div>
+    <div style="width: 100%; height: 15px; background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center; max-height: 15px; min-height: 15px;    border-radius: 0px 0px 4px 4px; width: 120px; margin-bottom: -4px;">
+      <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+      <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div>
+      <div style="width: 40px; height: 1px; background-color: #aeaeae; margin: 1px;"></div></div>
     </div>
   </div>
+</div>
+</div>
 </div>
 </body>
 <footer>
@@ -419,6 +421,8 @@
       }
     }
 
+    const scanTitle = document.getElementById("scanTitle")
+
     const scanDownButton = document.getElementById("scanDownButton")
     scanDownButton.onclick=scanDown
 
@@ -433,6 +437,7 @@
 
     const scanRandomButton = document.getElementById("scanRandomButton")
     scanRandomButton.onclick=scanRandom
+    scanTitle.onclick=scanRandom
 
 
     stage.interactive = true;
