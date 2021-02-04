@@ -214,3 +214,8 @@ a > div > h2 {
 a > div > h2:hover {
   color: #fff;
 }
+
+.flexCenter{
+  display: flex;
+  justify-content: center;
+}
