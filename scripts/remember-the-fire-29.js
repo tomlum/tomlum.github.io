@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
       type: "person",
     },
     {
-      lyric: "Satayana Goodbye",
+      lyric: "Santayana Goodbye",
       wikiName: "George Santayana",
       addendum: " (George Santayana)",
       count: 18343,
