@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
       addendum: "",
       count: 47829,
       oldCount: 51862,
-      url: "Juan_Per%C3%B3n%C3%B3n",
+      url: "Juan_Perón",
       type: "person",
     },
     {
