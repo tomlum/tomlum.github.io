@@ -92,7 +92,11 @@
       }
       h2 {
         margin: 0px;
-        color: #000;
+        font-family: Futura;
+        color: #ffffff;
+      }
+      h3 {
+        margin: 0px;
         font-family: Futura;
         color: #ffffff;
       }
@@ -402,11 +406,11 @@
       <div class="legend">
         <h2 class="row justify-center">Tom Lum's Software Job Search 2020</h2>
         <br />
-        <div class="row align-center justify-center futura">
-          <h2 class="orderBy">Order by:</h2>
-          <button id="chrono">Chronological</button>
-          <button id="length">Duration</button>
-          <button id="size">Company Size</button>
+        <div class="row align-center justify-center futura" style="flex-wrap: wrap;">
+          <h3 class="orderBy">Order by:</h3>
+          <button style="margin-bottom: 5px;" id="chrono">Chronological</button>
+          <button style="margin-bottom: 5px;" id="length">Duration</button>
+          <button style="margin-bottom: 5px;" id="size">Company Size</button>
         </div>
       </div>
       <div class="chartContainer dragscroll">
@@ -420,12 +424,14 @@
       <br />
       <div class="center">
         <svg
-          style="min-width: 300px; margin-left: 10px; float: right"
+          style="min-width: 300px; margin-left: 10px; float: right; margin-bottom: 10px;"
           id="pieChart"
           width="300"
           height="400"
         ></svg>
         <p>
+          <br/>
+          <br/>
           As with last year, there are a number of factors to consider with
           reading this data.
         </p>
