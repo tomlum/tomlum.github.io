@@ -101,40 +101,56 @@
     teams[2] = {name: "Icebergs", color1: "#89CFF0", city: "Las Vegas", icon: "assets/icon_iceberg.png"}
 
     const games = []
-    for (let i = 0; i < 10; i++) {
-      games[i] = {
-        team1: teams[Math.floor(Math.random() * teams.length)],
-        team2: teams[Math.floor(Math.random() * teams.length)],
-        innings: [],
-        team1total: 0,
-        team2total: 0
-      }
-      for (let inning = 0; inning < 9; inning++) {
-        const team1runs = Math.floor(Math.random()*10)
-        const team2runs = Math.floor(Math.random()*10)
-        games[i].innings[inning] = [team1runs, team2runs]
-        games[i].team1total += team1runs
-        games[i].team2total += team2runs
-      }
-    }
-    console.log(games)
+
 
     class App extends Component {
-        render({ page }) {
-          return html`
-
-        <div class="center app" style="padding:10px;">
-          <h1 id="title"><i><b><u>PENGUIN BASEBALL LEAGUE</u></b></i></h1>
-          </div>
-            <div class="games">
-              ${games.map(game => html`
-                <${GameCard} game=${game}>
-                <//>
-              `)}
-            </div>
-          `;
+      generateGames(){
+        const newGames=[]
+        for (let i = 0; i < 10; i++) {
+          newGames[i] = {
+            team1: teams[Math.floor(Math.random() * teams.length)],
+            team2: teams[Math.floor(Math.random() * teams.length)],
+            innings: [],
+            team1total: 0,
+            team2total: 0
+          }
+          for (let inning = 0; inning < 9; inning++) {
+            const team1runs = Math.floor(Math.random()*10)
+            const team2runs = Math.floor(Math.random()*10)
+            newGames[i].innings[inning] = [team1runs, team2runs]
+            newGames[i].team1total += team1runs
+            newGames[i].team2total += team2runs
+          }
         }
+        return newGames
       }
+
+      resetGames(){
+        this.setState({games: this.generateGames()})
+      }
+
+      constructor() {
+        super();
+        this.state = { games: this.generateGames() }
+      }
+
+      render({ page }) {
+        return html`
+          <div class="center app" style="padding:10px;">
+            <h1 id="title"><i><b><u>PENGUIN BASEBALL LEAGUE</u></b></i></h1>
+            <button onClick=${() => this.resetGames()}>
+              Generate New Games
+            </button>
+            </div>
+              <div class="games">
+                ${this.state.games && this.state.games.length && this.state.games.map(game => html`
+                  <${GameCard} game=${game}>
+                  <//>
+                `)}
+              </div>
+        `;
+      }
+    }
 
     const GameCard = ({game}) => html`
       <div class="game-card">
