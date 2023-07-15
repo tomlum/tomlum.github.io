@@ -36,8 +36,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="You've heard of Human Baseball..." />
   <style>
-    body{
-      font-family: "proxima-nova";
+    app{
+      font-family: "proxima-nova" !important;
     }
     #title{
       color:  white;
@@ -122,9 +122,9 @@
         render({ page }) {
           return html`
 
-        <div class="center" style="padding:10px;">
+        <div class="center app" style="padding:10px;">
           <h1 id="title"><i><b><u>PENGUIN BASEBALL LEAGUE</u></b></i></h1>
-        </div>
+          </div>
             <div class="games">
               ${games.map(game => html`
                 <${GameCard} game=${game}>
@@ -170,7 +170,7 @@
     render(html`<${App} page="All" />`, document.body);
   </script>
   <!-- Custom CSS -->
-  <link href="css/tomlum.css" rel="stylesheet" />
+  <link href="css/tomlum-6.css" rel="stylesheet" />
 </head>
 <header></header>
 
