@@ -10,7 +10,7 @@ body {
 
 
 .item-holder{
-  height: 2700px;
+  height: 2800px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -84,19 +84,19 @@ body {
 .lle{
   order:  1;
 }
-.tt{
+.ss{
   order:  2;
 }
-.ppc{
+.tt{
   order:  3;
 }
-.km{
+.ppc{
   order:  4;
 }
-.dwrtf{
-  order: 5;
+.km{
+  order:  5;
 }
-.tet{
+.dwrtf{
   order: 6;
 }
 
@@ -118,6 +118,10 @@ body {
 }
 .tor{
   order: 15;
+}
+
+.tet{
+  order: 16;
 }
 
 @media (max-width: 902px) {
