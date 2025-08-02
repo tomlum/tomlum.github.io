@@ -10,7 +10,7 @@ body {
 
 
 .item-holder{
-  height: 3000px;
+  height: 3300px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -84,24 +84,27 @@ body {
 .lle{
   order:  1;
 }
-.ss{
+.sam{
   order:  2;
 }
-.tt{
+.ss{
   order:  3;
 }
-.ppc{
+.tt{
   order:  4;
 }
-.km{
+.ppc{
   order:  5;
 }
+.km{
+  order:  6;
+}
 .dwrtf{
-  order: 6;
+  order: 7;
 }
 
 .tet{
-  order: 7;
+  order: 8;
 }
 
 .yt{
@@ -143,38 +146,41 @@ body {
 .ofs{
   order:  2;
 }
-.ss{
+.sam{
   order:  3;
 }
+.ss{
+  order:  4;
+}
   .v{
-    order:  4;
-  }
-  .tt{
     order:  5;
   }
-  .cac{
+  .tt{
     order:  6;
   }
-  .wag{
+  .cac{
     order:  7;
   }
-  .ppc{
+  .wag{
     order:  8;
   }
-  .km{
+  .ppc{
     order:  9;
   }
-  .sl{
+  .km{
     order:  10;
   }
-  .tor{
-    order: 11;
+  .sl{
+    order:  11;
   }
-  .dwrtf{
+  .tor{
     order: 12;
   }
-  .tet{
+  .dwrtf{
     order: 13;
+  }
+  .tet{
+    order: 14;
   }
 }
 
