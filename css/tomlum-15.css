@@ -10,7 +10,7 @@ body {
 
 
 .item-holder{
-  height: 3300px;
+  height: 3350px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
