@@ -10,7 +10,7 @@ body {
 
 
 .item-holder{
-  height: 3350px;
+  height: 3600px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -90,22 +90,22 @@ body {
 .ss{
   order:  3;
 }
-.tt{
+.aha{
   order:  4;
 }
-.ppc{
+.tt{
   order:  5;
 }
-.km{
+.ppc{
   order:  6;
 }
-.dwrtf{
-  order: 7;
+.km{
+  order:  7;
 }
-
-.tet{
+.dwrtf{
   order: 8;
 }
+
 
 .yt{
   order:  10;
@@ -131,6 +131,9 @@ body {
   order: 16;
 }
 
+.tet{
+  order: 17;
+}
 
 @media (max-width: 902px) {
   .item{
@@ -152,35 +155,40 @@ body {
 .ss{
   order:  4;
 }
+
   .v{
     order:  5;
   }
+
+.aha{
+  order:  6;
+}
   .tt{
-    order:  6;
-  }
-  .cac{
     order:  7;
   }
-  .wag{
+  .cac{
     order:  8;
   }
-  .ppc{
+  .wag{
     order:  9;
   }
-  .km{
+  .ppc{
     order:  10;
   }
-  .sl{
+  .km{
     order:  11;
   }
-  .tor{
-    order: 12;
+  .sl{
+    order:  12;
   }
-  .dwrtf{
+  .tor{
     order: 13;
   }
-  .tet{
+  .dwrtf{
     order: 14;
+  }
+  .tet{
+    order: 15;
   }
 }
 
